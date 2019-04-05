@@ -1,70 +1,69 @@
 ﻿<!DOCTYPE html>
 <html> 
-    <head>
-        <title>@ViewBag.Title - My Telerik MVC Application</title>
-        <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+<head>
+    <meta charset="utf-8">
+    <title>FGM - Our Communities </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />*@
 
-        @* Content-box fixes as per http://docs.telerik.com/kendo-ui/third-party/using-kendo-with-twitter-bootstrap article  *@
-        <link href="@Url.Content("~/Content/box-sizing-fixes.css")" rel="stylesheet" type="text/css" />
+    @* Content-box fixes as per http://docs.telerik.com/kendo-ui/third-party/using-kendo-with-twitter-bootstrap article  *@
+    <link href="@Url.Content("~/Content/box-sizing-fixes.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
 
-        <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <!--Styesheet of template-->
+    <link href="@Url.Content("css/bootstrap-responsive.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("css/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/color/default.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Images/favicon.icon")" rel="shortcut icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    	<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
-	<script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
-	<script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
-	<script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.aspnetmvc.min.js"></script>
-	<script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    @*<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.aspnetmvc.min.js"></script>*@
+
+    <!--JavaScript of template-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/jquery.nav.js"></script>
+    <script src="js/jquery.localScroll.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/isotope.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/inview.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/custom.js"></script>
+
 </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button id="configure" class="k-rpanel-toggle k-button btn-toggle"><span class="k-icon k-i-hbars"></span></button>
-                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-
-                <div id="responsive-panel" class="navbar-left">
-                    @(Html.Kendo().Menu()
-                                .Name("Menu")
-                                .Items(items =>
-                                {
-                                    items.Add().Text("Home").Action("Index", "Home", new { area = "" });
-                                    items.Add().Text("About").Action("About", "Home", new { area = "" });
-                                    items.Add().Text("Contact").Action("Contact", "Home", new { area = "" });
-                                })
-                    )
-                </div>
+<body>
+    <div class="navbar-wrapper">
+        <div class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Responsive navbar -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </a>
+                <img src="~/Images/logo.png" class="brand" />
+                <nav class="pull-right nav-collapse collapse">
+                    <ul id="menu-main" class="nav">
+                        <li><a title="team" href="#about">About</a></li>
+                        <li><a title="services" href="#services">Services</a></li>
+                        <li><a title="works" href="#works">Works</a></li>
+                        <li><a title="blog" href="#blog">Blog</a></li>
+                        <li><a title="contact" href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
-        <div class="body-content">
-            <div class="container">
-                @RenderBody()
+    </div>
+    <div class="body-content">
+        @RenderBody()
+    </div>
 
-                <footer>
-                    <hr />
-						
-                    <p>Copyright &copy; @DateTime.Now.Year Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
-                </footer>
-            </div>
-        </div> 
-
-        <script>
-            $(document).ready(function () {
-                $("#responsive-panel").kendoResponsivePanel({
-                    breakpoint: 768,
-                    autoClose: false,
-                    orientation: "top"
-                });
-            });
-            function onclick(e) {
-                $("#responsive-panel").getKendoResponsivePanel().toggle();
-            }
-        </script>
-
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
-    </body>
+</body>
+   
 </html>
