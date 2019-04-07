@@ -445,14 +445,15 @@ header .logo {
 
 
 section.section {
-	padding: 100px 0 80px;
+	padding: 50px 0 80px;
 }
 section.section h4 {
 	text-align: center;
-	margin-bottom: 40px;
-	font-size: 46px;
+	margin-bottom: 20px;
+	font-size: 36px;
 	font-weight: 700;
 	letter-spacing: -1px;
+    color: #EC802F;
 }
 section.inner {
 	padding: 50px 0 50px;
@@ -826,8 +827,20 @@ section#blog {
 
 /* === section about === */
 
+.separated-line {
+    border-color: #EC802F;
+    opacity:0.3;
+}
+
+.slogan {
+    background-color: rgb(209, 208, 170);
+    border-color: rgb(209, 208, 170);
+    padding:20px;
+}
+
+
 section#about {
-	background:#f2f2f2;
+    background: #fff;
 }
 
 .people {
