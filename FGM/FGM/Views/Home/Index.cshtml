@@ -19,58 +19,54 @@
             color: #777;
         }
 </style>
-<div id="header-wrapper" class="header-slider">
-    <header class="clearfix">
-        <div class="container">
-            <div class="row">
-                <div class="span12">
-                    <div id="main-flexslider" class="flexslider">
-                        <ul class="slides">
-                            @{
-                                string[] titles = { "Ballarat", "Bendigo", "Hamilton", "Warrnambool", "Horsham" };
-                            }
-                            @for (var i = 0; i <= 4; i++)
-                            {
-                                <li>
-                                    <p style="font-size:15px; position:absolute;" class="flex-caption">@titles[i]</p>
-                                    <img src="~/Images/cities/@i-photo.jpg" alt="" />
-                                </li>
-                            }
-                        </ul>
-                    </div>
+
+
+<!-- section: About -->
+<section id="about" class="section" style="padding:0px;">
+    <div class="container" style="padding-left:0px; padding-right:0px;">
+        <div class="row">
+            <div class="col-md-12 col-12 col-xs-12">
+                <div>
+                    <h4 style="color: #EC802F; text-align:center; font-family:'Bell MT'; padding: 20px;">Find your home in regional Victoria on Feel Good Mate</h4>
                 </div>
             </div>
         </div>
-    </header>
-</div>
 
-<hr class="separated-line" />
-<!-- section: About -->
-<section id="about" class="section" style="padding:0px;">
-    <div class="container-fluid" style="padding-left:0px; padding-right:0px;">
+        <div class="row">
+            <div class="span12">
+                <div id="main-flexslider" class="flexslider">
+                    <ul class="slides">
+                        @{
+                            string[] titles = { "Ballarat", "Bendigo", "Hamilton", "Warrnambool", "Horsham" };
+                        }
+                        @for (var i = 0; i <= 4; i++)
+                        {
+                            <li>
+                                <p style="font-size:15px; position:absolute;" class="flex-caption">@titles[i]</p>
+                                <img src="~/Images/cities/@i-photo.jpg" alt="" />
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
         <h4>About</h4>
         <div class="row">
             <div class="col-md-12 col-12 col-xs-12">
                 <div>
-                    <h6 style="color: #EC802F; text-align:center;">FIND YOUR HOME IN REGIONAL VICTORIA ON FEEL GOOD MATE</h6>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-12 col-xs-12">
-                <div>
-                    <h6 style="text-align:center; margin:auto; width:50%;">
-                        We at Feel Good Mate understand how difficult it is to move to a new country
-                        and create a home there. Everybody has a different criteria to select a perfect region.Feel Good Mate
-                        allows you to choose a regional area in Victoria based on your preference.
+                    <h6 style="text-align:center; margin:auto; width:60%;">
+                        We at Feel Good Mate understand how difficult it is to move to a new country and create a home there.
+                        Everybody has a different criteria to select a perfect location. This website will allow you to choose a regional city in Victoria, Australia  based on your preference.
                     </h6>
                 </div>
             </div>
         </div>
         <div class="col-md-12 col-12 col-xs-12 slogan">
             <div>
-                <h6 style="text-align:center; margin:auto; width:60%;">
+                <h6 style="text-align:center; margin:auto; width:80%; margin-bottom: 10px;">
                     <i>"We have places to live in Australia, we just haven't been very good at presenting those opportunities to people".</i>
+                </h6>
+                <h6 style="text-align:center; margin:auto; width:80%;">
                     - David Matthews, a 60-year-old farmer born and raised in Rypanyup, about 300 kilometres north-west of Melbourne
                 </h6>
             </div>
@@ -87,7 +83,8 @@
             <div class="span12" id="filters">
                 <ul class="clearfix">
                     <li>
-                        <a href="#" data-filter="*" class="active" id="Geelong">
+                        <a href="#" data-filter="*" id="Geelong">
+                            <!--class="active"-->
                             <h5>Geelong</h5>
                         </a>
                     </li>
@@ -135,22 +132,24 @@
             </div>
         </div>
         <div class="row">
-            <div class="span8 mapDetail">
-                <div id="map" style="height: 400px; width:90%"></div>
-            </div>
             <div class="span4">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Click to view data of each area
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Population</a></li>
-                        <li><a href="#">Health Services</a></li>
-                        <li><a href="#">Education</a></li>
-                        <li><a href="#">Job Opprotunities</a></li>
-                    </ul>
+                <h6>Select your options to view the data of each area</h6>
+                <hr />
+                <div class="span2">
+                    <select class="form-control form-control-sm" style="color:black;" id="mylist">
+                        <option>Health Services</option>
+                        <option>Education</option>
+                        <option>Job Opportunities</option>
+                    </select>
                 </div>
+                <div class="span2">
+                    <button type="button" id="search" class="btn btn-outline-info" style="color:#007bff; background-color: transparent; background-image:none; border-color:#007bff">
+                        Search
+                    </button>
+                </div>
+            </div>
+            <div class="span8 mapDetail">
+                <div id="map" style="height: 400px; width:100%"></div>
             </div>
         </div>
     </div>
@@ -162,14 +161,14 @@
 <!--Section: Team-->
 <section id="team" class="section">
     <div class="container">
-        <h4>Who We Are</h4>
+        <h4>Who Are We</h4>
         <div class="row">
             <div class="span4 offset1">
                 <div>
                     <h2>We live with <strong>creativity</strong></h2>
                     <p>
-                        Team Feel Good Mate(FGM) aims at providing a smooth experience to immigrants while they make a choice over which regional area(cities outside Greater Melbourne) in Victoria they should choose as their new home.
-                        To accomplish this goal we will create  a website for new Australian immigrants.Using our website a user can search an area, compare two regional areas and predict the development of a region for certain criteria
+                        Coming from different corners of the world our team believes in cultural acceptance and the power of diversity. 
+                        Never letting the enthusiasm die, we strive for perfection.
                     </p>
                 </div>
             </div>

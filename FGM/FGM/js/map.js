@@ -5,24 +5,48 @@
 //Geelong
 $("#Geelong").click(function () {
 
-    
-    var container = L.DomUtil.get('map');
-    if (container !== null) { container._leaflet_id = null; }
+    $('#search').click(function () {
+        var select = $('#mylist :selected').text();
+        var container = L.DomUtil.get('map');
+        if (container !== null) { container._leaflet_id = null; }
+
+        //Initial Map
+
+        var mapOptions = {
+            center: [-38.14711, 144.36069],
+            zoom: 10
+        };
 
 
-    var mapOptions = {
-        center: [-38.14711, 144.36069],
-        zoom: 10
-    };
+        var map = new L.map('map', mapOptions);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoiZmdtbW9uYXNoIiwiYSI6ImNqdTBybzEwcTF1ZG40NHJ6a3g4ZGZzZW8ifQ.jwIjG6Q5cJyzy87lU8BmvQ'
+        }).addTo(map);
 
-    // Creating a map object
-    var map = new L.map('map', mapOptions);
+        if (select === "Health Services") {
+            var catalogo = MCH;
+            for (var i = 0; i < 5; i++) {
+                var name = catalogo.name[i];
+                var lat = catalogo.lat[i];
+                var long = catalogo.long[i];
+                var marker = L.marker([lat, long]).addTo(map);
+                marker.bindPopup(name).openPopup();
+            }
+        }
+        if (select === "Education"){
+            for (var j = 0; j < 5; j++) {
+                var educationName = school.name[j];
+                var educationLat = school.lat[j];
+                var educationLong = school.long[j];
+                var educationMarker = L.marker([educationLat, educationLong]).addTo(map);
+                educationMarker.bindPopup(educationName).openPopup();
+            }
 
-    // Creating a Layer object
-    var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-
-    // Adding layer to the map
-    map.addLayer(layer);
+        }
+    });
 });
 
 //Bendigo
@@ -153,6 +177,7 @@ $("#Wangaratta").click(function () {
 
 //Default Map
 
+/*
 var mapOptions = {
     center: [-38.14711, 144.36069],
     zoom: 10
@@ -167,5 +192,33 @@ var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
 // Adding layer to the map
 map.addLayer(layer);
 
+*/
+
+
+/*
+var mapOptions = {
+    center: [-38.14711, 144.36069],
+    zoom: 10
+};
+
+
+var map = new L.map('map', mapOptions);
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiZmdtbW9uYXNoIiwiYSI6ImNqdTBybzEwcTF1ZG40NHJ6a3g4ZGZzZW8ifQ.jwIjG6Q5cJyzy87lU8BmvQ'
+}).addTo(map);
+
+
+var catalogo = MCH;
+for (var i = 0; i < 5; i++) {
+    var name = catalogo.name[i];
+    var lat = catalogo.lat[i];
+    var long = catalogo.long[i];
+    var marker = L.marker([lat, long]).addTo(map);
+    marker.bindPopup(name).openPopup();
+}
+*/
 
 
