@@ -202,6 +202,10 @@
     <Content Include="Images\works\9.png" />
     <Content Include="Images\works\big.jpg" />
     <Content Include="js\animate.js" />
+    <Content Include="js\Ballarat_business.js" />
+    <Content Include="js\Ballarat_hospital.js" />
+    <Content Include="js\Ballarat_school.js" />
+    <Content Include="js\BendigoBusiness.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\custom.js" />
