@@ -205,6 +205,7 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\custom.js" />
+    <Content Include="js\GeelongBusiness.js" />
     <Content Include="js\hospital.js" />
     <Content Include="js\inview.js" />
     <Content Include="js\isotope.js" />

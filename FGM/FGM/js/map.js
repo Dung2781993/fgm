@@ -10,8 +10,15 @@ $("#Geelong").click(function () {
         var container = L.DomUtil.get('map');
         if (container !== null) { container._leaflet_id = null; }
 
-        //Initial Map
 
+        //Check map exist or not
+
+        var checkMap = $('#filter').find('#map');
+        if (!checkMap.length) {
+            $('#filter').find('#businessChart').remove();
+            $('#filter').append('<div id="map" style="height: 400px; width:100%"></div>');   
+        }
+        //Initial Map
         var mapOptions = {
             center: [-38.14711, 144.36069],
             zoom: 10
@@ -45,6 +52,58 @@ $("#Geelong").click(function () {
                 educationMarker.bindPopup(educationName).openPopup();
             }
 
+        }
+        if (select === "Job Opportunities") {
+
+            //Remove the map
+
+            $('#filter').find('#map').remove();
+
+            var checkChart = $('#filter').find('#businessChart');
+            if (!checkChart.length) {
+                $('#filter').append('<div id="businessChart"></div>');
+            }
+
+            var body = d3.select("#businessChart")
+            {
+                body.append("h3")
+                    .attr("class", "top-label")
+                    .append("p")
+                    .text("Total number of businesses: " + business["Total number of businesses"][4]);
+
+                var svg = body.append("svg")
+                    .attr("height", 500)
+                    .attr("width", "100%")
+                var barGroup = svg.append("g")
+                    .attr("transform", "translate(220, 30) scale(43, 1)")
+                    .attr("class", "bar");
+
+                var barLabelGroup = svg.append("g")
+                    .attr("class", "bar-label");
+
+                var temp = 0;
+                for (x in business) {
+                    if (x !== "Total number of businesses") {
+                        barGroup.append("rect")
+                            .attr("x", 0)
+                            .attr("y", temp * 20)
+                            .attr("height", 15)
+                            .attr("width", business[x][4] / 1000)
+                            .attr("fill", "green");
+                        barLabelGroup.append("text")
+                            .attr("x", 000)
+                            .attr("y", temp * 20 + 40)
+                            .text(x)
+                            .style("font-size", "10px");
+                        barLabelGroup.append("text")
+                            .attr("x", 500)
+                            .attr("y", temp * 20 + 40)
+                            .text(business[x][4])
+                            .style("font-size", "11px");
+                    }
+                    temp++;
+                };
+            }
         }
     });
 });

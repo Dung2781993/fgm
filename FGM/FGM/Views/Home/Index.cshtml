@@ -79,8 +79,15 @@
 <section id="works" class="section">
     <div class="container">
         <h4>Services</h4>
+        
+        <div class="row">
+            <div class="span12 mapDetail">
+                <div id="mapid"></div>
+            </div>
+        </div>
         <div class="row">
             <div class="span12" id="filters">
+                <h6>Select your options to view the data of each area</h6>
                 <ul class="clearfix">
                     <li>
                         <a href="#" data-filter="*" id="Geelong">
@@ -125,15 +132,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
-        <div class="row">
-            <div class="span12 mapDetail">
-                <div id="mapid"></div>
-            </div>
-        </div>
-        <div class="row">
             <div class="span4">
-                <h6>Select your options to view the data of each area</h6>
                 <hr />
                 <div class="span2">
                     <select class="form-control form-control-sm" style="color:black;" id="mylist">
@@ -148,8 +147,11 @@
                     </button>
                 </div>
             </div>
-            <div class="span8 mapDetail">
+            <div class="span8 mapDetail" id="filter">
                 <div id="map" style="height: 400px; width:100%"></div>
+                <div id="businessChart">
+
+                </div>
             </div>
         </div>
     </div>
