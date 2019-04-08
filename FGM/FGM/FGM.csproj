@@ -176,7 +176,7 @@
     <Content Include="Images\icons\creativity.png" />
     <Content Include="Images\icons\lab.png" />
     <Content Include="Images\icons\laptop.png" />
-    <Content Include="Images\logo-image.png" />
+    <Content Include="Images\logo-2.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\prettyPhoto\default\default_thumb.png" />
     <Content Include="Images\prettyPhoto\default\loader.gif" />
@@ -205,6 +205,8 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\custom.js" />
+    <Content Include="js\GeelongBusiness.js" />
+    <Content Include="js\hospital.js" />
     <Content Include="js\inview.js" />
     <Content Include="js\isotope.js" />
     <Content Include="js\jquery-hover-effect.js" />
@@ -216,6 +218,7 @@
     <Content Include="js\jquery.scrollTo.js" />
     <Content Include="js\map.js" />
     <Content Include="js\population.js" />
+    <Content Include="js\school.js" />
     <Content Include="js\shape.js" />
     <Content Include="Scripts\animate.js" />
     <Content Include="Scripts\bootstrap.js" />
