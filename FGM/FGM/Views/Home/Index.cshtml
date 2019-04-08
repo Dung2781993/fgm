@@ -1,5 +1,24 @@
 ﻿<!-- Header area -->
+<style>
 
+    #mapid {
+        height: 480px;
+    }
+
+    .info {
+        padding: 6px 8px;
+        font: 14px/16px Arial, Helvetica, sans-serif;
+        background: white;
+        background: rgba(255,255,255,0.8);
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        border-radius: 5px;
+    }
+
+        .info h4 {
+            margin: 0 0 5px;
+            color: #777;
+        }
+</style>
 <div id="header-wrapper" class="header-slider">
     <header class="clearfix">
         <div class="container">
@@ -61,27 +80,65 @@
 
 <hr class="separated-line" />
 <!--Section: Services-->
-<section id="services" class="section">
-    <div class="container">
+<section id="works" class="section">
+    <div class="container-fluid">
         <h4>Services</h4>
-
-        <div id="map" style="height: 580px" class="col-12"></div>
-        <script>
-         // Creating map options
-         var mapOptions = {
-             center: [-38.14711, 144.36069],
-            zoom: 10
-         }
-
-         // Creating a map object
-         var map = new L.map('map', mapOptions);
-
-         // Creating a Layer object
-         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-
-         // Adding layer to the map
-         map.addLayer(layer);
-        </script>
+        <div class="row">
+            <div class="col-md-12 col-12" id="filters">
+                <ul class="clearfix">
+                    <li>
+                        <a href="#" data-filter="*" class="active" id="Geelong">
+                            <h5>Geelong</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Bendigo">
+                            <h5>Bendigo</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Ballarat">
+                            <h5>Ballarat</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Latrobe">
+                            <h5>Latrobe</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Warrnambol">
+                            <h5>Warrnambol</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Shepparton">
+                            <h5>Shepparton</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Wangaratta">
+                            <h5>Wangaratta</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Northern">
+                            <h5>Northern West</h5>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-12 mapDetail">
+                <div id="mapid"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-12 mapDetail">
+                <div id="map" style="height: 800px; width:50%"></div>
+            </div>
+        </div>
     </div>
 </section>
 

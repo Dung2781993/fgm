@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="utf-8">
+    <title>FGM - Our Communities </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />*@
+
+    @* Content-box fixes as per http://docs.telerik.com/kendo-ui/third-party/using-kendo-with-twitter-bootstrap article  *@
+    <link href="@Url.Content("~/Content/box-sizing-fixes.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+
+
+
+    <!--Styesheet of template-->
+    <link href="@Url.Content("css/bootstrap-responsive.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("css/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/color/default.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Images/favicon.icon")" rel="shortcut icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin="" />
+
+    @*<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.aspnetmvc.min.js"></script>*@
+
+
+
+</head>
+<body>
+    <div class="navbar-wrapper">
+        <div class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Responsive navbar -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </a>
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/Images/logo.png" class="brand" />
+                </a>
+                <nav class="pull-right nav-collapse collapse">
+                    <ul id="menu-main" class="nav">
+                        <li><a title="about" href="#about">About</a></li>
+                        <li><a title="team" href="#team">Team</a></li>
+                        <li><a title="contact" href="#team">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="body-content" style="padding:0px;">
+        @RenderBody()
+    </div>
+
+
+    <!--JavaScript of template-->
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+            integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+            crossorigin=""></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/jquery.nav.js"></script>
+    <script src="js/jquery.localScroll.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/isotope.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/inview.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/map.js"></script>
+</body>
+   
+</html>
