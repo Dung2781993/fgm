@@ -154,6 +154,7 @@
     <Content Include="font\fontawesome-webfont.woff" />
     <Content Include="font\FontAwesome.otf" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FGM20190407102810 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\bg\bg-1.jpg" />
     <Content Include="Images\bg\bg-2.jpg" />
@@ -214,6 +215,8 @@
     <Content Include="js\jquery.prettyPhoto.js" />
     <Content Include="js\jquery.scrollTo.js" />
     <Content Include="js\map.js" />
+    <Content Include="js\population.js" />
+    <Content Include="js\shape.js" />
     <Content Include="Scripts\animate.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

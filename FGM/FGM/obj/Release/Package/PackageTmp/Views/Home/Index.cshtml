@@ -1,0 +1,179 @@
+﻿<!-- Header area -->
+
+<div id="header-wrapper" class="header-slider">
+    <header class="clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div id="main-flexslider" class="flexslider">
+                        <ul class="slides">
+                            @{
+                                string[] titles = { "Ballarat", "Bendigo", "Hamilton", "Warrnambool", "Horsham" };
+                            }
+                            @for (var i = 0; i <= 4; i++)
+                            {
+                                <li>
+                                    <p style="font-size:15px; position:absolute;" class="flex-caption">@titles[i]</p>
+                                    <img src="~/Images/cities/@i-photo.jpg" alt="" />
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+<hr class="separated-line" />
+<!-- section: About -->
+<section id="about" class="section" style="padding:0px;">
+    <div class="container-fluid" style="padding-left:0px; padding-right:0px;">
+        <h4>About</h4>
+        <div class="row">
+            <div class="col-md-12 col-12 col-xs-12">
+                <div>
+                    <h6 style="color: #EC802F; text-align:center;">FIND YOUR HOME IN REGIONAL VICTORIA ON FEEL GOOD MATE</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-12 col-xs-12">
+                <div>
+                    <h6 style="text-align:center; margin:auto; width:50%;">
+                        We at Feel Good Mate understand how difficult it is to move to a new country
+                        and create a home there. Everybody has a different criteria to select a perfect region.Feel Good Mate
+                        allows you to choose a regional area in Victoria based on your preference.
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-12 col-xs-12 slogan">
+            <div>
+                <h6 style="text-align:center; margin:auto; width:60%;">
+                    <i>"We have places to live in Australia, we just haven't been very good at presenting those opportunities to people".</i>
+                    - David Matthews, a 60-year-old farmer born and raised in Rypanyup, about 300 kilometres north-west of Melbourne
+                </h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="separated-line" />
+<!--Section: Services-->
+<section id="works" class="section">
+    <div class="container-fluid">
+        <h4>Services</h4>
+        <div class="row">
+            <div class="col-md-12 col-12" id="filters" >
+                <ul class="clearfix">
+                    <li>
+                        <a href="#" data-filter="*" class="active" id="Geelong">
+                            <h5>Geelong</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Bendigo">
+                            <h5>Bendigo</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Ballarat">
+                            <h5>Ballarat</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Latrobe">
+                            <h5>Latrobe</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Warrnambol">
+                            <h5>Warrnambol</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Shepparton">
+                            <h5>Shepparton</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Wangaratta">
+                            <h5>Wangaratta</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="Northern">
+                            <h5>Northern West</h5>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-12 mapDetail">
+                <div id="map" style="height: 800px;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<hr class="separated-line" />
+<!--Section: Team-->
+<section id="team" class="section">
+    <div class="container">
+        <h4>Who We Are</h4>
+        <div class="row">
+            <div class="span4 offset1">
+                <div>
+                    <h2>We live with <strong>creativity</strong></h2>
+                    <p>
+                        Team Feel Good Mate(FGM) aims at providing a smooth experience to immigrants while they make a choice over which regional area(cities outside Greater Melbourne) in Victoria they should choose as their new home.
+                        To accomplish this goal we will create  a website for new Australian immigrants.Using our website a user can search an area, compare two regional areas and predict the development of a region for certain criteria
+                    </p>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="aligncenter">
+                    <img src="Images/icons/creativity.png" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span3 flyIn">
+                <div class="people">
+                    <img class="team-thumb img-circle" src="Images/team/img-1.jpg" alt="" />
+                    <p>
+                        Data Developer
+                    </p>
+                </div>
+            </div>
+            <div class="span3 flyIn">
+                <div class="people">
+                    <img class="team-thumb img-circle" src="Images/team/img-2.jpg" alt="" />
+                    <p>
+                        Web developer
+                    </p>
+                </div>
+            </div>
+            <div class="span3 flyIn">
+                <div class="people">
+                    <img class="team-thumb img-circle" src="Images/team/img-3.jpg" alt="" />
+                    <p>
+                        Web designer
+                    </p>
+                </div>
+            </div>
+            <div class="span3 flyIn">
+                <div class="people">
+                    <img class="team-thumb img-circle" src="Images/team/img-4.jpg" alt="" />
+                    <p>
+                        UI designer
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
