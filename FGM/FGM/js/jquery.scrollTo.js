@@ -7,6 +7,8 @@
  * @author Ariel Flesler
  * @version 2.1.2
  */
+
+
 ;(function(factory) {
 	'use strict';
 	if (typeof define === 'function' && define.amd) {
@@ -14,6 +16,7 @@
 		define(['jquery'], factory);
 	} else if (typeof module !== 'undefined' && module.exports) {
 		// CommonJS
+
 		module.exports = factory(require('jquery'));
 	} else {
 		// Global
@@ -205,6 +208,5 @@
 		}
 	};
 
-	// AMD requirement
 	return $scrollTo;
 });

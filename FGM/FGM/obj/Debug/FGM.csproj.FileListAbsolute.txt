@@ -43,7 +43,6 @@ D:\Working\src\FGM\FGM\FGM\bin\sv-SE\Kendo.Mvc.resources.dll
 D:\Working\src\FGM\FGM\FGM\bin\tr-TR\Kendo.Mvc.resources.dll
 D:\Working\src\FGM\FGM\FGM\bin\uk-UA\Kendo.Mvc.resources.dll
 D:\Working\src\FGM\FGM\FGM\bin\zh-CN\Kendo.Mvc.resources.dll
-D:\Working\src\FGM\FGM\FGM\obj\Debug\FGM.csprojAssemblyReference.cache
 D:\Working\src\FGM\FGM\FGM\obj\Debug\FGM.csproj.CoreCompileInputs.cache
 D:\Working\src\FGM\FGM\FGM\obj\Debug\FGM.csproj.CopyComplete
 D:\Working\src\FGM\FGM\FGM\obj\Debug\FGM.dll
