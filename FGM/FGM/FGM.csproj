@@ -220,6 +220,7 @@
     <Content Include="js\jquery.nav.js" />
     <Content Include="js\jquery.prettyPhoto.js" />
     <Content Include="js\jquery.scrollTo.js" />
+    <Content Include="js\LatrobeBusiness.js" />
     <Content Include="js\map.js" />
     <Content Include="js\population.js" />
     <Content Include="js\school.js" />

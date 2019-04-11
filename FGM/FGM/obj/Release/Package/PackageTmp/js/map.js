@@ -313,42 +313,125 @@ $("#Ballarat").click(function () {
 
 //Latrobe
 $("#Latrobe").click(function () {
-    var container = L.DomUtil.get('map');
-    if (container !== null) { container._leaflet_id = null; }
+    $('#search').click(function () {
+        var select = $('#mylist :selected').text();
 
-    var mapOptions = {
-        center: [-38.2556, 146.4720],
-        zoom: 10
-    };
+        var container = L.DomUtil.get('map');
+        if (container !== null) { container._leaflet_id = null; }
 
-    // Creating a map object
-    var map = new L.map('map', mapOptions);
+        //Check map exist or not
+        var checkMap = $('#filter').find('#map');
+        if (!checkMap.length) {
+            $('#filter').find('#businessChart').remove();
+            $('#filter').append('<div id="map" style="height: 400px; width:100%"></div>');
+        }
 
-    // Creating a Layer object
-    var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        var mapOptions = {
+            center: [-38.2556, 146.4720],
+            zoom: 10
+        };
 
-    // Adding layer to the map
-    map.addLayer(layer);
+        var map = new L.map('map', mapOptions);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoiZmdtbW9uYXNoIiwiYSI6ImNqdTBybzEwcTF1ZG40NHJ6a3g4ZGZzZW8ifQ.jwIjG6Q5cJyzy87lU8BmvQ'
+        }).addTo(map);
+
+        if (select === "Health Services") {
+            var marker = L.marker([-38.2333324, 146.3999984]).addTo(map);
+            marker.bindPopup("<b>No data available</b>").openPopup();
+        }
+        if (select === "Education") {
+            var marker = L.marker([-38.2333324, 146.3999984]).addTo(map);
+            marker.bindPopup("<b>No data available</b>").openPopup();
+        }
+        if (select === "Job Opportunities") {
+
+            //Remove the map
+            $('#filter').find('#map').remove();
+
+            var checkChart = $('#filter').find('#businessChart');
+            if (!checkChart.length) {
+                $('#filter').append('<div id="businessChart"></div>');
+            }
+
+            var body = d3.select("#businessChart")
+            body.append("h3")
+                .attr("class", "top-label")
+                .append("p")
+                .text("Total number of businesses: " + LatrobeBusiness["Total number of businesses"][4]);
+
+            var svg = body.append("svg")
+                .attr("height", 500)
+                .attr("width", 600);
+            var barGroup = svg.append("g")
+                .attr("transform", "translate(220, 30) scale(43, 1)")
+                .attr("class", "bar");
+
+            var barLabelGroup = svg.append("g")
+                .attr("class", "bar-label");
+
+            var temp = 0;
+            for (x in LatrobeBusiness) {
+                if (x !== "Total number of businesses" && x !== "Total") {
+                    barGroup.append("rect")
+                        .attr("x", 0)
+                        .attr("y", temp * 20)
+                        .attr("height", 15)
+                        .attr("width", LatrobeBusiness[x][4] / 1000)
+                        .attr("fill", "green");
+                    barLabelGroup.append("text")
+                        .attr("x", 000)
+                        .attr("y", temp * 20 + 40)
+                        .text(x)
+                        .style("font-size", "10px");
+                    barLabelGroup.append("text")
+                        .attr("x", 500)
+                        .attr("y", temp * 20 + 40)
+                        .text(LatrobeBusiness[x][4])
+                        .style("font-size", "11px");
+                };
+                temp++;
+            };
+        }
+    });
 });
 
 //Warrnambol
 $("#Warrnambol").click(function () {
-    var container = L.DomUtil.get('map');
-    if (container !== null) { container._leaflet_id = null; }
+    $('#search').click(function () {
+        var select = $('#mylist :selected').text();
+        var container = L.DomUtil.get('map');
+        if (container !== null) { container._leaflet_id = null; }
 
-    var mapOptions = {
-        center: [-38.3687, 142.4982],
-        zoom: 10
-    };
+        //Check map exist or not
+        var checkMap = $('#filter').find('#map');
+        if (!checkMap.length) {
+            $('#filter').find('#businessChart').remove();
+            $('#filter').append('<div id="map" style="height: 400px; width:100%"></div>');
+        }
 
-    // Creating a map object
-    var map = new L.map('map', mapOptions);
+        var mapOptions = {
+            center: [-38.3687, 142.4982],
+            zoom: 10
+        };
+        var map = new L.map('map', mapOptions);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoiZmdtbW9uYXNoIiwiYSI6ImNqdTBybzEwcTF1ZG40NHJ6a3g4ZGZzZW8ifQ.jwIjG6Q5cJyzy87lU8BmvQ'
+        }).addTo(map);
 
-    // Creating a Layer object
-    var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 
-    // Adding layer to the map
-    map.addLayer(layer);
+        if (select === "Health Services") {
+            var marker = L.marker([-38.38176, 142.48799]).addTo(map);
+            marker.bindPopup("<b>No data available</b>").openPopup();
+        }
+
+    });  
 });
 
 
