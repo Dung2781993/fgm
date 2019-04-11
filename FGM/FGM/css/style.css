@@ -46,7 +46,7 @@ CONTENTS:
 ============================================================ */
 
 div, article, section, header, footer, nav, li {
-	position:relative;
+    position: relative;
 }
 .group:after {
 	display:block;

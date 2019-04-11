@@ -4,7 +4,6 @@
     #mapid {
         height: 480px;
     }
-
     .info {
         padding: 6px 8px;
         font: 14px/16px Arial, Helvetica, sans-serif;
@@ -13,11 +12,22 @@
         box-shadow: 0 0 15px rgba(0,0,0,0.2);
         border-radius: 5px;
     }
+    .info h4 {
+        margin: 0 0 5px;
+        color: #777;
+    }
 
-        .info h4 {
-            margin: 0 0 5px;
-            color: #777;
-        }
+    .legend {
+        line-height: 18px;
+        color: #555;
+    }
+    .legend i {
+        width: 18px;
+        height: 18px;
+        float: left;
+        margin-right: 8px;
+        opacity: 0.7;
+    }
 </style>
 <div class="navbar-wrapper">
     <div class="navbar navbar-fixed-top" style="background-color:rgb(209, 208, 170);">
@@ -42,15 +52,12 @@
 
 <!-- section: About -->
 <section id="about" class="section" style="padding:0px;">
-    <div class="container" style="padding-left:0px; padding-right:0px;">
-        <div class="row">
-            <div class="col-md-12 col-12 col-xs-12">
-                <div>
-                    <h4 style="color: #EC802F; text-align:center; font-family:Arial, Helvetica, sans-serif ; padding: 20px;">Find your home in regional Victoria on Feel Good Mate</h4>
-                </div>
-            </div>
+    <div class="col-md-12 col-12 col-xs-12">
+        <div>
+            <h4 style="color: #EC802F; text-align:center; font-family:Arial, Helvetica, sans-serif ; padding: 20px;">Find your home in regional Victoria on Feel Good Mate</h4>
         </div>
-
+    </div>
+    <div class="container" style="padding-left:0px; padding-right:0px;">
         <div class="row">
             <div class="span12">
                 <div id="main-flexslider" class="flexslider">
@@ -124,37 +131,13 @@
                             <h5>Ballarat</h5>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" id="Latrobe">
-                            <h5>Latrobe</h5>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" id="Warrnambol">
-                            <h5>Warrnambol</h5>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" id="Shepparton">
-                            <h5>Shepparton</h5>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" id="Wangaratta">
-                            <h5>Wangaratta</h5>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" id="Northern">
-                            <h5>Northern West</h5>
-                        </a>
-                    </li>
                 </ul>
             </div>
             <div class="span4">
                 <hr />
                 <div class="span2">
                     <select class="form-control form-control-sm" style="color:black;" id="mylist">
+                        <option>Population</option>
                         <option>Health Services</option>
                         <option>Education</option>
                         <option>Job Opportunities</option>

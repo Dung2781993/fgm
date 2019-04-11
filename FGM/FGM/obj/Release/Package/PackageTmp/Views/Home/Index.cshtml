@@ -4,7 +4,6 @@
     #mapid {
         height: 480px;
     }
-
     .info {
         padding: 6px 8px;
         font: 14px/16px Arial, Helvetica, sans-serif;
@@ -13,25 +12,52 @@
         box-shadow: 0 0 15px rgba(0,0,0,0.2);
         border-radius: 5px;
     }
+    .info h4 {
+        margin: 0 0 5px;
+        color: #777;
+    }
 
-        .info h4 {
-            margin: 0 0 5px;
-            color: #777;
-        }
+    .legend {
+        line-height: 18px;
+        color: #555;
+    }
+    .legend i {
+        width: 18px;
+        height: 18px;
+        float: left;
+        margin-right: 8px;
+        opacity: 0.7;
+    }
 </style>
-
+<div class="navbar-wrapper">
+    <div class="navbar navbar-fixed-top" style="background-color:rgb(209, 208, 170);">
+        <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </a>
+            <a href="@Url.Action("Index", "Home")">
+                <img src="~/Images/logo-2.png" class="brand" />
+            </a>
+            <nav class="pull-right nav-collapse collapse">
+                <ul id="menu-main" class="nav">
+                    <li><a title="team" href="#about">About</a></li>
+                    <li><a title="services" href="#works">Services</a></li>
+                    <li><a title="team" href="#team">Team</a></li>
+                    <li><a title="contact" href="#team">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
 
 <!-- section: About -->
 <section id="about" class="section" style="padding:0px;">
-    <div class="container" style="padding-left:0px; padding-right:0px;">
-        <div class="row">
-            <div class="col-md-12 col-12 col-xs-12">
-                <div>
-                    <h4 style="color: #EC802F; text-align:center; font-family:'Bell MT'; padding: 20px;">Find your home in regional Victoria on Feel Good Mate</h4>
-                </div>
-            </div>
+    <div class="col-md-12 col-12 col-xs-12">
+        <div>
+            <h4 style="color: #EC802F; text-align:center; font-family:Arial, Helvetica, sans-serif ; padding: 20px;">Find your home in regional Victoria on Feel Good Mate</h4>
         </div>
-
+    </div>
+    <div class="container" style="padding-left:0px; padding-right:0px;">
         <div class="row">
             <div class="span12">
                 <div id="main-flexslider" class="flexslider">
@@ -50,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <h4>About</h4>
+        <h4>ABOUT</h4>
         <div class="row">
             <div class="col-md-12 col-12 col-xs-12">
                 <div>
@@ -78,7 +104,7 @@
 <!--Section: Services-->
 <section id="works" class="section">
     <div class="container">
-        <h4>Services</h4>
+        <h4>SERVICES</h4>
         
         <div class="row">
             <div class="span12 mapDetail">
@@ -105,37 +131,13 @@
                             <h5>Ballarat</h5>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" id="Latrobe">
-                            <h5>Latrobe</h5>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" id="Warrnambol">
-                            <h5>Warrnambol</h5>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" id="Shepparton">
-                            <h5>Shepparton</h5>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" id="Wangaratta">
-                            <h5>Wangaratta</h5>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" id="Northern">
-                            <h5>Northern West</h5>
-                        </a>
-                    </li>
                 </ul>
             </div>
             <div class="span4">
                 <hr />
                 <div class="span2">
                     <select class="form-control form-control-sm" style="color:black;" id="mylist">
+                        <option>Population</option>
                         <option>Health Services</option>
                         <option>Education</option>
                         <option>Job Opportunities</option>
@@ -163,7 +165,7 @@
 <!--Section: Team-->
 <section id="team" class="section">
     <div class="container">
-        <h4>Who Are We</h4>
+        <h4>OUR TEAM</h4>
         <div class="row">
             <div class="span4 offset1">
                 <div>
@@ -177,40 +179,6 @@
             <div class="span6">
                 <div class="aligncenter">
                     <img src="Images/icons/creativity.png" alt="" />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="span3 flyIn">
-                <div class="people">
-                    <img class="team-thumb img-circle" src="Images/team/img-1.jpg" alt="" />
-                    <p>
-                        Data Developer
-                    </p>
-                </div>
-            </div>
-            <div class="span3 flyIn">
-                <div class="people">
-                    <img class="team-thumb img-circle" src="Images/team/img-2.jpg" alt="" />
-                    <p>
-                        Web developer
-                    </p>
-                </div>
-            </div>
-            <div class="span3 flyIn">
-                <div class="people">
-                    <img class="team-thumb img-circle" src="Images/team/img-3.jpg" alt="" />
-                    <p>
-                        Web designer
-                    </p>
-                </div>
-            </div>
-            <div class="span3 flyIn">
-                <div class="people">
-                    <img class="team-thumb img-circle" src="Images/team/img-4.jpg" alt="" />
-                    <p>
-                        UI designer
-                    </p>
                 </div>
             </div>
         </div>

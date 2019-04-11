@@ -46,7 +46,7 @@ CONTENTS:
 ============================================================ */
 
 div, article, section, header, footer, nav, li {
-	position:relative;
+    position: relative;
 }
 .group:after {
 	display:block;
@@ -451,7 +451,7 @@ section.section h4 {
 	text-align: center;
 	margin-bottom: 20px;
 	font-size: 36px;
-	font-weight: 700;
+	font-weight: 300;
 	letter-spacing: -1px;
     color: #EC802F;
 }
