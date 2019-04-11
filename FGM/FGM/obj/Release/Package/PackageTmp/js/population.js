@@ -1,17 +1,12 @@
-﻿var map = L.map('mapid').setView([-36.815018, 144.946014], 7);//not melbourne central
+﻿var map = L.map('mapid', { maxBounds: [[-33.815018, 142.946014], [-38.815018, 147.946014]], }).setView([-36.815018, 144.946014], 7);//not melbourne central
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
+    minZoom: 6,
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoiZmdtbW9uYXNoIiwiYSI6ImNqdTBybzEwcTF1ZG40NHJ6a3g4ZGZzZW8ifQ.jwIjG6Q5cJyzy87lU8BmvQ'
 }).addTo(map);
-
-
-//heatmapLayer.setData(testData);
-//new HeatmapOverlay(testData, cfg).addTo(map);
-
-
 
 
 //getJSON('https://data.gov.au/geoserver/vic-local-government-areas-psma-administrative-boundaries/wfs?request=GetFeature&typeName=ckan_bdf92691_c6fe_42b9_a0e2_a4cd716fa811&outputFormat=json');
@@ -22,9 +17,10 @@ function getColor(d) {
         d > 200000 ? '#E31A1C' :
             //d > 10000  ? '#FC4E2A' :
             d > 150000 ? '#FD8D3C' :
-                d > 149000 ? '#FEB24C' :
+                d > 148000 ? '#FEB24C' :
                     d > 145000 ? '#FED976' :
-                        d > 12000 ? '#f9ecb3' :
+                        d > 100000 ? '#f9ecb3' :
+
                             '#fff6d1'; //backgound color
 }
 function style(feature) {
@@ -65,12 +61,13 @@ function resetHighlight(e) {
 
 function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
+    //alert('hhh');
 }
 
 function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
-        mouseout: resetHighlight,  //maybe here, when user click the mouse function can return value
+        mouseout: resetHighlight,//maybe here, when user click the mouse function can return value
         click: zoomToFeature
     });
 }
@@ -91,9 +88,34 @@ info.onAdd = function (map) {
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
-    this._div.innerHTML = '<h4>Victoria Population Numbers</h4>' + (props ?
+    this._div.innerHTML = '<h5>Victoria Population Numbers</h5>' + '<br/>'+(props ?
         '<b>' + props.name + '</b><br />' + props.name1 + '</b><br />' + props.density + ' people in total Area'
         : 'Hover over a Region');
 };
+
+var legend = L.control({ position: 'bottomright' });
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [100000, 145000, 148000, 150000, 200000, 300000],
+        labels = [],
+        from, to;
+
+    for (var i = 0; i < grades.length; i++) {
+        from = grades[i];
+        to = grades[i + 1];
+
+        labels.push(
+            '<i style="background:' + getColor(from + 1) + '"></i> ' +
+            from + (to ? '&ndash;' + to : '+'));
+    }
+
+    div.innerHTML = labels.join('<br>');
+    return div;
+};
+
+legend.addTo(map);
+
 
 info.addTo(map);
