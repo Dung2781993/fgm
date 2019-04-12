@@ -1,6 +1,4 @@
-﻿// Creating map options
-
-
+﻿// Creating map optionsc
 
 //Geelong
 $("#Geelong").click(function () {
@@ -36,13 +34,14 @@ $("#Geelong").click(function () {
         }
         if (select === "Health Services") {
             
-            var catalogo = MCH;
+            var catalogo = GEELONG_EME_HOSPT;
             for (var i = 0; i < 5; i++) {
-                var name = catalogo.name[i];
-                var lat = catalogo.lat[i];
-                var long = catalogo.long[i];
+                var name = catalogo.Centre[i];
+                var lat = catalogo.Lat[i];
+                var long = catalogo.Long[i];
                 var marker = L.marker([lat, long]).addTo(map);
-                marker.bindPopup(name).openPopup();
+                marker.bindPopup("<b>" + name + "</b>" + "<br>Address: " + catalogo.Location[i]
+                    + "<br> Contact:  " + catalogo.Contact[i]).openPopup();
             }
         }
         if (select === "Education"){
@@ -139,13 +138,14 @@ $("#Ballarat").click(function () {
         }).addTo(map);
 
         if (select === "Health Services") {
-            var catalogo = EME_HOSPT;
+            var catalogo = BALLARAT_EME_HOSPT;
             for (var i = 0; i < 4; i++) {
                 var name = catalogo.Centre[i];
                 var lat = catalogo.Lat[i];
                 var long = catalogo.Long[i];
                 var marker = L.marker([lat, long]).addTo(map);
-                marker.bindPopup(name).openPopup();
+                marker.bindPopup("<b>" + name + "</b>" + "<br>Address: " + catalogo.Location[i]
+                    + "<br> Contact:  " + catalogo.Contact[i]).openPopup();
             }
         }
         if (select === "Education") {
@@ -154,7 +154,7 @@ $("#Ballarat").click(function () {
                 var educationLat = school_Ballarat.Lat[j];
                 var educationLong = school_Ballarat.Long[j];
                 var educationMarker = L.marker([educationLat, educationLong]).addTo(map);
-                educationMarker.bindPopup(educationName).openPopup();
+                educationMarker.bindPopup("<b>" + educationName + "</b>" + "<br>Address: " + school_Ballarat.Location[j]).openPopup()
             }
 
         }

@@ -93,7 +93,7 @@ info.update = function (props) {
         : 'Hover over a Region');
 };
 
-var legend = L.control({ position: 'bottomright' });
+var legend = L.control({ position: 'topleft' });
 
 legend.onAdd = function (map) {
 
