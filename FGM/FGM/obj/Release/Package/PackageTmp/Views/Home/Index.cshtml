@@ -30,14 +30,19 @@
     }
 </style>
 <div class="navbar-wrapper">
-    <div class="navbar navbar-fixed-top" style="background-color:rgb(209, 208, 170);">
+    <div class="navbar navbar-fixed-top" style="background-color:#FFF;">
         <div class="container-fluid">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </a>
+            @*
+        <h5>
             <a href="@Url.Action("Index", "Home")">
-                <img src="~/Images/logo-2.png" class="brand" />
+            Feel Good Mate
+            <img src="~/Images/logo-2.png" class="brand" />
             </a>
+        </h5>*@
+            <h4 class="brand"><a href="@Url.Action("Index", "Home")" style="font-family: 'Walt Disney Script', arial;">Feel Good Mate</a></h4>
             <nav class="pull-right nav-collapse collapse">
                 <ul id="menu-main" class="nav">
                     <li><a title="team" href="#about">About</a></li>

@@ -280,16 +280,13 @@ h2.pagetitle {
 }
 .navbar .brand {
 	margin-left:0;
-	padding: 0;
-    width: 120px;
+	padding: 13px;
 }
 .navbar .brand a {
 	padding: 0;
-	color: #fff;
-	font-size: 1.75em;
+	color: #43413e;
+	font-size: 1.25em;
 	margin-left: 0;
-	font-weight: 400;
-	text-transform:uppercase;
 }
 .navbar .brand a:hover {
 	text-decoration: none;
@@ -314,10 +311,10 @@ h2.pagetitle {
 	margin-top: 1.125em;
 }
 ul#menu-main > li > a {
-	font-weight: 600;
-	color: black;
-	font-size:14px;
-	text-transform:uppercase;
+    font-weight: 100;
+    color: #0000009e;
+    font-size: 16px;
+    font-family: 'Brandon Grotesque';
 }
 ul#menu-main > li > a:hover {
 	padding: 9px 15px;

@@ -187,6 +187,7 @@ a {
   text-decoration: none;
 }
 
+
 a:hover, a:active {
 	text-decoration: underline;
 }
@@ -209,15 +210,15 @@ h3 {
 	margin-bottom:20px;
 }
 h4 {
-	font-size: 22px;
+	font-size: 65px;
 	margin-bottom:20px;
 }
 h5 {
-	font-size: 18px;
+	font-size: 28px;
 	margin-bottom:15px;
 }
 h6 {
-	font-size: 16px;
+	font-size: 24px;
 	margin-bottom:10px;
 }
 strong {
@@ -270,6 +271,7 @@ h2.pagetitle {
 	font-weight: normal;
 }
 
+
 /* =========================================================
 04. Navigation
 ============================================================ */
@@ -280,16 +282,13 @@ h2.pagetitle {
 }
 .navbar .brand {
 	margin-left:0;
-	padding: 0;
-    width: 120px;
+	padding: 13px;
 }
 .navbar .brand a {
 	padding: 0;
-	color: #fff;
-	font-size: 1.75em;
+	color: #E65100;
+	font-size: 1.25em;
 	margin-left: 0;
-	font-weight: 400;
-	text-transform:uppercase;
 }
 .navbar .brand a:hover {
 	text-decoration: none;
@@ -314,10 +313,10 @@ h2.pagetitle {
 	margin-top: 1.125em;
 }
 ul#menu-main > li > a {
-	font-weight: 600;
-	color: black;
-	font-size:14px;
-	text-transform:uppercase;
+    font-weight: 100;
+    color: #0000009e;
+    font-size: 16px;
+    font-family: 'Brandon Grotesque';
 }
 ul#menu-main > li > a:hover {
 	padding: 9px 15px;
@@ -453,7 +452,8 @@ section.section h4 {
 	font-size: 36px;
 	font-weight: 300;
 	letter-spacing: -1px;
-    color: #EC802F;
+    font-family: EB Garamond;
+    color: #E65100;
 }
 section.inner {
 	padding: 50px 0 50px;
