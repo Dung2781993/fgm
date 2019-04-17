@@ -132,6 +132,7 @@
     <Content Include="css\flexslider.css" />
     <Content Include="css\font-awesome-ie7.css" />
     <Content Include="css\font-awesome.css" />
+    <Content Include="css\image.css" />
     <Content Include="css\overwrite.css" />
     <Content Include="css\prettyPhoto.css" />
     <Content Include="css\style.css" />
@@ -159,6 +160,8 @@
     <None Include="Properties\PublishProfiles\FGM20190407102810 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\Background.jpg" />
+    <Content Include="Images\Ballarat.jpg" />
+    <Content Include="Images\Bendigo.jpg" />
     <Content Include="Images\bg\bg-1.jpg" />
     <Content Include="Images\bg\bg-2.jpg" />
     <Content Include="Images\bg\bg-3.jpg" />
@@ -173,6 +176,7 @@
     <Content Include="Images\cities\3-photo.jpg" />
     <Content Include="Images\cities\4-photo.jpg" />
     <Content Include="Images\favicon.ico" />
+    <Content Include="Images\Geelong.jpg" />
     <Content Include="Images\glyphicons-halflings.png" />
     <Content Include="Images\icons\basket.png" />
     <Content Include="Images\icons\camera.png" />
