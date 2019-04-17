@@ -132,12 +132,14 @@
     <Content Include="css\flexslider.css" />
     <Content Include="css\font-awesome-ie7.css" />
     <Content Include="css\font-awesome.css" />
+    <Content Include="css\image.css" />
     <Content Include="css\overwrite.css" />
     <Content Include="css\prettyPhoto.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="font\fontawesome-webfont.svg" />
+    <Content Include="font\Reklame.css" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -153,9 +155,13 @@
     <Content Include="font\fontawesome-webfont.ttf" />
     <Content Include="font\fontawesome-webfont.woff" />
     <Content Include="font\FontAwesome.otf" />
+    <Content Include="font\ReklameScript-Regular_DEMO.woff" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FGM20190407102810 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Images\Background.jpg" />
+    <Content Include="Images\Ballarat.jpg" />
+    <Content Include="Images\Bendigo.jpg" />
     <Content Include="Images\bg\bg-1.jpg" />
     <Content Include="Images\bg\bg-2.jpg" />
     <Content Include="Images\bg\bg-3.jpg" />
@@ -170,6 +176,7 @@
     <Content Include="Images\cities\3-photo.jpg" />
     <Content Include="Images\cities\4-photo.jpg" />
     <Content Include="Images\favicon.ico" />
+    <Content Include="Images\Geelong.jpg" />
     <Content Include="Images\glyphicons-halflings.png" />
     <Content Include="Images\icons\basket.png" />
     <Content Include="Images\icons\camera.png" />
@@ -222,6 +229,7 @@
     <Content Include="js\jquery.scrollTo.js" />
     <Content Include="js\LatrobeBusiness.js" />
     <Content Include="js\map.js" />
+    <Content Include="js\Password.js" />
     <Content Include="js\population.js" />
     <Content Include="js\school.js" />
     <Content Include="js\shape.js" />

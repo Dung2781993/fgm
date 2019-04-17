@@ -1,6 +1,5 @@
 ﻿<!-- Header area -->
-<style>
-
+@*<style>
     #mapid {
         height: 480px;
     }
@@ -28,18 +27,17 @@
         margin-right: 8px;
         opacity: 0.7;
     }
-</style>
+</style>*@
 <div class="navbar-wrapper">
-    <div class="navbar navbar-fixed-top" style="background-color:rgb(209, 208, 170);">
+    <div class="navbar navbar-fixed-top" style="background-color:#FFF;">
         <div class="container-fluid">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-            </a>
-            <a href="@Url.Action("Index", "Home")">
-                <img src="~/Images/logo-2.png" class="brand" />
-            </a>
+            </a>      
+            <h4 class="brand"><a href="@Url.Action("Index", "Home")" style="font-family:Reklame Script Regular DEMO; font-size: 50px;">Feel Good Mate</a></h4>
             <nav class="pull-right nav-collapse collapse">
                 <ul id="menu-main" class="nav">
+                    <li><a title="home" href="@Url.Action("Index", "Home")">Home</a></li>
                     <li><a title="team" href="#about">About</a></li>
                     <li><a title="services" href="#works">Services</a></li>
                     <li><a title="team" href="#team">Team</a></li>
@@ -54,46 +52,22 @@
 <section id="about" class="section" style="padding:0px;">
     <div class="col-md-12 col-12 col-xs-12">
         <div>
-            <h4 style="color: #EC802F; text-align:center; font-family:Arial, Helvetica, sans-serif ; padding: 20px;">Find your home in regional Victoria on Feel Good Mate</h4>
+            <h4 style="color: #E65100; text-align:center; font-family:EB Garamond  ; padding: 20px;">Find your home in regional Victoria on Feel Good Mate</h4>
         </div>
     </div>
-    <div class="container" style="padding-left:0px; padding-right:0px;">
-        <div class="row">
-            <div class="span12">
-                <div id="main-flexslider" class="flexslider">
-                    <ul class="slides">
-                        @{
-                            string[] titles = { "Ballarat", "Bendigo", "Hamilton", "Warrnambool", "Horsham" };
-                        }
-                        @for (var i = 0; i <= 4; i++)
-                        {
-                            <li>
-                                <p style="font-size:15px; position:absolute;" class="flex-caption">@titles[i]</p>
-                                <img src="~/Images/cities/@i-photo.jpg" alt="" />
-                            </li>
-                        }
-                    </ul>
-                </div>
-            </div>
+    <header class="clearfix">
+        <div class="logo">
+            <img src="~/Images/Background.jpg" alt="" />
         </div>
-        <h4>ABOUT</h4>
-        <div class="row">
-            <div class="col-md-12 col-12 col-xs-12">
-                <div>
-                    <h6 style="text-align:center; margin:auto; width:60%;">
-                        We at Feel Good Mate understand how difficult it is to move to a new country and create a home there.
-                        Everybody has a different criteria to select a perfect location. This website will allow you to choose a regional city in Victoria, Australia  based on your preference.
-                    </h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12 col-12 col-xs-12 slogan">
+    </header>
+    
+    <h4>ABOUT</h4>
+    <div class="row">
+        <div class="span5 offset7">
             <div>
-                <h6 style="text-align:center; margin:auto; width:80%; margin-bottom: 10px;">
-                    <i>"We have places to live in Australia, we just haven't been very good at presenting those opportunities to people".</i>
-                </h6>
-                <h6 style="text-align:center; margin:auto; width:80%;">
-                    - David Matthews, a 60-year-old farmer born and raised in Rypanyup, about 300 kilometres north-west of Melbourne
+                <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque;">
+                    We at Feel Good Mate understand how difficult it is to move to a new country and create a home there.
+                    Everybody has a different criteria to select a perfect location. This website will allow you to choose a regional city in Victoria, Australia  based on your preference.
                 </h6>
             </div>
         </div>
@@ -104,7 +78,7 @@
 <!--Section: Services-->
 <section id="works" class="section">
     <div class="container">
-        <h4>SERVICES</h4>
+        <h4>Regional Cities</h4>
         
         <div class="row">
             <div class="span12 mapDetail">
@@ -137,7 +111,7 @@
                 <hr />
                 <div class="span2">
                     <select class="form-control form-control-sm" style="color:black;" id="mylist">
-                        <option>Population</option>
+                        <option selected disabled style="color:gray">Select a category</option>
                         <option>Health Services</option>
                         <option>Education</option>
                         <option>Job Opportunities</option>
