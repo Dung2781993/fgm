@@ -1,0 +1,16 @@
+﻿div #geelong{
+    content:url(../Images/Geelong.jpg);
+}
+
+div #bendigo {
+    content: url(../Images/Bendigo.jpg);
+}
+
+div #ballarat {
+    content: url(../Images/Ballarat.jpg);
+}
+
+.regional-cities {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}

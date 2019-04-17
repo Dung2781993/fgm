@@ -47,3 +47,4 @@ D:\Working\src\FGM\FGM\FGM\obj\Debug\FGM.csproj.CoreCompileInputs.cache
 D:\Working\src\FGM\FGM\FGM\obj\Debug\FGM.csproj.CopyComplete
 D:\Working\src\FGM\FGM\FGM\obj\Debug\FGM.dll
 D:\Working\src\FGM\FGM\FGM\obj\Debug\FGM.pdb
+D:\Working\src\FGM\FGM\FGM\obj\Debug\FGM.csprojAssemblyReference.cache
