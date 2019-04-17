@@ -221,6 +221,16 @@ h6 {
 	font-size: 20px;
 	margin-bottom:10px;
 }
+
+h7 {
+    font-size: 18px;
+    font-family: Brandon Grotesque;
+}
+
+p {
+    font-size: 16px;
+    font-family: Brandon Grotesque;
+}
 strong {
 	font-weight:700;
 	font-family: 'Open Sans', sans-serif;
