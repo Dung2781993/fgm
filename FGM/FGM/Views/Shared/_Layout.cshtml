@@ -33,9 +33,34 @@
         <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
         <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
         <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.aspnetmvc.min.js"></script>*@
+
+
+
+
 </head>
 <body>
+    <div class="navbar-wrapper">
+        <div class="navbar navbar-fixed-top" style="background-color:#FFF;">
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </a>
+                <h4 class="brand"><a href="@Url.Action("Index", "Home")" style="font-family:Reklame Script Regular DEMO; font-size: 50px;">Feel Good Mate</a></h4>
+                <nav class="pull-right nav-collapse collapse">
+                    <ul id="menu-main" class="nav">
+                        <li><a title="home" href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a title="team" href="#about">About</a></li>
+                        <li><a title="regional" href="#regional">Regional Cities</a></li>
+                        <li><a title="team" href="#team">Team</a></li>
+                        <li><a title="contact" href="#team">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
     @RenderBody()
+
 
     <footer>
         <div class="container">
@@ -58,6 +83,7 @@
     </footer>
     <!--JavaScript of template-->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
+
 
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
             integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
@@ -85,6 +111,7 @@
     <script src="js/map.js"></script>
     <script src="js/shape.js"></script>
     <script src="js/population.js"></script>
+
 
 </body>
    
