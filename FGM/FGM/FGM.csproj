@@ -103,6 +103,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -133,12 +134,15 @@
     <Content Include="css\font-awesome-ie7.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="css\image.css" />
+    <Content Include="css\map.css" />
     <Content Include="css\overwrite.css" />
     <Content Include="css\prettyPhoto.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="font\fontawesome-webfont.svg" />
+    <Content Include="font\fontawesome-webfont.svg">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="font\Reklame.css" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -155,7 +159,7 @@
     <Content Include="font\fontawesome-webfont.ttf" />
     <Content Include="font\fontawesome-webfont.woff" />
     <Content Include="font\FontAwesome.otf" />
-    <Content Include="font\ReklameScript-Regular_DEMO.woff" />
+    <Content Include="font\ReklameScript.woff" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FGM20190407102810 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -176,6 +180,7 @@
     <Content Include="Images\cities\3-photo.jpg" />
     <Content Include="Images\cities\4-photo.jpg" />
     <Content Include="Images\favicon.ico" />
+    <Content Include="Images\Geelong-Background.jpeg" />
     <Content Include="Images\Geelong.jpg" />
     <Content Include="Images\glyphicons-halflings.png" />
     <Content Include="Images\icons\basket.png" />
@@ -217,6 +222,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\GeelongBusiness.js" />
+    <Content Include="js\GeelongMap.js" />
     <Content Include="js\hospital.js" />
     <Content Include="js\inview.js" />
     <Content Include="js\isotope.js" />
@@ -287,6 +293,7 @@
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
+    <Content Include="Views\City\Geelong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
