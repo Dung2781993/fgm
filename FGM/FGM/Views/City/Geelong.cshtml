@@ -4,13 +4,47 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<link href="@Url.Content("~/css/map.css")" rel="stylesheet" type="text/css" />
+
 <!--Section: Description-->
 <section id="geelong-description" class="section">
     <div class="container-fluid">
-        <div class="row">
-            <div class="span7">
-                <div id="geelong-background"></div>
-            </div>         
+        <div class="row regional-cities">
+            <div class="span12" id="geelong-background"></div>
+            <div class="span6" style="float:right;">
+                <div class="span3">
+                    <p>
+                        <h4>Geelong</h4>
+                    </p>
+                </div>
+                <div class="span3">
+                    <p>
+                        Geelong is a paradise for artists and the only city in Victoria to hold the international photographic salon ‘VIGEX’.
+                        The historical society and the heritage society have played a major role in safeguarding the history and culture of the city.
+                        There are several pond and creek trails enjoyed by the bikers.
+                        Additionally, being a home to the second oldest AFL club the Geelong Football Club Australian Football League,
+                        the city holds a special place in the hearts of football fans.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<!--Section: Map-->
+<section id="geelong-map" class="section">
+    <div class="container">
+        <h4>Location</h4>
+        <div class="row">
+            <div class="span12" style="text-align:center;">
+                <div id="Geelong-map"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="~/js/GeelongMap.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=@TempData[" GoogleApiKey"]&callback=initMap">
+</script>

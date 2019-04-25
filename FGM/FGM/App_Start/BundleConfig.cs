@@ -22,6 +22,17 @@ namespace FGM
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/common").Include(
+                    "~/js/jquery.scrollTo.js",
+                    "~/js/jquery.nav.js",
+                    "~/js/jquery.localScroll.js",
+                    "~/js/bootstrap.js",
+                    "~/js/jquery.prettyPhoto.js",
+                    "~/js/isotope.js",
+                    "~/js/jquery.flexslider.js",
+                    "~/js/custom.js"
+                ));
         }
     }
 }

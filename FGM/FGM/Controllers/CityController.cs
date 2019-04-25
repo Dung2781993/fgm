@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
 using System.Web.Mvc;
 
 namespace FGM.Controllers
@@ -16,6 +13,8 @@ namespace FGM.Controllers
 
         public ActionResult Geelong()
         {
+            var googleMapKey = ConfigurationManager.AppSettings["googleApiKey"];
+            TempData["GoogleApiKey"] = googleMapKey;
             return View();
         }
     }
