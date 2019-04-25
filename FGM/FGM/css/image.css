@@ -14,3 +14,7 @@ div #ballarat {
     padding-bottom: 30px;
     padding-top: 30px;
 }
+
+div #geelong-background{
+    content: url(../Images/Geelong-Background.jpeg);
+}
