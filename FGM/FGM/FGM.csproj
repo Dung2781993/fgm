@@ -222,6 +222,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\GeelongBusiness.js" />
+    <Content Include="js\GeelongJobOpprotunitiesChart.js" />
     <Content Include="js\GeelongMap.js" />
     <Content Include="js\hospital.js" />
     <Content Include="js\inview.js" />

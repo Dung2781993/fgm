@@ -4,20 +4,36 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@*<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>*@
+
 <link href="@Url.Content("~/css/map.css")" rel="stylesheet" type="text/css" />
+
+<style>
+    #population, #ethnic {
+        width: 100%;
+        height: 500px;
+        margin: 0;
+        padding: 0;
+    }
+</style>
 
 <!--Section: Description-->
 <section id="geelong-description" class="section">
     <div class="container-fluid">
         <div class="row regional-cities">
-            <div class="span12" id="geelong-background"></div>
-            <div class="span6" style="float:right;">
-                <div class="span3">
+            <div class="span14" id="geelong-background"></div>
+            <div class="span8" style="float:right;">
+                <div class="span4">
                     <p>
                         <h4>Geelong</h4>
                     </p>
                 </div>
-                <div class="span3">
+                <div class="span4">
                     <p>
                         Geelong is a paradise for artists and the only city in Victoria to hold the international photographic salon ‘VIGEX’.
                         The historical society and the heritage society have played a major role in safeguarding the history and culture of the city.
@@ -43,8 +59,69 @@
     </div>
 </section>
 
+<!--Section: Population and ethnic groups-->
+<section id="geelong-population" class="section">
+    <div class="container">
+        <h4>Population</h4>
+        <div class="row">
+            <div class="span12">
+                <div id="ethnic"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12 demo-section k-content wide">
+                <div id="population"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!--Section: Job Opportunities-->
+<section id="geelong-job" class="section">
+    <div class="container">
+        <h4>Job Opportunties</h4>
+        <div class="row">
+            <div class="span8">
+                <h6>Total Job Opportunities in Geelong in 2016 by sectors</h6>
+                <div id="businessChart"></div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <script src="~/js/GeelongMap.js"></script>
+<script src="~/js/GeelongBusiness.js"></script>
+<script src="~/js/GeelongJobOpprotunitiesChart.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=@TempData[" GoogleApiKey"]&callback=initMap">
+</script>
+
+<script type="text/javascript">
+    anychart.onDocumentReady(function () {
+        // create pie chart
+        var chart = anychart.pie();
+
+        // set chart title
+        chart.title('Top 5 Languages in Geelong (excluding English)');
+
+        // set chart data
+        chart.data([
+            { x: 'Italian', value: 2617 },
+            { x: 'Croatian', value: 2184 },
+            { x: 'Mandarin', value: 1841 },
+            { x: 'Macedonian', value: 1078 },
+            { x: 'Greek', value: 1033 }
+        ]);
+
+        // set container id for the chart
+        chart.container('ethnic');
+
+        // initiate chart drawing
+        chart.draw();
+    });
+
+    
 </script>
