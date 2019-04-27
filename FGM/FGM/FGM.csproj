@@ -224,6 +224,15 @@
     <Content Include="js\GeelongBusiness.js" />
     <Content Include="js\GeelongJobOpprotunitiesChart.js" />
     <Content Include="js\GeelongMap.js" />
+    <Content Include="js\Geelong\Education\geelong_advanced_colleges.js" />
+    <Content Include="js\Geelong\Education\Geelong_education.js" />
+    <Content Include="js\Geelong\Education\geelong_primary_school.js" />
+    <Content Include="js\Geelong\Education\geelong_secondary_school.js" />
+    <Content Include="js\Geelong\Education\geelong_special_needs_school.js" />
+    <Content Include="js\Geelong\Education\geelong_tertiary.js" />
+    <Content Include="js\Geelong\Healthcare\geelong_emergency_hospital.js" />
+    <Content Include="js\Geelong\Healthcare\Geelong_healthcare.js" />
+    <Content Include="js\Geelong\Healthcare\geelong_maternal_and_child_health_service.js" />
     <Content Include="js\hospital.js" />
     <Content Include="js\inview.js" />
     <Content Include="js\isotope.js" />

@@ -33,7 +33,7 @@ for (x in business) {
             .attr("x", 000)
             .attr("y", temp * 20 + 40)
             .text(x)
-            .style("font-size", "10px");
+            .style("font-size", "11px");
         barLabelGroup.append("text")
             .attr("x", 500)
             .attr("y", temp * 20 + 40)
