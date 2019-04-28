@@ -1,7 +1,8 @@
 ﻿//Filtering Healthcare facilities and display on the map 
-
-
 $('#healthSearch').click(function () {
+    //Remove Description
+    $('#healthDescription').find('#healthDescriptionDetail').remove();
+
     var select = $('#healthList :selected').text();
     var container = L.DomUtil.get('mapHospital');
     if (container !== null) { container._leaflet_id = null; }
@@ -19,7 +20,9 @@ $('#healthSearch').click(function () {
         accessToken: 'pk.eyJ1IjoiZmdtbW9uYXNoIiwiYSI6ImNqdTBybzEwcTF1ZG40NHJ6a3g4ZGZzZW8ifQ.jwIjG6Q5cJyzy87lU8BmvQ'
     }).addTo(map);
 
-    if (select === "EMERGENCY Hospital") {
+    if (select === "Emergency Hospital") {
+        //Insert primary Description
+        addHealthDescription(select);
         for (var i = 0; i < 5; i++) {
             var emergencyName = geelong_emergency_hospital.name[i];
             var emergencyLat = geelong_emergency_hospital.lat[i];
@@ -28,7 +31,9 @@ $('#healthSearch').click(function () {
             emergencyMarker.bindPopup(emergencyName).openPopup();
         }
     }
-    if (select === "MATERNAL & CHILDCARE") {
+    if (select === "Maternal & Childcare") {
+        //Insert primary Description
+        addHealthDescription(select);
         for (var j = 0; j < 5; j++) {
             var maternalName = geelong_maternal_and_child_health_service.name[j];
             var maternalLat = geelong_maternal_and_child_health_service.lat[j];
@@ -37,4 +42,58 @@ $('#healthSearch').click(function () {
             maternalMarker.bindPopup(maternalName).openPopup();
         }
     }
+    
 });
+
+
+function addHealthDescription(type) {
+    if (type === "Emergency Hospital") {
+        $('#healthDescription').append(
+            '<ul id="healthDescriptionDetail">' +
+            '<li>' +
+            '<p class="mapDetail">' +
+            'Geelong Hospital is a public hospital and is part of the Barwon Health. It is the largest hospital in regional Victoria and the only tertiary hospital outside the metropolitan. It has got both medical and surgical units.' +
+            ' For more information: <a href="https://www.barwonhealth.org.au">https://www.barwonhealth.org.au</a>' +
+            '</p >' +
+            '</li>' +
+            '<li>' +
+            '<p class="mapDetail">' +
+            'St John of God Health Care is a private hospital founded in 1871. It is Australian largest Catholic not -for-profit private hospital group.' +
+            ' For more information: <a href="https://www.sjog.org.au">https://www.sjog.org.au</a>' +
+            '</p >' +
+            '</li>' +
+            '<li>' +
+            '<p class="mapDetail">' +
+            'Grace McKellar Centre is a part of the Barwon Health and is an aged care, nursing hospital.' +
+            ' For more information: <a href="https://www.sjog.org.au">https://www.sjog.org.au</a>' +
+            '</p >' +
+            '</li>' +
+            '</ul>'
+        );
+    }
+    if (type === "Maternal & Childcare") {
+        $('#healthDescription').append(
+            '<ul id="healthDescriptionDetail">' +
+            '<li>' +
+            '<p class="mapDetail">' +
+            'Drysdale hospital' +
+            ' For more information: <a href="https://www.drysdaleclinic.com.au">https://www.drysdaleclinic.com.au</a>' +
+            '</p >' +
+            '</li>' +
+            '<li>' +
+            '<p class="mapDetail">' +
+            'St Leonards hospital' +
+            ' For more information: <a href="https://stleonardshospital.com">https://stleonardshospital.com</a>' +
+            '</p >' +
+            '</li>' +
+            '<li>' +
+            '<p class="mapDetail">' +
+            'Portarlington hospital' +
+            ' For more information: <a href="http://www.medicentreportarlington.ie">http://www.medicentreportarlington.ie</a>' +
+            '</p >' +
+            '</li>' +
+            '</ul>'
+        );
+    }
+
+}

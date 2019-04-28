@@ -20,21 +20,27 @@ div #geelong-background{
     width: 75%;
 }
 
+div #ballarat-background {
+    content: url(../Images/Ballarat-Background.jpeg);
+    width: 75%;
+}
+
+
 
 @media (max-width: 767px) {
-    #geelong-background{
-        width:100% !important;
+    #geelong-background, #ballarat-background {
+        width: 100% !important;
     }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-    #geelong-background {
+    #geelong-background, #ballarat-background {
         width: 100%;
     }   
 }
 
 @media only screen and (max-width: 600px) {
-    #geelong-background {
+    #geelong-background, #ballarat-background {
         width: 100%;
     }   
 }

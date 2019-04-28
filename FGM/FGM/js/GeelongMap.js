@@ -1,7 +1,7 @@
 ﻿
 // Initialize and add the map
 function initMap() {
-    // The location of Uluru
+    // The location of Ballarat
     var geelong = { lat: -38.1499994, lng: 144.3499986 };
     // The map, centered at Geelong
     var map = new google.maps.Map(

@@ -1,16 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "Geelong";
+    ViewBag.Title = "Ballarat";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-@*<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>*@
 
 <link href="@Url.Content("~/css/map.css")" rel="stylesheet" type="text/css" />
 
@@ -23,24 +16,22 @@
         padding: 0;
     }
 
-
 </style>
 
 <!--Section: Description-->
-<section id="geelong-description" class="section">
+<section id="ballarat-description" class="section">
     <div class="container-fluid">
         <div class="row regional-cities">
-            <div class="span12" id="geelong-background"></div>
+            <div class="span12" id="ballarat-background"></div>
             <div class="span3" style="float:left;">
                 <p>
-                    <h4>Geelong</h4>
+                    <h4>Ballarat</h4>
                 </p>
                 <p style="font-size:16px;">
-                    Geelong is a paradise for artists and the only city in Victoria to hold the international photographic salon ‘VIGEX’.
-                    The historical society and the heritage society have played a major role in safeguarding the history and culture of the city.
-                    There are several pond and creek trails enjoyed by the bikers.
-                    Additionally, being a home to the second oldest AFL club the Geelong Football Club Australian Football League,
-                    the city holds a special place in the hearts of football fans.
+                    Ballarat has delved significantly into the renewable energy sector which has lured several industrialists and investors in the region. 
+                    The city has been listed under the International League of historical cities due to its rich heritage and cultural significance. 
+                    The Ballarat art gallery displays some of the oldest works of some incredible artists. 
+                    The city conducts several annual festivals which is a major attraction for visitors.
                 </p>
             </div>
         </div>
@@ -48,19 +39,19 @@
 </section>
 
 <!--Section: Map-->
-<section id="geelong-goolge-map" class="section">
+<section id="ballarat-google-map" class="section">
     <div class="container">
         <h4>Location</h4>
         <div class="row">
             <div class="span12" style="text-align:center;">
-                <div id="Geelong-map"></div>
+                <div id="Ballarat-map"></div>
             </div>
         </div>
     </div>
 </section>
 
 <!--Section: Population ethnic groups-->
-<section id="geelong-population" class="section">
+<section id="ballarat-population" class="section">
     <div class="container">
         <h4>Population</h4>
         <div class="row">
@@ -70,9 +61,7 @@
         </div>
         <div class="row">
             <div class="span12 demo-section k-content wide">
-                <p>
-                    The population of Geelong is estimated to be 273,951 out of which 32.5% are immigrants. The highest Italian speaking immigrant population resides in this region followed by Croatians. The largest Croatian community in the entire Australia is found here
-                </p>
+                <div id="population"></div>
             </div>
         </div>
     </div>
@@ -80,13 +69,13 @@
 
 
 <!--Section: Education Facilities-->
-<section id="geelong-facilities" class="section">
+<section id="ballarat-facilities" class="section">
     <div class="container">
         <h4>Education Facilities</h4>
         <div class="row">
             <div class="span12">
                 <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 30px; margin-bottom:20px;">
-                    All your education needs can be met in Geelong, with a broad range of pathways from primary to tertiary.
+                    All your education needs can be met in Ballarat, with a broad range of pathways from primary to tertiary.
                     By selecting the filter ,you will find a wide choice of public or private schooling, and multiple tertiary education options.
                 </h6>
             </div>
@@ -96,7 +85,6 @@
                     <select class="form-control form-control-sm" style="color:black;" id="educationList">
                         <option>Primary School</option>
                         <option>Secondary School</option>
-                        <option>Advanced Colleges</option>
                         <option>Tertiary</option>
                     </select>
                 </div>
@@ -117,13 +105,13 @@
 </section>
 
 <!--Section: Healthcare Services-->
-<section id="geelong-healthcare" class="section">
+<section id="ballarat-healthcare" class="section">
     <div class="container">
         <h4>Healthcare Service</h4>
         <div class="row">
             <div class="span12">
                 <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 30px; margin-bottom:20px;">
-                    Geelong has world class health care and all permanent residents are entitled to benefits. The Medicare system is publicly funded,
+                    Ballarat has world class health care and all permanent residents are entitled to benefits. The Medicare system is publicly funded,
                     and provides permanent residents with access to both hospital and non-emergency care.
                 </h6>
             </div>
@@ -144,9 +132,6 @@
             <div class="span8 mapDetail">
                 <div id="mapHospital" style="height: 600px; width:100%"></div>
             </div>
-            <div class="span12" id="healthDescription">
-
-            </div>
         </div>
     </div>
 </section>
@@ -154,12 +139,12 @@
 
 
 <!--Section: Job Opportunities-->
-<section id="geelong-job" class="section">
+<section id="ballarat-job" class="section">
     <div class="container">
         <h4>Job Opportunties</h4>
         <div class="row">
             <div class="span8">
-                <h6>Total Job Opportunities in Geelong in 2016 by sectors</h6>
+                <h6>Total Job Opportunities in Ballarat in 2016 by sectors</h6>
                 @*<div id="businessChart"></div>*@
                 <div id="jobPieChart"></div>
             </div>
@@ -167,19 +152,14 @@
     </div>
 </section>
 
-<script src="~/js/GeelongMap.js"></script>
+<script src="~/js/BallaratMap.js"></script>
 
 <!--Education Search-->
-<script src="~/js/Geelong/Education/geelong_primary_school.js"></script>
-<script src="~/js/Geelong/Education/geelong_secondary_school.js"></script>
-<script src="~/js/Geelong/Education/geelong_advanced_colleges.js"></script>
-<script src="~/js/Geelong/Education/geelong_tertiary.js"></script>
-<script src="~/js/Geelong/Education/Geelong_education.js"></script>
-
+<script src="~/js/Ballarat/Education/ballarat_primary_school.js"></script>
+<script src="~/js/Ballarat/Education/Ballarat_education.js"></script>
+<script src="~/js/Ballarat/Education/ballarat_secondary_school.js"></script>
+<script src="~/js/Ballarat/Education/ballarat_tertiary.js"></script>
 <!--Healthcare Search-->
-<script src="~/js/Geelong/Healthcare/geelong_emergency_hospital.js"></script>
-<script src="~/js/Geelong/Healthcare/geelong_maternal_and_child_health_service.js"></script>
-<script src="~/js/Geelong/Healthcare/Geelong_healthcare.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDML5fUiWxphpJfa-fFq3kiFx5AqQlCd4c&callback=initMap">
 
@@ -192,15 +172,15 @@
         var chart = anychart.pie();
 
         // set chart title
-        chart.title('Top 5 Languages in Geelong (excluding English)');
+        chart.title('Top 5 Languages in Ballarat (excluding English)');
 
         // set chart data
         chart.data([
-            { x: 'Italian', value: 2617 },
-            { x: 'Croatian', value: 2184 },
-            { x: 'Mandarin', value: 1841 },
-            { x: 'Macedonian', value: 1078 },
-            { x: 'Greek', value: 1033 }
+            { x: 'Mandarin', value: 950 },
+            { x: 'Italian', value: 358 },
+            { x: 'German', value: 317 },
+            { x: 'Punjabi', value: 281 },
+            { x: 'Dutch', value: 255 }
         ]);
 
         // set container id for the chart
@@ -214,18 +194,18 @@
         var chartJob = anychart.pie();
 
         // set chart title
-        chartJob.title('Top 8 Occupation in Geelong');
+        chartJob.title('Top 8 Occupation in Ballarat');
 
         // set chart data
         chartJob.data([
-            { x: 'Professionals', value: 26367 },
-            { x: 'Technicians and Trades Workers', value: 18883 },
-            { x: 'Community and Personal Service Workers', value: 15714 },
-            { x: 'Clerical and Administrative Workers', value: 15082 },
-            { x: 'Managers', value: 14520 },
-            { x: 'Sales Workers', value: 12707 },
-            { x: 'Labourers', value: 12505 },
-            { x: 'Machinery Operators and Drivers', value: 7191 },
+            { x: 'Professionals', value: 13213 },
+            { x: 'Technicians and Trades Workers', value: 10130 },
+            { x: 'Community and Personal Service Workers', value: 8415 },
+            { x: 'Clerical and Administrative Workers', value: 8197 },
+            { x: 'Managers', value: 8162 },
+            { x: 'Sales Workers', value: 7550 },
+            { x: 'Labourers', value: 6666 },
+            { x: 'Machinery Operators and Drivers', value: 3955 },
         ]);
 
         // set container id for the chart
