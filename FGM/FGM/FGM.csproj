@@ -229,7 +229,6 @@
     <Content Include="js\Geelong\Education\Geelong_education.js" />
     <Content Include="js\Geelong\Education\geelong_primary_school.js" />
     <Content Include="js\Geelong\Education\geelong_secondary_school.js" />
-    <Content Include="js\Geelong\Education\geelong_special_needs_school.js" />
     <Content Include="js\Geelong\Education\geelong_tertiary.js" />
     <Content Include="js\Geelong\Healthcare\geelong_emergency_hospital.js" />
     <Content Include="js\Geelong\Healthcare\Geelong_healthcare.js" />
