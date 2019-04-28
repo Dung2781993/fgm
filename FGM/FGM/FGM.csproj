@@ -314,6 +314,7 @@
     <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
     <Content Include="Views\City\Geelong.cshtml" />
     <Content Include="Views\City\Ballarat.cshtml" />
+    <Content Include="Views\City\Comparison.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
