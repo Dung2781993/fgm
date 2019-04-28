@@ -183,8 +183,8 @@ body, input, textarea {
 }
 
 a {
-  color: #454545;
-  text-decoration: none;
+    color: #0088cc;
+    text-decoration: none;
 }
 
 
@@ -228,7 +228,7 @@ h7 {
 }
 
 p {
-    font-size: 22px;
+    font-size: 25px;
     font-family: Brandon Grotesque;
 }
 strong {

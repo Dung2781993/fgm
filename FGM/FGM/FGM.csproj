@@ -162,6 +162,7 @@
     <Content Include="font\ReklameScript.woff" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FGM20190407102810 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FGM20190428015618 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\Background.jpg" />
     <Content Include="Images\Ballarat.jpg" />
