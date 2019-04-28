@@ -14,6 +14,7 @@
 
 <link href="@Url.Content("~/css/map.css")" rel="stylesheet" type="text/css" />
 
+
 <style>
     #population, #ethnic, #jobPieChart {
         width: 100%;
@@ -22,61 +23,32 @@
         padding: 0;
     }
 
-    .info {
-        padding: 6px 8px;
-        font: 14px/16px Arial, Helvetica, sans-serif;
-        background: white;
-        background: rgba(255,255,255,0.8);
-        box-shadow: 0 0 15px rgba(0,0,0,0.2);
-        border-radius: 5px;
-    }
 
-        .info h4 {
-            margin: 0 0 5px;
-            color: #777;
-        }
-
-    .legend {
-        line-height: 18px;
-        color: #555;
-    }
-
-        .legend i {
-            width: 18px;
-            height: 18px;
-            float: left;
-            margin-right: 8px;
-            opacity: 0.7;
-        }
 </style>
 
 <!--Section: Description-->
 <section id="geelong-description" class="section">
     <div class="container-fluid">
         <div class="row regional-cities">
-            <div class="span14" id="geelong-background"></div>
-            <div class="span8" style="float:right;">
-                <div class="span4">
-                    <p>
-                        <h4>Geelong</h4>
-                    </p>
-                </div>
-                <div class="span4">
-                    <p>
-                        Geelong is a paradise for artists and the only city in Victoria to hold the international photographic salon ‘VIGEX’.
-                        The historical society and the heritage society have played a major role in safeguarding the history and culture of the city.
-                        There are several pond and creek trails enjoyed by the bikers.
-                        Additionally, being a home to the second oldest AFL club the Geelong Football Club Australian Football League,
-                        the city holds a special place in the hearts of football fans.
-                    </p>
-                </div>
+            <div class="span12" id="geelong-background"></div>
+            <div class="span3" style="float:left;">
+                <p>
+                    <h4>Geelong</h4>
+                </p>
+                <p style="font-size:16px;">
+                    Geelong is a paradise for artists and the only city in Victoria to hold the international photographic salon ‘VIGEX’.
+                    The historical society and the heritage society have played a major role in safeguarding the history and culture of the city.
+                    There are several pond and creek trails enjoyed by the bikers.
+                    Additionally, being a home to the second oldest AFL club the Geelong Football Club Australian Football League,
+                    the city holds a special place in the hearts of football fans.
+                </p>
             </div>
         </div>
     </div>
 </section>
 
 <!--Section: Map-->
-<section id="geelong-map" class="section">
+<section id="geelong-goolge-map" class="section">
     <div class="container">
         <h4>Location</h4>
         <div class="row">
@@ -98,7 +70,9 @@
         </div>
         <div class="row">
             <div class="span12 demo-section k-content wide">
-                <div id="population"></div>
+                <p>
+                    The population of Geelong is estimated to be 273,951 out of which 32.5% are immigrants. The highest Italian speaking immigrant population resides in this region followed by Croatians. The largest Croatian community in the entire Australia is found here
+                </p>
             </div>
         </div>
     </div>
@@ -111,7 +85,7 @@
         <h4>Education Facilities</h4>
         <div class="row">
             <div class="span12">
-                <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 30px; margin-bottom:20px;">
+                <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 22px; margin-bottom:20px;">
                     All your education needs can be met in Geelong, with a broad range of pathways from primary to tertiary.
                     By selecting the filter ,you will find a wide choice of public or private schooling, and multiple tertiary education options.
                 </h6>
@@ -122,9 +96,8 @@
                     <select class="form-control form-control-sm" style="color:black;" id="educationList">
                         <option>Primary School</option>
                         <option>Secondary School</option>
-                        <option>Advanced School</option>
+                        <option>Advanced Colleges</option>
                         <option>Tertiary</option>
-                        <option>Special Need</option>
                     </select>
                 </div>
                 <div class="span2">
@@ -136,6 +109,9 @@
             <div class="span8 mapDetail">
                 <div id="mapEducation" style="height: 600px; width:100%"></div>
             </div>
+            <div class="span12" id="description">
+
+            </div>
         </div>
     </div>
 </section>
@@ -146,7 +122,7 @@
         <h4>Healthcare Service</h4>
         <div class="row">
             <div class="span12">
-                <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 30px; margin-bottom:20px;">
+                <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 22px; margin-bottom:20px;">
                     Geelong has world class health care and all permanent residents are entitled to benefits. The Medicare system is publicly funded,
                     and provides permanent residents with access to both hospital and non-emergency care.
                 </h6>
@@ -155,8 +131,8 @@
                 <hr />
                 <div class="span2">
                     <select class="form-control form-control-sm" style="color:black;" id="healthList">
-                        <option>EMERGENCY Hospital</option>
-                        <option>MATERNAL & CHILDCARE</option>
+                        <option>Emergency Hospital</option>
+                        <option>Maternal & Childcare</option>
                     </select>
                 </div>
                 <div class="span2">
@@ -167,6 +143,9 @@
             </div>
             <div class="span8 mapDetail">
                 <div id="mapHospital" style="height: 600px; width:100%"></div>
+            </div>
+            <div class="span12" id="healthDescription">
+
             </div>
         </div>
     </div>
@@ -180,24 +159,25 @@
         <h4>Job Opportunties</h4>
         <div class="row">
             <div class="span8">
-                <h6>Total Job Opportunities in Geelong in 2016 by sectors</h6>
                 @*<div id="businessChart"></div>*@
                 <div id="jobPieChart"></div>
             </div>
+            <div class="span4 mapDetail">
+                <p>
+                    Geelong has roughly 10,000 business running which has given employment to more than 80,000 people in the region. The professional sector has the most number of job opportunities in the region followed by trade workers and community and personal service workers. Geelong has seen a tremendous growth in job opportunities in the past 10 years. Several opportunities in the engineering and manufacturing industries have grown over the time. There are many managerial and sales positions available as well.
+                </p>
+            </div>
         </div>
-    </div>
+        </div>
 </section>
 
 <script src="~/js/GeelongMap.js"></script>
-<script src="~/js/GeelongBusiness.js"></script>
-<script src="~/js/GeelongJobOpprotunitiesChart.js"></script>
 
 <!--Education Search-->
 <script src="~/js/Geelong/Education/geelong_primary_school.js"></script>
 <script src="~/js/Geelong/Education/geelong_secondary_school.js"></script>
 <script src="~/js/Geelong/Education/geelong_advanced_colleges.js"></script>
 <script src="~/js/Geelong/Education/geelong_tertiary.js"></script>
-<script src="~/js/Geelong/Education/geelong_special_needs_school.js"></script>
 <script src="~/js/Geelong/Education/Geelong_education.js"></script>
 
 <!--Healthcare Search-->

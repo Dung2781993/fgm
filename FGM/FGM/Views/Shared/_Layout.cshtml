@@ -66,15 +66,11 @@
                 <div class="pull-right nav-collapse collapse">
                     <ul id="menu-main" class="nav navbar-nav">
                         <li><a title="home" href="@Url.Action("Index", "Home")">Home</a></li>
-                        <li><a title="team" href="#about">About</a></li>
-                        @*<li><a title="regional" href="#regional">Regional Cities</a></li>*@
-                        <li><a title="team" href="#team">Team</a></li>
-                        <li><a title="contact" href="#team">Contact</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Regional Cities <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="@Url.Action("Geelong", "City")">Geelong</a></li>
-                                <li><a href="#">Ballarat</a></li>
+                                <li><a href="@Url.Action("Ballarat", "City")">Ballarat</a></li>
                                 <li><a href="#">Bendigo</a></li>
                             </ul>
                         </li>

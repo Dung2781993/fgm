@@ -17,5 +17,12 @@ namespace FGM.Controllers
             TempData["GoogleApiKey"] = googleMapKey;
             return View();
         }
+
+        public ActionResult Ballarat()
+        {
+            var googleMapKey = ConfigurationManager.AppSettings["googleApiKey"];
+            TempData["GoogleApiKey"] = googleMapKey;
+            return View();
+        }
     }
 }

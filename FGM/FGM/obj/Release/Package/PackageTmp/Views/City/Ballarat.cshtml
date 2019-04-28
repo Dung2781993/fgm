@@ -1,0 +1,233 @@
+﻿
+@{
+    ViewBag.Title = "Ballarat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="@Url.Content("~/css/map.css")" rel="stylesheet" type="text/css" />
+
+
+<style>
+    #population, #ethnic, #jobPieChart {
+        width: 100%;
+        height: 500px;
+        margin: 0;
+        padding: 0;
+    }
+
+</style>
+
+<!--Section: Description-->
+<section id="ballarat-description" class="section">
+    <div class="container-fluid">
+        <div class="row regional-cities">
+            <div class="span12" id="ballarat-background"></div>
+            <div class="span3" style="float:left;">
+                <p>
+                    <h4>Ballarat</h4>
+                </p>
+                <p style="font-size:16px;">
+                    Ballarat has delved significantly into the renewable energy sector which has lured several industrialists and investors in the region. 
+                    The city has been listed under the International League of historical cities due to its rich heritage and cultural significance. 
+                    The Ballarat art gallery displays some of the oldest works of some incredible artists. 
+                    The city conducts several annual festivals which is a major attraction for visitors.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Section: Map-->
+<section id="ballarat-google-map" class="section">
+    <div class="container">
+        <h4>Location</h4>
+        <div class="row">
+            <div class="span12" style="text-align:center;">
+                <div id="Ballarat-map"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Section: Population ethnic groups-->
+<section id="ballarat-population" class="section">
+    <div class="container">
+        <h4>Population</h4>
+        <div class="row">
+            <div class="span12">
+                <div id="ethnic"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12 demo-section k-content wide">
+                <p>
+                    The total population of Bendigo is 149,919 out of which 35.5% are immigrants while 1.8% population comprises of Aboriginal people. The highest immigrant population that resides in Bendigo is from England while the most commonly spoken language in Mandarin followed by Italian.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--Section: Education Facilities-->
+<section id="ballarat-facilities" class="section">
+    <div class="container">
+        <h4>Education Facilities</h4>
+        <div class="row">
+            <div class="span12">
+                <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 22px; margin-bottom:20px;">
+                    All your education needs can be met in Ballarat, with a broad range of pathways from primary to tertiary.
+                    By selecting the filter ,you will find a wide choice of public or private schooling, and multiple tertiary education options.
+                </h6>
+            </div>
+            <div class="span4">
+                <hr />
+                <div class="span2">
+                    <select class="form-control form-control-sm" style="color:black;" id="educationList">
+                        <option>Primary School</option>
+                        <option>Secondary School</option>
+                        <option>Tertiary</option>
+                    </select>
+                </div>
+                <div class="span2">
+                    <button type="button" id="educationSearch" class="btn btn-outline-info" style="color:#007bff; background-color: transparent; background-image:none; border-color:#007bff">
+                        Search
+                    </button>
+                </div>
+            </div>
+            <div class="span8 mapDetail">
+                <div id="mapEducation" style="height: 600px; width:100%"></div>
+            </div>
+            <div class="span12" id="description">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Section: Healthcare Services-->
+<section id="ballarat-healthcare" class="section">
+    <div class="container">
+        <h4>Healthcare Service</h4>
+        <div class="row">
+            <div class="span12">
+                <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 22px; margin-bottom:20px;">
+                    Ballarat has world class health care and all permanent residents are entitled to benefits. The Medicare system is publicly funded,
+                    and provides permanent residents with access to both hospital and non-emergency care.
+                </h6>
+            </div>
+            <div class="span4">
+                <hr />
+                <div class="span2">
+                    <select class="form-control form-control-sm" style="color:black;" id="healthList">
+                        <option>Emergency Hospital</option>
+                        <option>Maternal & Childcare</option>
+                    </select>
+                </div>
+                <div class="span2">
+                    <button type="button" id="healthSearch" class="btn btn-outline-info" style="color:#007bff; background-color: transparent; background-image:none; border-color:#007bff">
+                        Search
+                    </button>
+                </div>
+            </div>
+            <div class="span8 mapDetail">
+                <div id="mapHospital" style="height: 600px; width:100%"></div>
+            </div>
+            <div class="span12" id="healthDescription">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!--Section: Job Opportunities-->
+<section id="ballarat-job" class="section">
+    <div class="container">
+        <h4>Job Opportunties</h4>
+        <div class="row">
+            <div class="span8">
+                @*<div id="businessChart"></div>*@
+                <div id="jobPieChart"></div>
+            </div>
+            <div class="span4 mapDetail">
+                <p>
+                    More than 50% of the population in Ballarat is in white collar jobs with an average income of $53,174 per year. The professional sector has the most number of job opportunities in the region followed closely by trade workers and community and personal service workers. The region has several administrative, managerial and clerical roles available. Additionally, are opportunities in the sector of machinery operators and drivers.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/js/BallaratMap.js"></script>
+
+<!--Education Search-->
+<script src="~/js/Ballarat/Education/ballarat_primary_school.js"></script>
+<script src="~/js/Ballarat/Education/Ballarat_education.js"></script>
+<script src="~/js/Ballarat/Education/ballarat_secondary_school.js"></script>
+<script src="~/js/Ballarat/Education/ballarat_tertiary.js"></script>
+<!--Healthcare Search-->
+<script src="~/js/Ballarat/Healthcare/ballarat_emergency_hospital.js"></script>
+<script src="~/js/Ballarat/Healthcare/ballarat_maternal_and_child_health_service.js"></script>
+<script src="~/js/Ballarat/Healthcare/Ballarat_healthcare.js"></script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDML5fUiWxphpJfa-fFq3kiFx5AqQlCd4c&callback=initMap">
+
+        //src="https://maps.googleapis.com/maps/api/js?key=@TempData[" GoogleApiKey"]&callback=initMap">
+</script>
+
+<script type="text/javascript">
+    anychart.onDocumentReady(function () {
+        // create pie chart
+        var chart = anychart.pie();
+
+        // set chart title
+        chart.title('Top 5 Languages in Ballarat (excluding English)');
+
+        // set chart data
+        chart.data([
+            { x: 'Mandarin', value: 950 },
+            { x: 'Italian', value: 358 },
+            { x: 'German', value: 317 },
+            { x: 'Punjabi', value: 281 },
+            { x: 'Dutch', value: 255 }
+        ]);
+
+        // set container id for the chart
+        chart.container('ethnic');
+
+        // initiate chart drawing
+        chart.draw();
+
+
+        //Chart for job
+        var chartJob = anychart.pie();
+
+        // set chart title
+        chartJob.title('Top 8 Occupation in Ballarat');
+
+        // set chart data
+        chartJob.data([
+            { x: 'Professionals', value: 13213 },
+            { x: 'Technicians and Trades Workers', value: 10130 },
+            { x: 'Community and Personal Service Workers', value: 8415 },
+            { x: 'Clerical and Administrative Workers', value: 8197 },
+            { x: 'Managers', value: 8162 },
+            { x: 'Sales Workers', value: 7550 },
+            { x: 'Labourers', value: 6666 },
+            { x: 'Machinery Operators and Drivers', value: 3955 },
+        ]);
+
+        // set container id for the chart
+        chartJob.container('jobPieChart');
+
+        // initiate chart drawing
+        chartJob.draw();
+
+    });
+
+
+</script>
