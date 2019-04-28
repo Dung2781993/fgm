@@ -183,8 +183,8 @@ body, input, textarea {
 }
 
 a {
-  color: #454545;
-  text-decoration: none;
+    color: #0088cc;
+    text-decoration: none;
 }
 
 
@@ -228,7 +228,7 @@ h7 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 20px;
     font-family: Brandon Grotesque;
 }
 strong {
@@ -453,9 +453,9 @@ header .logo {
 }
 
 
-section.section {
+/*section.section {
 	padding: 50px 0 80px;
-}
+}*/
 section.section h4 {
 	text-align: center;
 	margin-bottom: 20px;

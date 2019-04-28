@@ -162,8 +162,10 @@
     <Content Include="font\ReklameScript.woff" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FGM20190407102810 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FGM20190428015618 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\Background.jpg" />
+    <Content Include="Images\Ballarat-Background.jpeg" />
     <Content Include="Images\Ballarat.jpg" />
     <Content Include="Images\Bendigo.jpg" />
     <Content Include="Images\bg\bg-1.jpg" />
@@ -214,6 +216,14 @@
     <Content Include="Images\works\9.png" />
     <Content Include="Images\works\big.jpg" />
     <Content Include="js\animate.js" />
+    <Content Include="js\BallaratMap.js" />
+    <Content Include="js\Ballarat\Education\Ballarat_education.js" />
+    <Content Include="js\Ballarat\Education\ballarat_primary_school.js" />
+    <Content Include="js\Ballarat\Education\ballarat_secondary_school.js" />
+    <Content Include="js\Ballarat\Education\ballarat_tertiary.js" />
+    <Content Include="js\Ballarat\Healthcare\ballarat_emergency_hospital.js" />
+    <Content Include="js\Ballarat\Healthcare\Ballarat_healthcare.js" />
+    <Content Include="js\Ballarat\Healthcare\ballarat_maternal_and_child_health_service.js" />
     <Content Include="js\Ballarat_business.js" />
     <Content Include="js\Ballarat_hospital.js" />
     <Content Include="js\Ballarat_school.js" />
@@ -228,7 +238,6 @@
     <Content Include="js\Geelong\Education\Geelong_education.js" />
     <Content Include="js\Geelong\Education\geelong_primary_school.js" />
     <Content Include="js\Geelong\Education\geelong_secondary_school.js" />
-    <Content Include="js\Geelong\Education\geelong_special_needs_school.js" />
     <Content Include="js\Geelong\Education\geelong_tertiary.js" />
     <Content Include="js\Geelong\Healthcare\geelong_emergency_hospital.js" />
     <Content Include="js\Geelong\Healthcare\Geelong_healthcare.js" />
@@ -304,6 +313,7 @@
     <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
     <Content Include="Views\City\Geelong.cshtml" />
+    <Content Include="Views\City\Ballarat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
