@@ -15,23 +15,21 @@
         margin: 0;
         padding: 0;
     }
-
 </style>
 
 <!--Section: Description-->
-<section id="ballarat-description" class="section">
+<section id="bendigo-description" class="section">
     <div class="container-fluid">
         <div class="row regional-cities">
-            <div class="span12" id="ballarat-background"></div>
+            <div class="span12" id="bendigo-background"></div>
             <div class="span3" style="float:left;">
                 <p>
-                    <h4>Ballarat</h4>
+                    <h4>Bendigo</h4>
                 </p>
                 <p style="font-size:16px;">
-                    Ballarat has delved significantly into the renewable energy sector which has lured several industrialists and investors in the region. 
-                    The city has been listed under the International League of historical cities due to its rich heritage and cultural significance. 
-                    The Ballarat art gallery displays some of the oldest works of some incredible artists. 
-                    The city conducts several annual festivals which is a major attraction for visitors.
+                    Bendigo gardens are a home to several native animal species like ring-tailed possums, ducks, 
+                    coots and grey-headed flying fox. One of the oldest and largest galleries in Australia is situated in this city. The annual film and musical festivals are the most awaited events in the region. While the locals enjoy cricket, football and horse racing, 
+                    the major attraction for tourists are the gold mines in the region.
                 </p>
             </div>
         </div>
@@ -39,12 +37,12 @@
 </section>
 
 <!--Section: Map-->
-<section id="ballarat-google-map" class="section">
+<section id="bendigo-google-map" class="section">
     <div class="container">
         <h4>Location</h4>
         <div class="row">
             <div class="span12" style="text-align:center;">
-                <div id="Ballarat-map"></div>
+                <div id="Bendigo-map"></div>
             </div>
         </div>
     </div>
@@ -161,17 +159,12 @@
     </div>
 </section>
 
-<script src="~/js/BallaratMap.js"></script>
+<script src="~/js/BendigoMap.js"></script>
 
 <!--Education Search-->
-<script src="~/js/Ballarat/Education/ballarat_primary_school.js"></script>
-<script src="~/js/Ballarat/Education/Ballarat_education.js"></script>
-<script src="~/js/Ballarat/Education/ballarat_secondary_school.js"></script>
-<script src="~/js/Ballarat/Education/ballarat_tertiary.js"></script>
+
 <!--Healthcare Search-->
-<script src="~/js/Ballarat/Healthcare/ballarat_emergency_hospital.js"></script>
-<script src="~/js/Ballarat/Healthcare/ballarat_maternal_and_child_health_service.js"></script>
-<script src="~/js/Ballarat/Healthcare/Ballarat_healthcare.js"></script>
+
 
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=@TempData["GoogleApiKey"]&callback=initMap">
@@ -183,15 +176,15 @@
         var chart = anychart.pie();
 
         // set chart title
-        chart.title('Top 5 Languages in Ballarat (excluding English)');
+        chart.title('Top 5 Languages in Bendigo (excluding English)');
 
         // set chart data
         chart.data([
-            { x: 'Mandarin', value: 950 },
-            { x: 'Italian', value: 358 },
-            { x: 'German', value: 317 },
-            { x: 'Punjabi', value: 281 },
-            { x: 'Dutch', value: 255 }
+            { x: 'Mandarin', value: 666 },
+            { x: 'Karen', value: 870 },
+            { x: 'Italian', value: 346 },
+            { x: 'German', value: 303 },
+            { x: 'Punjabi', value: 237 }
         ]);
 
         // set container id for the chart
@@ -200,23 +193,21 @@
         // initiate chart drawing
         chart.draw();
 
-
         //Chart for job
         var chartJob = anychart.pie();
-
         // set chart title
-        chartJob.title('Top 8 Occupation in Ballarat');
+        chartJob.title('Top 8 Occupation in Bendigo');
 
         // set chart data
         chartJob.data([
-            { x: 'Professionals', value: 13213 },
-            { x: 'Technicians and Trades Workers', value: 10130 },
-            { x: 'Community and Personal Service Workers', value: 8415 },
-            { x: 'Clerical and Administrative Workers', value: 8197 },
-            { x: 'Managers', value: 8162 },
-            { x: 'Sales Workers', value: 7550 },
-            { x: 'Labourers', value: 6666 },
-            { x: 'Machinery Operators and Drivers', value: 3955 },
+            { x: 'Professionals', value: 13622},
+            { x: 'Technicians and Trades Workers', value: 9454 },
+            { x: 'Community and Personal Service Workers', value: 8518 },
+            { x: 'Clerical and Administrative Workers', value: 7933 },
+            { x: 'Managers', value: 7873 },
+            { x: 'Sales Workers', value: 7809 },
+            { x: 'Labourers', value: 6400 },
+            { x: 'Machinery Operators and Drivers', value: 3814 },
         ]);
 
         // set container id for the chart

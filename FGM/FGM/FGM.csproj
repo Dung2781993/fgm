@@ -167,6 +167,7 @@
     <Content Include="Images\Background.jpg" />
     <Content Include="Images\Ballarat-Background.jpeg" />
     <Content Include="Images\Ballarat.jpg" />
+    <Content Include="Images\Bendigo-Background.jpeg" />
     <Content Include="Images\Bendigo.jpg" />
     <Content Include="Images\bg\bg-1.jpg" />
     <Content Include="Images\bg\bg-2.jpg" />
@@ -181,8 +182,9 @@
     <Content Include="Images\cities\2-photo.jpg" />
     <Content Include="Images\cities\3-photo.jpg" />
     <Content Include="Images\cities\4-photo.jpg" />
+    <Content Include="Images\Comparison-Background.jpeg" />
     <Content Include="Images\favicon.ico" />
-    <Content Include="Images\Geelong-Background.jpeg" />
+    <Content Include="Images\Geelong-Background.jpg" />
     <Content Include="Images\Geelong.jpg" />
     <Content Include="Images\glyphicons-halflings.png" />
     <Content Include="Images\icons\basket.png" />
@@ -228,6 +230,7 @@
     <Content Include="js\Ballarat_hospital.js" />
     <Content Include="js\Ballarat_school.js" />
     <Content Include="js\BendigoBusiness.js" />
+    <Content Include="js\BendigoMap.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\custom.js" />
@@ -315,6 +318,7 @@
     <Content Include="Views\City\Geelong.cshtml" />
     <Content Include="Views\City\Ballarat.cshtml" />
     <Content Include="Views\City\Comparison.cshtml" />
+    <Content Include="Views\City\Bendigo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
@@ -330,6 +334,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="js\Bendigo\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

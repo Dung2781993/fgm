@@ -16,7 +16,7 @@ div #ballarat {
 }
 
 div #geelong-background{
-    content: url(../Images/Geelong-Background.jpeg);
+    content: url(../Images/Geelong-Background.jpg);
     width: 75%;
 }
 
@@ -25,22 +25,43 @@ div #ballarat-background {
     width: 75%;
 }
 
+div #bendigo-background {
+    content: url(../Images/Bendigo-Background.jpeg);
+    width: 75%;
+}
 
+div #comparison-background {
+    content: url(../Images/Comparison-Background.jpeg);
+    width: 75%;
+}
+
+.compare {
+    font-size: 22px;
+    font-weight: normal;
+    font-family: Brandon Grotesque;
+    margin: 20px;
+}
+
+.filter-selection {
+    color: black;
+    font-size:20px;
+    height:auto;
+}
 
 @media (max-width: 767px) {
-    #geelong-background, #ballarat-background {
+    #geelong-background, #ballarat-background, #comparison-background , #bendigo-background {
         width: 100% !important;
     }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-    #geelong-background, #ballarat-background {
-        width: 100%;
+    #geelong-background, #ballarat-background, #comparison-background, #bendigo-background {
+        width: 100% !important;
     }   
 }
 
 @media only screen and (max-width: 600px) {
-    #geelong-background, #ballarat-background {
-        width: 100%;
+    #geelong-background, #ballarat-background, #comparison-background, #bendigo-background {
+        width: 100% !important;
     }   
 }

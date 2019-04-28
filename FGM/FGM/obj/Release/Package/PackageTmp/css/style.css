@@ -548,6 +548,7 @@ section.spacer blockquote cite {
 #filters ul {
 	margin: 0 0 20px;
 	list-style: none;
+    text-align:left;
 	padding: 0;
 }
 #filters ul li {
@@ -567,7 +568,7 @@ section.spacer blockquote cite {
 	outline:0;
 }
 #filters ul li a h5 {
-	font-size: 14px;
+	font-size: 22px;
 	padding: 5px 10px 5px;
 	border: 2px solid #f2f2f2;
 }

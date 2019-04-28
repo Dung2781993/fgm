@@ -5,13 +5,6 @@
 }
 
 
-@*<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>*@
-
 <link href="@Url.Content("~/css/map.css")" rel="stylesheet" type="text/css" />
 
 
@@ -93,7 +86,7 @@
             <div class="span4">
                 <hr />
                 <div class="span2">
-                    <select class="form-control form-control-sm" style="color:black;" id="educationList">
+                    <select class="form-control form-control-sm filter-selection" id="educationList">
                         <option>Primary School</option>
                         <option>Secondary School</option>
                         <option>Advanced Colleges</option>
@@ -101,7 +94,7 @@
                     </select>
                 </div>
                 <div class="span2">
-                    <button type="button" id="educationSearch" class="btn btn-outline-info" style="color:#007bff; background-color: transparent; background-image:none; border-color:#007bff">
+                    <button type="button" id="educationSearch" class="btn btn-outline-info" style="color:#E65100; background-color: transparent; background-image:none; border-color:#E65100; text-align: left; padding: 12px;">
                         Search
                     </button>
                 </div>
@@ -130,13 +123,13 @@
             <div class="span4">
                 <hr />
                 <div class="span2">
-                    <select class="form-control form-control-sm" style="color:black;" id="healthList">
+                    <select class="form-control form-control-sm filter-selection" style="color:black;" id="healthList">
                         <option>Emergency Hospital</option>
                         <option>Maternal & Childcare</option>
                     </select>
                 </div>
                 <div class="span2">
-                    <button type="button" id="healthSearch" class="btn btn-outline-info" style="color:#007bff; background-color: transparent; background-image:none; border-color:#007bff">
+                    <button type="button" id="healthSearch" class="btn btn-outline-info" style="color:#E65100; background-color: transparent; background-image:none; border-color:#E65100; text-align: left; padding: 12px;">
                         Search
                     </button>
                 </div>
@@ -185,7 +178,7 @@
 <script src="~/js/Geelong/Healthcare/geelong_maternal_and_child_health_service.js"></script>
 <script src="~/js/Geelong/Healthcare/Geelong_healthcare.js"></script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=@TempData[" GoogleApiKey"]&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=@TempData["GoogleApiKey"]&callback=initMap">
 </script>
 
 <script type="text/javascript">

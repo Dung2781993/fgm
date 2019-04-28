@@ -24,5 +24,17 @@ namespace FGM.Controllers
             TempData["GoogleApiKey"] = googleMapKey;
             return View();
         }
+
+        public ActionResult Bendigo()
+        {
+            var googleMapKey = ConfigurationManager.AppSettings["googleApiKey"];
+            TempData["GoogleApiKey"] = googleMapKey;
+            return View();
+        } 
+
+        public ActionResult Comparison()
+        {
+            return View();
+        }
     }
 }

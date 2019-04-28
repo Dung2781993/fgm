@@ -28,7 +28,7 @@ $('#healthSearch').click(function () {
             var emergencyLat = geelong_emergency_hospital.lat[i];
             var emergencyLong = geelong_emergency_hospital.long[i];
             var emergencyMarker = L.marker([emergencyLat, emergencyLong]).addTo(map);
-            emergencyMarker.bindPopup(emergencyName).openPopup();
+            emergencyMarker.bindPopup("<b>" + emergencyName + "</b>" + "<br>Address: " + geelong_emergency_hospital.location[i]).openPopup();
         }
     }
     if (select === "Maternal & Childcare") {
