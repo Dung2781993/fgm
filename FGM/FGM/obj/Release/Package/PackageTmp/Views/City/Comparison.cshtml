@@ -8,6 +8,14 @@
 
 <link href="@Url.Content("~/css/map.css")" rel="stylesheet" type="text/css" />
 
+<style>
+    #ComparisonGraph, #Geelonglanguage, #Bendigolanguage, #Ballaratlanguage {
+        width: 100%;
+        height: 500px;
+        margin: 0;
+        padding: 0;
+    }
+</style>
 <!--Section: Description-->
 <section id="comparison-description" class="section">
     <div class="container-fluid">
@@ -35,16 +43,16 @@
                 <h4 style="text-align:left">Select one criteria from the list below:</h4>
                 <form>
                     <div class="radio">
-                        <label class="compare"><input type="radio" name="optradio" checked>Population</label>
+                        <label class="compare"><input type="radio" name="optradio" value="population">Population</label>
                     </div>
                     <div class="radio">
-                        <label class="compare"><input type="radio" name="optradio">Language Spoken (Community)</label>
+                        <label class="compare"><input type="radio" name="optradio" value="language">Language Spoken (Community)</label>
                     </div>
                     <div class="radio">
-                        <label class="compare"><input type="radio" name="optradio">Housing Price</label>
+                        <label class="compare"><input type="radio" name="optradio" value="housing">Housing Price</label>
                     </div>
                     <div class="radio">
-                        <label class="compare"><input type="radio" name="optradio">Job Opportunities</label>
+                        <label class="compare"><input type="radio" name="optradio" value="job">Job Opportunities</label>
                     </div>
                 </form>
             </div>
@@ -54,18 +62,18 @@
                 <h4 style="text-align:left;">Select two cities you want to compare for the criterion chosen above:</h4>
                 <ul class="clearfix">
                     <li>
-                        <a href="#" data-filter="*" id="Geelong">
+                        <a href="#" data-filter="*" id="Geelong" value="Geelong">
                             <!--class="active"-->
                             <h5>Geelong</h5>
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-filter="*" id="Bendigo">
+                        <a href="#" data-filter="*" id="Bendigo" value="Bendigo">
                             <h5>Bendigo</h5>
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-filter="*" id="Ballarat">
+                        <a href="#" data-filter="*" id="Ballarat" value="Ballarat">
                             <h5>Ballarat</h5>
                         </a>
                     </li>
@@ -79,3 +87,27 @@
         </div>
     </div>
 </section>
+<section id="comparison-graph" class="section" >
+    <div class="container">
+        <div class="row regional-cities">
+            <div class="span12" id="filter">
+            </div>
+        </div>
+        <div class="row regional-cities" id="languageFilter">
+            <div class="span4" id="GeelongContainer">
+                <div id="Geelonglanguage"></div>
+            </div>
+            <div class="span4" id="BendigoContainer">
+                <div id="Bendigolanguage"></div>
+            </div>
+            <div class="span4" id="BallaratContainer">
+                <div id="Ballaratlanguage"></div>
+            </div>
+        </div>    
+    </div>
+
+</section>
+
+<!--Comparsison-->
+
+<script src="~/js/Comparison/Comparison.js"></script>
