@@ -3,6 +3,7 @@
     ViewBag.Title = "Comparison";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script src="~/js/Bendigo/Education/Bendigo_education.js"></script>
 
 
 <link href="@Url.Content("~/css/map.css")" rel="stylesheet" type="text/css" />
@@ -17,10 +18,8 @@
                     <h4>Comparison</h4>
                 </p>
                 <p style="font-size:16px;">
-                    Are you confused between two or more cities? Use our comparison feature
-                    and compare particular criteria for your favorite cities
-                    so that you can make the best choice for.
-                    yourself and your family.
+                    Are you too confused between two or more cities? We are here to help you out. Use our comparison feature and compare between population, job opportunities, cost of accomodation and many other criteria for your two most favourite cities.
+                    You can now make a smart and quick choice for yourself and your family.
                 </p>
             </div>
         </div>
@@ -33,7 +32,7 @@
     <div class="container">
         <div class="row regional-cities">
             <div class="span12">
-                <h4 style="text-align:left">Please select one critera from the below:</h4>
+                <h4 style="text-align:left">Select one criteria from the list below:</h4>
                 <form>
                     <div class="radio">
                         <label class="compare"><input type="radio" name="optradio" checked>Population</label>
@@ -52,7 +51,7 @@
         </div>
         <div class="row">
             <div class="span12" id="filters">
-                <h4 style="text-align:left;">Please select at least two from the below:</h4>
+                <h4 style="text-align:left;">Select two cities you want to compare for the criterion chosen above:</h4>
                 <ul class="clearfix">
                     <li>
                         <a href="#" data-filter="*" id="Geelong">
@@ -80,3 +79,7 @@
         </div>
     </div>
 </section>
+
+<!--Comparsison-->
+
+<script src="~/js/Comparison/Comparison.js"></script>

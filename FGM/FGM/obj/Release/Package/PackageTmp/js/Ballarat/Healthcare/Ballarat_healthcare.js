@@ -52,20 +52,14 @@ function addHealthDescription(type) {
             '<ul id="healthDescriptionDetail">' +
             '<li>' +
             '<p class="mapDetail">' +
-            'Geelong Hospital is a public hospital and is part of the Barwon Health. It is the largest hospital in regional Victoria and the only tertiary hospital outside the metropolitan. It has got both medical and surgical units.' +
-            ' For more information: <a href="https://www.barwonhealth.org.au">https://www.barwonhealth.org.au</a>' +
+            'Ballarat Health Services is a public hospital that was established in 1997 when the Ballarat Base Hospital merged with the Queen Elizabeth Centre and the Grampians Psychiatric Service.' +
+            ' For more information: <a href="https://bhs.org.au">https://bhs.org.au</a>' +
             '</p >' +
             '</li>' +
             '<li>' +
             '<p class="mapDetail">' +
-            'St John of God Health Care is a private hospital founded in 1871. It is Australian largest Catholic not -for-profit private hospital group.' +
-            ' For more information: <a href="https://www.sjog.org.au">https://www.sjog.org.au</a>' +
-            '</p >' +
-            '</li>' +
-            '<li>' +
-            '<p class="mapDetail">' +
-            'Grace McKellar Centre is a part of the Barwon Health and is an aged care, nursing hospital.' +
-            ' For more information: <a href="https://www.sjog.org.au">https://www.sjog.org.au</a>' +
+            'Buninyong is focused on cancer treatment but treats other ailments as well.' +
+            ' For more information: <a href="https://www.hospitalby.com/australia-hospital/buninyong-hospital/">https://www.hospitalby.com/australia-hospital/buninyong-hospital/</a>' +
             '</p >' +
             '</li>' +
             '</ul>'
@@ -76,20 +70,14 @@ function addHealthDescription(type) {
             '<ul id="healthDescriptionDetail">' +
             '<li>' +
             '<p class="mapDetail">' +
-            'Drysdale hospital' +
-            ' For more information: <a href="https://www.drysdaleclinic.com.au">https://www.drysdaleclinic.com.au</a>' +
+            'Sebastopol is a private hospital and is a part of the Tristar Medical Group.' +
+            ' For more information: <a href="https://www.tristarmedicalgroup.com.au/tristar-clinics/sebastopol/">https://www.tristarmedicalgroup.com.au/tristar-clinics/sebastopol/</a>' +
             '</p >' +
             '</li>' +
             '<li>' +
             '<p class="mapDetail">' +
-            'St Leonards hospital' +
-            ' For more information: <a href="https://stleonardshospital.com">https://stleonardshospital.com</a>' +
-            '</p >' +
-            '</li>' +
-            '<li>' +
-            '<p class="mapDetail">' +
-            'Portarlington hospital' +
-            ' For more information: <a href="http://www.medicentreportarlington.ie">http://www.medicentreportarlington.ie</a>' +
+            'Ballarat Community Health is a public organisation that was established in 2001.' +
+            ' For more information: <a href="https://bchc.org.au/">https://bchc.org.au/</a>' +
             '</p >' +
             '</li>' +
             '</ul>'

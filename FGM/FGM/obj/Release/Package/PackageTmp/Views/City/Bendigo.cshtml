@@ -27,8 +27,8 @@
                     <h4>Bendigo</h4>
                 </p>
                 <p style="font-size:16px;">
-                    Bendigo gardens are a home to several native animal species like ring-tailed possums, ducks, 
-                    coots and grey-headed flying fox. One of the oldest and largest galleries in Australia is situated in this city. The annual film and musical festivals are the most awaited events in the region. While the locals enjoy cricket, football and horse racing, 
+                    Bendigo gardens are a home to several native animal species like ring-tailed possums, ducks,
+                    coots and grey-headed flying fox. One of the oldest and largest galleries in Australia is situated in this city. The annual film and musical festivals are the most awaited events in the region. While the locals enjoy cricket, football and horse racing,
                     the major attraction for tourists are the gold mines in the region.
                 </p>
             </div>
@@ -120,7 +120,6 @@
                 <div class="span2">
                     <select class="form-control form-control-sm filter-selection" style="color:black;" id="healthList">
                         <option>Emergency Hospital</option>
-                        <option>Maternal & Childcare</option>
                     </select>
                 </div>
                 <div class="span2">
@@ -152,7 +151,7 @@
             </div>
             <div class="span4 mapDetail">
                 <p>
-                    More than 50% of the population in Ballarat is in white collar jobs with an average income of $53,174 per year. The professional sector has the most number of job opportunities in the region followed closely by trade workers and community and personal service workers. The region has several administrative, managerial and clerical roles available. Additionally, are opportunities in the sector of machinery operators and drivers.
+                    JOB OPPORTUNITY: The median annual income of an individual in Bendigo is $27,072. The Professional sector has the most number of job opportunities followed by technicians and trade workers. There are several opportunities available in the tourism industry along with trade and commerce sector. The manufacturing industry has also flourished over the years in Bendigo. There are many managerial and sales positions available as well.
                 </p>
             </div>
         </div>
@@ -162,9 +161,13 @@
 <script src="~/js/BendigoMap.js"></script>
 
 <!--Education Search-->
-
+<script src="~/js/Bendigo/Education/Bendigo_tertiary.js"></script>
+<script src="~/js/Bendigo/Education/Bendigo_secondary_school.js"></script>
+<script src="~/js/Bendigo/Education/Bendigo_primary_school.js"></script>
+<script src="~/js/Bendigo/Education/Bendigo_education.js"></script>
 <!--Healthcare Search-->
-
+<script src="~/js/Bendigo/Healthcare/Bendigo_emergency_hospital.js"></script>
+<script src="~/js/Bendigo/Healthcare/Bendigo_healthcare.js"></script>
 
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=@TempData["GoogleApiKey"]&callback=initMap">
@@ -200,7 +203,7 @@
 
         // set chart data
         chartJob.data([
-            { x: 'Professionals', value: 13622},
+            { x: 'Professionals', value: 13622 },
             { x: 'Technicians and Trades Workers', value: 9454 },
             { x: 'Community and Personal Service Workers', value: 8518 },
             { x: 'Clerical and Administrative Workers', value: 7933 },

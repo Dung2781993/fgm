@@ -1,6 +1,6 @@
 ﻿//Filtering education facilities and display on the map 
 
-//Geelong
+//Ballarat
 $('#educationSearch').click(function () {
     //Remove Description
     $('#description').find('#descriptionDetail').remove();

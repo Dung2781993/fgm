@@ -231,8 +231,15 @@
     <Content Include="js\Ballarat_school.js" />
     <Content Include="js\BendigoBusiness.js" />
     <Content Include="js\BendigoMap.js" />
+    <Content Include="js\Bendigo\Education\Bendigo_education.js" />
+    <Content Include="js\Bendigo\Education\Bendigo_primary_school.js" />
+    <Content Include="js\Bendigo\Education\Bendigo_secondary_school.js" />
+    <Content Include="js\Bendigo\Education\Bendigo_tertiary.js" />
+    <Content Include="js\Bendigo\Healthcare\Bendigo_emergency_hospital.js" />
+    <Content Include="js\Bendigo\Healthcare\Bendigo_healthcare.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\Comparison\Comparison.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\GeelongBusiness.js" />
     <Content Include="js\GeelongJobOpprotunitiesChart.js" />
@@ -334,7 +341,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="js\Bendigo\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
