@@ -7,6 +7,10 @@
     var languageGeelong;
     var languageBendigo;
     var languageBallarat;
+    var jobGeelong;
+    var jobBendigo;
+    var jobBallarat;
+
 
 
     //Remove all chart
@@ -103,6 +107,71 @@
                 languageBallaratChart.container('Ballaratlanguage');
                 // initiate chart drawing
                 languageBallaratChart.draw();
+            }
+        }
+        if (criteria === 'job') {
+            $('#languageFilter').find('#GeelongContainer').append('<div id="Geelonglanguage"></div>');
+            $('#languageFilter').find('#BendigoContainer').append('<div id="Bendigolanguage"></div>');
+            $('#languageFilter').find('#BallaratContainer').append('<div id="Ballaratlanguage"></div>');
+            if (jQuery.inArray('Geelong', cities) !== -1) {
+                jobGeelong = [
+                    { x: 'Professionals', value: 26367 },
+                    { x: 'Technicians and Trades Workers', value: 18883 },
+                    { x: 'Community and Personal Service Workers', value: 15714 },
+                    { x: 'Clerical and Administrative Workers', value: 15082 },
+                    { x: 'Managers', value: 14520 },
+                    { x: 'Sales Workers', value: 12707 },
+                    { x: 'Labourers', value: 12505 },
+                    { x: 'Machinery Operators and Drivers', value: 7191 },
+                ];
+                var jobGeelongChart = anychart.pie();
+                // set chart title
+                jobGeelongChart.title('Top 8 Occupation in Geelong');
+                jobGeelongChart.data(jobGeelong);
+                // set container id for the chart
+                jobGeelongChart.container('Geelonglanguage');
+                // initiate chart drawing
+                jobGeelongChart.draw();
+            }
+            if (jQuery.inArray('Bendigo', cities) !== -1) {
+                jobBendigo = [
+                    { x: 'Professionals', value: 13622 },
+                    { x: 'Technicians and Trades Workers', value: 9454 },
+                    { x: 'Community and Personal Service Workers', value: 8518 },
+                    { x: 'Clerical and Administrative Workers', value: 7933 },
+                    { x: 'Managers', value: 7873 },
+                    { x: 'Sales Workers', value: 7809 },
+                    { x: 'Labourers', value: 6400 },
+                    { x: 'Machinery Operators and Drivers', value: 3814 },
+                ];
+                var jobBendigoChart = anychart.pie();
+                // set chart title
+                jobBendigoChart.title('Top 8 Occupation in Geelong');
+                jobBendigoChart.data(jobBendigo);
+                // set container id for the chart
+                jobBendigoChart.container('Bendigolanguage');
+                // initiate chart drawing
+                jobBendigoChart.draw();
+            }
+            if (jQuery.inArray('Ballarat', cities) !== -1) {
+                jobBallarat = [
+                    { x: 'Professionals', value: 13213 },
+                    { x: 'Technicians and Trades Workers', value: 10130 },
+                    { x: 'Community and Personal Service Workers', value: 8415 },
+                    { x: 'Clerical and Administrative Workers', value: 8197 },
+                    { x: 'Managers', value: 8162 },
+                    { x: 'Sales Workers', value: 7550 },
+                    { x: 'Labourers', value: 6666 },
+                    { x: 'Machinery Operators and Drivers', value: 3955 },
+                ];
+                var jobBallaratChart = anychart.pie();
+                // set chart title
+                jobBallaratChart.title('Top 8 Occupation in Ballarat ');
+                jobBallaratChart.data(jobBallarat);
+                // set container id for the chart
+                jobBallaratChart.container('Ballaratlanguage');
+                // initiate chart drawing
+                jobBallaratChart.draw();
             }
         }
     }
