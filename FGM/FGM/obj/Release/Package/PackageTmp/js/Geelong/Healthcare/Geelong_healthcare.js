@@ -20,8 +20,8 @@ for (var g = 0; g < 11; g++) {
     var allHealthName = geelong_all_healthcare.name[g];
     var allHealthLat = geelong_all_healthcare.lat[g];
     var allHealthLong = geelong_all_healthcare.long[g];
-    var primaryMarker = L.marker([allHealthLat, allHealthLong]).addTo(map);
-    primaryMarker.bindPopup(allHealthName).openPopup();
+    var allHealthMarker = L.marker([allHealthLat, allHealthLong]).addTo(map);
+    allHealthMarker.bindPopup(allHealthName).openPopup();
 }
 
 $('#healthSearch').click(function () {
@@ -31,6 +31,30 @@ $('#healthSearch').click(function () {
     var select = $('#healthList :selected').text();
     var container = L.DomUtil.get('mapHospital');
     if (container !== null) { container._leaflet_id = null; }
+
+    //Initial Map
+    var mapOptions = {
+        center: [-38.14711, 144.36069],
+        zoom: 10
+    };
+
+    var map = new L.map('mapHospital', mapOptions);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        minZoom: 8,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoiZmdtbW9uYXNoIiwiYSI6ImNqdTBybzEwcTF1ZG40NHJ6a3g4ZGZzZW8ifQ.jwIjG6Q5cJyzy87lU8BmvQ'
+    }).addTo(map);
+
+    if (select === "All Healthcare Service") {
+        for (var g = 0; g < 11; g++) {
+            var allHealthName = geelong_all_healthcare.name[g];
+            var allHealthLat = geelong_all_healthcare.lat[g];
+            var allHealthLong = geelong_all_healthcare.long[g];
+            var allHealthMarker = L.marker([allHealthLat, allHealthLong]).addTo(map);
+            allHealthMarker.bindPopup(allHealthName).openPopup();
+        }
+    }
 
     if (select === "Emergency Hospital") {
         //Insert primary Description

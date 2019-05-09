@@ -1,5 +1,6 @@
 ﻿//Filtering education facilities and display on the map 
 //Initial Map
+
 var mapOptions = {
     center: [-38.14711, 144.36069],
     zoom: 10
@@ -13,13 +14,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoiZmdtbW9uYXNoIiwiYSI6ImNqdTBybzEwcTF1ZG40NHJ6a3g4ZGZzZW8ifQ.jwIjG6Q5cJyzy87lU8BmvQ'
 }).addTo(map);
 
-//Display all educations in Geelong
 for (var g = 0; g < 20; g++) {
     var allEducationName = geelong_all_eduction.name[g];
     var allEducationLat = geelong_all_eduction.lat[g];
     var allEducationLong = geelong_all_eduction.long[g];
-    var primaryMarker = L.marker([allEducationLat, allEducationLong]).addTo(map);
-    primaryMarker.bindPopup(allEducationName).openPopup();
+    var allEducationMarker = L.marker([allEducationLat, allEducationLong]).addTo(map);
+    allEducationMarker.bindPopup(allEducationName).openPopup();
 }
 
 
@@ -28,17 +28,32 @@ $('#educationSearch').click(function () {
     //Remove Description
     $('#description').find('#descriptionDetail').remove();
 
+    var mapOptions = {
+        center: [-38.14711, 144.36069],
+        zoom: 10
+    };
+
     var select = $('#educationList :selected').text();
     var container = L.DomUtil.get('mapEducation');
     if (container !== null) { container._leaflet_id = null; }
 
+
+    var map = new L.map('mapEducation', mapOptions);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        minZoom: 8,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoiZmdtbW9uYXNoIiwiYSI6ImNqdTBybzEwcTF1ZG40NHJ6a3g4ZGZzZW8ifQ.jwIjG6Q5cJyzy87lU8BmvQ'
+    }).addTo(map);
+
+    
     if (select === "All Education Facilities") {
         for (var g = 0; g < 20; g++) {
             var allEducationName = geelong_all_eduction.name[g];
             var allEducationLat = geelong_all_eduction.lat[g];
             var allEducationLong = geelong_all_eduction.long[g];
-            var primaryMarker = L.marker([allEducationLat, allEducationLong]).addTo(map);
-            primaryMarker.bindPopup(allEducationName).openPopup();
+            var allEducationMarker = L.marker([allEducationLat, allEducationLong]).addTo(map);
+            allEducationMarker.bindPopup(allEducationName).openPopup();
         }
     }
     if (select === "Primary School") {
