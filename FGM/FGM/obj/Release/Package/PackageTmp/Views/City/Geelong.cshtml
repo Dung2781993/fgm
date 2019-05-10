@@ -337,37 +337,47 @@
         <div class="content">
             <div class="row">
                 <div class="span12">
+                    <h4>Go Out To Eat Or Eat Outside</h4>
+                    <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 22px; margin-bottom:20px;">
+                        Geelong has a huge range of places to eat, both in the city and in the surrounding suburbs, precincts and regions. Formal restaurants awarded hats by The Age Good Food Guide, quick and cheerful cafes with better-than-average coffee and loads of venues that take advantage of our position on the coast to offer views, 
+                        al fresco and an amazing range of local produce.
+                    </h6>
+                    <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 22px; margin-bottom:20px;">
+                        Accroding to Zomato,the below table shows the most excited restaurants that you must try in  <a href="https://www.zomato.com/vi/geelong-vic">Geelong</a>
+                    </h6>
+                </div>
+                <div class="span12">
                     @(Html.Kendo().Grid<RestaurantModel>()
-                                      .Name("RestaurantGrid")
-                                       .Columns(columns =>
-                                       {
-                                           columns.Template(@<text> </text>).Title("Image").ClientTemplate("<img src='#:restaurantImage#' />").Width(10);
-                                           columns.Bound(c => c.restaurantName).Title("Restaurant Name")
-                                           .ClientTemplate("<a href='#:restaurantPhotoUrl#'>#:restaurantName#</a>")
-                                           .Width(10);
-                                           columns.Bound(c => c.restaurantCuisines).Title("Cuisines").Width(20);
-                                           columns.Bound(c => c.restaurantRating).Title("Rating").Width(20).HtmlAttributes(new { style = "color: rgb(128, 0, 255)" });
-                                           columns.Bound(c => c.restaurantAddress).Title("Address").Width(20);
-                                       })
-                                       .Editable(editable => editable.Mode(GridEditMode.InLine))
-                                       .Scrollable(s => s.Height("auto"))
-                                       .Filterable(filterable => filterable.Extra(false))
-                                       .Sortable()
-                                       .Pageable()
-                                       .DataSource(dataSource => dataSource
-                                       .Ajax()
-                                       .PageSize(5)
-                                       .Model(model =>
-                                       {
-                                           model.Id(p => p.id);
-                                           model.Field(p => p.restaurantName).Editable(false);
-                                       })
-                                       .Read(read => read.Action("GeelongRestaurantList_Read", "City"))
-                                       )
-                                       .AutoBind(true)
-                                       .Selectable(selectable => selectable.Mode(GridSelectionMode.Single))
-                                       .Resizable(resize => resize.Columns(true))
-                                       .Navigatable()
+                                              .Name("RestaurantGrid")
+                                               .Columns(columns =>
+                                               {
+                                                   columns.Template(@<text> </text>).Title("Image").ClientTemplate("<img src='#:restaurantImage#' />").Width(10);
+                                        columns.Bound(c => c.restaurantName).Title("Restaurant Name")
+                                        .ClientTemplate("<a href='#:restaurantPhotoUrl#'>#:restaurantName#</a>")
+                                        .Width(10);
+                                        columns.Bound(c => c.restaurantCuisines).Title("Cuisines").Width(20);
+                                        columns.Bound(c => c.restaurantRating).Title("Rating").Width(20).HtmlAttributes(new { style = "color: rgb(128, 0, 255)" });
+                                        columns.Bound(c => c.restaurantAddress).Title("Address").Width(20);
+                                    })
+                                    .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                    .Scrollable(s => s.Height("auto"))
+                                    .Filterable(filterable => filterable.Extra(false))
+                                    .Sortable()
+                                    .Pageable()
+                                    .DataSource(dataSource => dataSource
+                                    .Ajax()
+                                    .PageSize(5)
+                                    .Model(model =>
+                                    {
+                                        model.Id(p => p.id);
+                                        model.Field(p => p.restaurantName).Editable(false);
+                                    })
+                                    .Read(read => read.Action("GeelongRestaurantList_Read", "City"))
+                                    )
+                                    .AutoBind(true)
+                                    .Selectable(selectable => selectable.Mode(GridSelectionMode.Single))
+                                    .Resizable(resize => resize.Columns(true))
+                                    .Navigatable()
                     )
                 </div>
             </div>
