@@ -1,4 +1,5 @@
-﻿
+﻿@using Kendo.Mvc.UI
+@using FGM.Models
 @{
     ViewBag.Title = "Geelong";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,7 +8,13 @@
 
 <link href="@Url.Content("~/css/map.css")" rel="stylesheet" type="text/css" />
 
-
+<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.aspnetmvc.min.js"></script>
 
 <style>
     #population, #ethnic, #jobPieChart {
@@ -28,7 +35,7 @@
         text-align: left;
         outline: none;
         font-size: 36px;
-        margin-bottom:20px;
+        margin-bottom: 20px;
         font-family: EB Garamond;
     }
 
@@ -55,7 +62,7 @@
         transition: max-height 0.2s ease-out;
         background-color: white;
     }
-    
+
     /*******Card Stylesheet*******/
     .border-left-primary {
         border-left: .25rem solid #4e73df !important;
@@ -133,8 +140,8 @@
         margin-bottom: 0 !important;
     }
 
-    .fa{
-        font-size:30px;
+    .fa {
+        font-size: 30px;
     }
 </style>
 
@@ -177,7 +184,7 @@
 
                 <div class="span6">
                     <div class="row">
-                        <div class="span6"  style="width:50%;">
+                        <div class="span6" style="width:50%;">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -226,14 +233,14 @@
             <div class="row">
                 <div class="span12 demo-section k-content wide">
                     <p>
-                        The total population of Geelong is estimated to be 273,951 out of which 88,917 are immigrants. 
-                        The city is a blend of multiple cultures and flourishes in diversity. The highest Italian speaking immigrant population resides in this city followed by Croatians. The largest Croatian community in the entire Australia is found in Geelong. 
+                        The total population of Geelong is estimated to be 273,951 out of which 88,917 are immigrants.
+                        The city is a blend of multiple cultures and flourishes in diversity. The highest Italian speaking immigrant population resides in this city followed by Croatians. The largest Croatian community in the entire Australia is found in Geelong.
                         There is a fair share of Chinese population in the city followed by the Europeans.
                     </p>
                 </div>
             </div>
 
-            
+
         </div>
     </div>
 </section>
@@ -321,7 +328,53 @@
         </div>
     </div>
 </section>
+<!--Section: Restaurant Services-->
+<section id="geelong-restaurant" class="section">
+    <div class="container">
+        <button class="collapsible">
+            Restaurant Service
+        </button>
+        <div class="content">
+            <div class="row">
+                <div class="span12">
+                    @(Html.Kendo().Grid<RestaurantModel>()
+                                      .Name("RestaurantGrid")
+                                       .Columns(columns =>
+                                       {
+                                           columns.Template(@<text> </text>).Title("Image").ClientTemplate("<img src='#:restaurantImage#' />").Width(10);
+                                           columns.Bound(c => c.restaurantName).Title("Restaurant Name")
+                                           .ClientTemplate("<a href='#:restaurantPhotoUrl#'>#:restaurantName#</a>")
+                                           .Width(10);
+                                           columns.Bound(c => c.restaurantCuisines).Title("Cuisines").Width(20);
+                                           columns.Bound(c => c.restaurantRating).Title("Rating").Width(20).HtmlAttributes(new { style = "color: rgb(128, 0, 255)" });
+                                           columns.Bound(c => c.restaurantAddress).Title("Address").Width(20);
+                                       })
+                                       .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                       .Scrollable(s => s.Height("auto"))
+                                       .Filterable(filterable => filterable.Extra(false))
+                                       .Sortable()
+                                       .Pageable()
+                                       .DataSource(dataSource => dataSource
+                                       .Ajax()
+                                       .PageSize(5)
+                                       .Model(model =>
+                                       {
+                                           model.Id(p => p.id);
+                                           model.Field(p => p.restaurantName).Editable(false);
+                                       })
+                                       .Read(read => read.Action("GeelongRestaurantList_Read", "City"))
+                                       )
+                                       .AutoBind(true)
+                                       .Selectable(selectable => selectable.Mode(GridSelectionMode.Single))
+                                       .Resizable(resize => resize.Columns(true))
+                                       .Navigatable()
+                    )
+                </div>
+            </div>
 
+        </div>
+    </div>
+</section>
 
 <!--Section: Job Opportunities-->
 <section id="geelong-job" class="section">
@@ -431,4 +484,17 @@
         });
     }
 
+    //Restaurant Table
+    var expandedRow;
+
+    //Create client campaign template
+    function detailExpand(e) {
+        var grid = $('#RestaurantGrid').data('kendoGrid');
+        // Only one open at a time
+        if (expandedRow != null && expandedRow[0] != e.masterRow[0]) {
+            grid.collapseRow(expandedRow);
+        }
+        expandedRow = e.masterRow;
+        grid.select(expandedRow);
+    }
 </script>
