@@ -7,6 +7,14 @@ var geelong_emergency_hospital = {
         "4": "Geelong Private Hospital",
         "5": "Geelong Hospital - Barwon Health"
     },
+    "location": {
+        "0": "Bellerine St, Geelong VIC 3220",
+        "1": "Myers St, Geelong VIC 3220",
+        "2": "98 Townsend Rd, St Albans Park VIC 3219",
+        "3": "45-95 Ballarat Rd, North Geelong VIC 3215",
+        "4": "Bellerine Streets, Geelong VIC 3220",
+        "5": "59 Sydney Parade, Geelong VIC 3220"
+    },
     "category": {
         "0": "PBLC",
         "1": "PRIV",
