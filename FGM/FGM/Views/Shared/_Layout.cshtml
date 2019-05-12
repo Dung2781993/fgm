@@ -18,6 +18,7 @@
 
 
     <!--Styesheet of template-->
+
     <link href="@Url.Content("~/css/bootstrap-responsive.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/css/image.css")" rel="stylesheet" type="text/css" />
@@ -71,9 +72,10 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="@Url.Action("Geelong", "City")">Geelong</a></li>
                                 <li><a href="@Url.Action("Ballarat", "City")">Ballarat</a></li>
-                                <li><a href="#">Bendigo</a></li>
+                                <li><a href="@Url.Action("Bendigo", "City")">Bendigo</a></li>
                             </ul>
                         </li>
+                        <li><a title="comparison" href="@Url.Action("Comparison", "City")">Comparison</a></li>
                     </ul>
                 </div>
             </div>

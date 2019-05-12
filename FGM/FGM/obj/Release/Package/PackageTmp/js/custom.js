@@ -111,9 +111,14 @@ jQuery(document).ready(function($) {
 	});
 	}
 	// filter items when filter link is clicked
-	$('#filters a').click(function(){
-		$('#filters a').removeClass('active');
-		$(this).addClass('active');
+    $('#filters a').click(function () {
+        var check = $(this).attr('class');
+        if (check === 'active') {
+            $(this).removeClass('active');
+        }
+        else {
+            $(this).addClass('active');
+        }  
 		var selector = $(this).attr('data-filter');
 		$container.isotope({ filter: selector });
 		return false;
