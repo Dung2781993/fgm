@@ -1,4 +1,5 @@
-﻿
+﻿@using Kendo.Mvc.UI
+@using FGM.Models
 @{
     ViewBag.Title = "Ballarat";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,37 +7,159 @@
 
 
 <link href="@Url.Content("~/css/map.css")" rel="stylesheet" type="text/css" />
-
+<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+<link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.aspnetmvc.min.js"></script>
 
 <style>
-    #population, #ethnic, #jobPieChart {
+    #population, #ethnic {
         width: 100%;
         height: 500px;
         margin: 0;
         padding: 0;
     }
 
+    #jobPieChart {
+        width: 100%;
+        height: 750px;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .collapsible {
+        background-color: #FFFF;
+        color: black;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 36px;
+        margin-bottom: 20px;
+        font-family: EB Garamond;
+    }
+
+        .active, .collapsible:hover {
+            background-color: #E65100;
+            color: white;
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            color: black;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+    .active:after {
+        content: "\2212";
+    }
+
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: white;
+    }
+
+    /*******Card Stylesheet*******/
+    .border-left-primary {
+        border-left: .25rem solid #4e73df !important;
+    }
+
+    .pt-2, .py-2 {
+        padding-top: .5rem !important;
+    }
+
+    .h-100 {
+        height: 100% !important;
+    }
+
+    .shadow {
+        -webkit-box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15) !important;
+        box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15) !important;
+    }
+
+    .card {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid #e3e6f0;
+        border-radius: .35rem;
+    }
+
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1.25rem;
+    }
+
+    .align-items-center {
+        -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+        align-items: center !important;
+    }
+
+    .no-gutters {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .text-xs {
+        font-size: 15px;
+    }
+
+    .text-primary {
+        color: #4e73df !important;
+    }
+
+    .font-weight-bold {
+        font-weight: 700 !important;
+    }
+
+    .text-gray-800 {
+        color: #5a5c69 !important;
+    }
+
+    .font-weight-bold {
+        font-weight: 700 !important;
+    }
+
+    .mb-0, .my-0 {
+        margin-bottom: 0 !important;
+    }
+
+    .fa {
+        font-size: 30px;
+    }
 </style>
 
 <!--Section: Description-->
 <section id="ballarat-description" class="section">
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding:0px;">
         <div class="row regional-cities">
             <div class="span12" id="ballarat-background"></div>
-            <div class="span3" style="float:left;">
-                <p>
-                    <h4>Ballarat</h4>
-                </p>
-                <p style="font-size:16px;">
-                    Ballarat has delved significantly into the renewable energy sector which has lured several industrialists and investors in the region. 
-                    The city has been listed under the International League of historical cities due to its rich heritage and cultural significance. 
-                    The Ballarat art gallery displays some of the oldest works of some incredible artists. 
-                    The city conducts several annual festivals which is a major attraction for visitors.
-                </p>
-            </div>
         </div>
     </div>
 </section>
+
 
 <!--Section: Map-->
 <section id="ballarat-google-map" class="section">
@@ -44,6 +167,12 @@
         <h4>Location</h4>
         <div class="row">
             <div class="span12" style="text-align:center;">
+                <p>
+                    Ballarat has delved significantly into the renewable energy sector which has lured several industrialists and investors in the region.
+                    The city has been listed under the International League of historical cities due to its rich heritage and cultural significance.
+                    The Ballarat art gallery displays some of the oldest works of some incredible artists.
+                    The city conducts several annual festivals which is a major attraction for visitors.
+                </p>
                 <div id="Ballarat-map"></div>
             </div>
         </div>
@@ -53,17 +182,66 @@
 <!--Section: Population ethnic groups-->
 <section id="ballarat-population" class="section">
     <div class="container">
-        <h4>Population</h4>
-        <div class="row">
-            <div class="span12">
-                <div id="ethnic"></div>
+        <button class="collapsible">
+            Population
+        </button>
+        <div class="content">
+            <div class="row">
+                <div class="span12 demo-section k-content wide">
+                    <p>
+                        The total population of Ballarat is 101,588 out of which 35.4% are immigrants. The population of Ballarat has risen continuously at an average rate of 1.9% per year. The highest immigrant population that resides in Bendigo is from China while the most commonly spoken language is Mandarin followed by Italian. There are also many immigrants from Germany and India that reside in Ballarat. The language Punjabi is quite common in the region indicating presence of a lot of people from the state of Punjab, India.
+                        There is also a fair share of Dutch population in this region.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="span12 demo-section k-content wide">
-                <p>
-                    BALLARAT POPULATION: The total population of Ballarat is 101588 out of which 35.4% are immigrants. The population of Ballarat has risen continuously at an average rate of 1.9% per year. The highest immigrant population that resides in Bendigo is from China while the most commonly spoken language is Mandarin followed by Italian.
-                </p>
+            <div class="row">
+                <div class="span6">
+                    <div class="row">
+                        <div class="span6" style="width:50%;">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="span2">
+                                            <i class="fa fa-globe" aria-hidden="true"></i>
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total population</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">101,588</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span6" style="width:50%;">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="span2">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Australian population</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">98,074</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="span6" style="width:50%;">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="span2">
+                                            <i class="fa fa-plane" aria-hidden="true"></i>
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Immigrant population</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">57,846</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div id="ethnic"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -73,34 +251,38 @@
 <!--Section: Education Facilities-->
 <section id="ballarat-facilities" class="section">
     <div class="container">
-        <h4>Education Facilities</h4>
-        <div class="row">
-            <div class="span12">
-                <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 22px; margin-bottom:20px;">
-                    All your education needs can be met in Ballarat, with a broad range of pathways from primary to tertiary.
-                    By selecting the filter ,you will find a wide choice of public or private schooling, and multiple tertiary education options.
-                </h6>
-            </div>
-            <div class="span4">
-                <hr />
-                <div class="span2">
-                    <select class="form-control form-control-sm filter-selection" style="color:black;" id="educationList">
-                        <option>Primary School</option>
-                        <option>Secondary School</option>
-                        <option>Tertiary</option>
-                    </select>
+        <button class="collapsible">
+            Education Facilities
+        </button>
+        <div class="content">
+            <div class="row">
+                <div class="span12 demo-section k-content wide">
+                    <p>
+                        All your education needs can be met in Ballarat, with a broad range of pathways from primary to tertiary.
+                        By selecting the filter ,you will find a wide choice of public or private schooling, and multiple tertiary education options.
+                    </p>
                 </div>
-                <div class="span2">
-                    <button type="button" id="educationSearch" class="btn btn-outline-info" style="color:#E65100; background-color: transparent; background-image:none; border-color:#E65100; text-align: left; padding: 12px;">
-                        Search
-                    </button>
+                <div class="span4">
+                    <hr />
+                    <div class="span2">
+                        <select class="form-control form-control-sm filter-selection" style="color:black;" id="educationList">
+                            <option>Primary School</option>
+                            <option>Secondary School</option>
+                            <option>Tertiary</option>
+                        </select>
+                    </div>
+                    <div class="span2">
+                        <button type="button" id="educationSearch" class="btn btn-outline-info" style="color:#E65100; background-color: transparent; background-image:none; border-color:#E65100; text-align: left; padding: 12px;">
+                            Search
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="span8 mapDetail">
-                <div id="mapEducation" style="height: 600px; width:100%"></div>
-            </div>
-            <div class="span12" id="description">
+                <div class="span8 mapDetail">
+                    <div id="mapEducation" style="height: 600px; width:100%"></div>
+                </div>
+                <div class="span12" id="description">
 
+                </div>
             </div>
         </div>
     </div>
@@ -109,34 +291,134 @@
 <!--Section: Healthcare Services-->
 <section id="ballarat-healthcare" class="section">
     <div class="container">
-        <h4>Healthcare Service</h4>
-        <div class="row">
-            <div class="span12">
-                <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 22px; margin-bottom:20px;">
-                    Ballarat has world class health care and all permanent residents are entitled to benefits. The Medicare system is publicly funded,
-                    and provides permanent residents with access to both hospital and non-emergency care.
-                </h6>
-            </div>
-            <div class="span4">
-                <hr />
-                <div class="span2">
-                    <select class="form-control form-control-sm filter-selection" style="color:black;" id="healthList">
-                        <option>Emergency Hospital</option>
-                        <option>Maternal & Childcare</option>
-                    </select>
+        <button class="collapsible">
+            Healthcare Service
+        </button>
+        <div class="content">
+            <div class="row">
+                <div class="span12 demo-section k-content wide">
+                    <p>
+                        Ballarat has world class health care and all permanent residents are entitled to benefits. The Medicare system is publicly funded,
+                        and provides permanent residents with access to both hospital and non-emergency care.
+                    </p>
                 </div>
-                <div class="span2">
-                    <button type="button" id="healthSearch" class="btn btn-outline-info" style="color:#E65100; background-color: transparent; background-image:none; border-color:#E65100; text-align: left; padding: 12px;">
-                        Search
-                    </button>
+                <div class="span4">
+                    <hr />
+                    <div class="span2">
+                        <select class="form-control form-control-sm filter-selection" style="color:black;" id="healthList">
+                            <option>Emergency Hospital</option>
+                            <option>Maternal & Childcare</option>
+                        </select>
+                    </div>
+                    <div class="span2">
+                        <button type="button" id="healthSearch" class="btn btn-outline-info" style="color:#E65100; background-color: transparent; background-image:none; border-color:#E65100; text-align: left; padding: 12px;">
+                            Search
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="span8 mapDetail">
-                <div id="mapHospital" style="height: 600px; width:100%"></div>
-            </div>
-            <div class="span12" id="healthDescription">
+                <div class="span8 mapDetail">
+                    <div id="mapHospital" style="height: 600px; width:100%"></div>
+                </div>
+                <div class="span12" id="healthDescription">
 
+                </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!--Section: Properties price-->
+<section id="ballarat-house" class="section">
+    <div class="container">
+        <button class="collapsible">
+            Cost of Accommodation
+        </button>
+        <div class="content">
+            <div class="row">
+                <div class="span6">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <i class="fa fa-usd" style="font-size: 2em;" aria-hidden="true"></i>
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="color:#dc5512 !important;margin-bottom: 15px; margin-top:15px;">Average cost of accomodation at present</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800" style="color:#dc5512 !important; font-size: 30px;">$314,607</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <i class="fa fa-line-chart" style="font-size: 2em;" aria-hidden="true"></i>
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="margin-bottom: 15px; margin-top:15px;">Estimated average cost of accomodation in the next 5 years</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800" style="color:#4e73df !important; font-size: 30px;">$414,607</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!--Section: Restaurant Services-->
+<section id="ballarat-restaurant" class="section">
+    <div class="container">
+        <button class="collapsible">
+            Restaurant Service
+        </button>
+        <div class="content">
+            <div class="row">
+                <div class="span12" style="text-align:center;">
+                    <p>
+                        Ballarat has a huge range of places to eat, both in the city and in the surrounding suburbs, precincts and regions. Formal restaurants awarded hats by The Age Good Food Guide, quick and cheerful cafes with better-than-average coffee and loads of venues that take advantage of our position on the coast to offer views,
+                        al fresco and an amazing range of local produce.
+                    </p>
+                    <p>
+                        According to Zomato,the below table shows the most excited restaurants that you must try in <a href="https://www.zomato.com">Ballarat</a>
+                    </p>
+                </div>
+                <div class="span12">
+                    @(Html.Kendo().Grid<RestaurantModel>()
+                                                                      .Name("RestaurantGrid")
+                                                                       .Columns(columns =>
+                                                                       {
+                                                                           columns.Template(@<text> </text>).Title("Image").ClientTemplate("<img src='#:restaurantImage#' />").Width(10);
+                                                                columns.Bound(c => c.restaurantName).Title("Restaurant Name")
+                                                                            .ClientTemplate("<a href='#:restaurantPhotoUrl#'>#:restaurantName#</a>")
+                                                                            .Width(10);
+                                                                columns.Bound(c => c.restaurantCuisines).Title("Cuisines").Width(20);
+                                                                columns.Bound(c => c.restaurantRating).Title("Rating").Width(20).HtmlAttributes(new { style = "color: rgb(128, 0, 255)" });
+                                                                columns.Bound(c => c.restaurantAddress).Title("Address").Width(20);
+                                                            })
+                           .Editable(editable => editable.Mode(GridEditMode.InLine))
+
+                           .Scrollable(s => s.Height("auto"))
+                           .Filterable(filterable => filterable.Extra(false))
+                           .Sortable(sortable => sortable.Equals(false))
+                           .Pageable()
+                           .DataSource(dataSource => dataSource
+                           .Ajax()
+                           .PageSize(5)
+                           .Model(model =>
+                           {
+                               model.Id(p => p.id);
+                               model.Field(p => p.restaurantName).Editable(false);
+                           })
+                           .Read(read => read.Action("BallaratRestaurantList_Read", "City"))
+                           )
+                           .AutoBind(true)
+                           .Selectable(selectable => selectable.Mode(GridSelectionMode.Single))
+                           .Resizable(resize => resize.Columns(true))
+                           .Navigatable()
+                    )
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -146,16 +428,20 @@
 <!--Section: Job Opportunities-->
 <section id="ballarat-job" class="section">
     <div class="container">
-        <h4>Job Opportunties</h4>
-        <div class="row">
-            <div class="span8">
-                @*<div id="businessChart"></div>*@
-                <div id="jobPieChart"></div>
-            </div>
-            <div class="span4 mapDetail">
-                <p>
-                    More than 50% of the population in Ballarat is in white collar jobs with an average income of $53,174 per year. The professional sector has the most number of job opportunities in the region followed closely by trade workers and community and personal service workers. The region has several administrative, managerial and clerical roles available. Additionally, are opportunities in the sector of machinery operators and drivers.
-                </p>
+        <button class="collapsible">
+            Job Opportunties
+        </button>
+        <div class="content">
+            <div class="row">
+                <div class="span8">
+                    @*<div id="businessChart"></div>*@
+                    <div id="jobPieChart"></div>
+                </div>
+                <div class="span4 mapDetail">
+                    <p>
+                        More than 50% of the population in Ballarat is in white collar jobs with an average income of $53,174 per year. The professional sector has the most number of job opportunities in the region followed closely by trade workers and community and personal service workers. The region has several administrative, managerial and clerical roles available. Additionally, are opportunities in the sector of machinery operators and drivers.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -179,20 +465,28 @@
 
 <script type="text/javascript">
     anychart.onDocumentReady(function () {
-        // create pie chart
-        var chart = anychart.pie();
 
-        // set chart title
-        chart.title('Top 5 Languages in Ballarat (excluding English)');
+        var data = [
+            ["Mandarin", 950],
+            ["Italian", 358],
+            ["German", 317],
+            ["Punjabi", 281],
+            ["Dutch", 255]
+        ];
 
-        // set chart data
-        chart.data([
-            { x: 'Mandarin', value: 950 },
-            { x: 'Italian', value: 358 },
-            { x: 'German', value: 317 },
-            { x: 'Punjabi', value: 281 },
-            { x: 'Dutch', value: 255 }
-        ]);
+        // set chart type
+        var chart = anychart.column(data);
+
+        // adjust chart settings
+        var title = chart.title();
+        // enable title
+        title.enabled(true);
+        // set title text
+        title.text("Top 5 Languages in Ballarat (excluding English)");
+        // place title into bottom of the chart
+        title.orientation("bottom");
+        // stick title to the left side
+        title.align("centre");
 
         // set container id for the chart
         chart.container('ethnic');
@@ -201,31 +495,92 @@
         chart.draw();
 
 
+
         //Chart for job
-        var chartJob = anychart.pie();
+        var chartJob = anychart.column();
+        // turn on chart animation
+        chartJob.animation(true);
+        // set chart title text settings
+        var titleJob = chartJob.title();
+        // enable title
+        titleJob.enabled(true);
+        // set title text
+        titleJob.text("Top 8 Occupation in Ballarat");
+        // place title into bottom of the chart
+        titleJob.orientation("bottom");
+        // stick title to the left side
+        titleJob.align("centre");
 
-        // set chart title
-        chartJob.title('Top 8 Occupation in Ballarat');
+        // create area series with passed data
+        chartJob.stick(getData());
 
-        // set chart data
-        chartJob.data([
-            { x: 'Professionals', value: 13213 },
-            { x: 'Technicians and Trades Workers', value: 10130 },
-            { x: 'Community and Personal Service Workers', value: 8415 },
-            { x: 'Clerical and Administrative Workers', value: 8197 },
-            { x: 'Managers', value: 8162 },
-            { x: 'Sales Workers', value: 7550 },
-            { x: 'Labourers', value: 6666 },
-            { x: 'Machinery Operators and Drivers', value: 3955 },
-        ]);
+        // set scale minimum
+        chartJob.yScale()
+            .minimum(0)
+            .ticks({
+                interval: 5
+            });
 
+        // tooltips position and interactivity settings
+        chartJob.tooltip()
+            .positionMode('point')
+            .format('Number of jobs in 2016: {%Value}{groupsSeparator: }');
+        chartJob.interactivity().hoverMode('by-x');
+
+        // axes titles
+        chartJob.yAxis().title('Job Opportunity');
+        chartJob.xAxis().labels().rotation(-90);
         // set container id for the chart
         chartJob.container('jobPieChart');
-
         // initiate chart drawing
         chartJob.draw();
 
+
+
     });
 
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = 90 + "%";
+            }
+        });
+    }
+
+    //Restaurant Table
+    var expandedRow;
+
+    //Create client campaign template
+    function detailExpand(e) {
+        var grid = $('#RestaurantGrid').data('kendoGrid');
+        // Only one open at a time
+        if (expandedRow != null && expandedRow[0] != e.masterRow[0]) {
+            grid.collapseRow(expandedRow);
+        }
+        expandedRow = e.masterRow;
+        grid.select(expandedRow);
+    }
+
+
+
+    function getData() {
+        return [
+            ["Professionals", 13213],
+            ["Technicians and Trades Workers", 10130],
+            ["Community and Personal Service Workers", 8415],
+            ["Clerical and Administrative Workers", 8197],
+            ["Managers", 8162],
+            ["Sales Workers", 7550],
+            ["Labourers", 6666],
+            ["Machinery Operators and Drivers", 3955]
+        ]
+    }
 
 </script>

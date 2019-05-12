@@ -22,17 +22,17 @@ div #geelong-background{
 
 div #ballarat-background {
     content: url(../Images/Ballarat-Background.jpeg);
-    width: 75%;
+    width: 100%;
 }
 
 div #bendigo-background {
     content: url(../Images/Bendigo-Background.jpeg);
-    width: 75%;
+    width: 100%;
 }
 
 div #comparison-background {
     content: url(../Images/Comparison-Background.jpeg);
-    width: 75%;
+    width: 100%;
 }
 
 .compare {
