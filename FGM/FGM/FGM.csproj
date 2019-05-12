@@ -199,6 +199,7 @@
     <Content Include="Images\icons\laptop.png" />
     <Content Include="Images\Latrobe.jpg" />
     <Content Include="Images\logo-2.png" />
+    <Content Include="Images\Logo_footer.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\prettyPhoto\default\default_thumb.png" />
     <Content Include="Images\prettyPhoto\default\loader.gif" />
@@ -212,8 +213,8 @@
     <Content Include="Images\team\img-3.jpg" />
     <Content Include="Images\team\img-4.jpg" />
     <Content Include="Images\team\img-5.jpg" />
-    <Content Include="Images\Warrnambool-Background.jpeg" />
-    <Content Include="Images\Warrnambool.jpg" />
+    <Content Include="Images\Warrnambool.jpeg" />
+    <Content Include="Images\Warrnambool-Background.jpg" />
     <Content Include="Images\works\1.png" />
     <Content Include="Images\works\10.png" />
     <Content Include="Images\works\2.png" />

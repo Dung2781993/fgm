@@ -3,7 +3,7 @@
 }
 
 div #warrnambool {
-    content: url(../Images/Warrnambool.jpg);
+    content: url(../Images/Warrnambool.jpeg);
 }
 
 div #latrobe {
@@ -29,7 +29,7 @@ div #geelong-background{
 }
 
 div #warrnambool-background {
-    content: url(../Images/Warrnambool-Background.jpeg);
+    content: url(../Images/Warrnambool-Background.jpg);
     width: 100%;
 }
 
