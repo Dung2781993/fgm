@@ -1,4 +1,19 @@
-﻿//Filtering Healthcare facilities and display on the map 
+﻿//Filtering Healthcare facilities and display on the map
+
+//Initial Map
+var mapOptions = {
+    center: [-36.75818, 144.28024],
+    zoom: 10
+};
+
+var map = new L.map('mapHospital', mapOptions);
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    minZoom: 8,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiZmdtbW9uYXNoIiwiYSI6ImNqdTBybzEwcTF1ZG40NHJ6a3g4ZGZzZW8ifQ.jwIjG6Q5cJyzy87lU8BmvQ'
+}).addTo(map);
+
 $('#healthSearch').click(function () {
     //Remove Description
     $('#healthDescription').find('#healthDescriptionDetail').remove();
@@ -8,7 +23,7 @@ $('#healthSearch').click(function () {
     if (container !== null) { container._leaflet_id = null; }
     //Initial Map
     var mapOptions = {
-        center: [-38.14711, 144.36069],
+        center: [-36.75818, 144.28024],
         zoom: 10
     };
 

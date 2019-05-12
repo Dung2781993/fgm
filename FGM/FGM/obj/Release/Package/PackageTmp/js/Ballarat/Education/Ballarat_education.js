@@ -1,4 +1,17 @@
 ﻿//Filtering education facilities and display on the map 
+//Initial Map
+var mapOptions = {
+    center: [-37.56622, 143.84957],
+    zoom: 10
+};
+
+var map = new L.map('mapEducation', mapOptions);
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    minZoom: 8,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiZmdtbW9uYXNoIiwiYSI6ImNqdTBybzEwcTF1ZG40NHJ6a3g4ZGZzZW8ifQ.jwIjG6Q5cJyzy87lU8BmvQ'
+}).addTo(map);
 
 //Ballarat
 $('#educationSearch').click(function () {
