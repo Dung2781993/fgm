@@ -5,6 +5,9 @@
 div #warrnambool {
     content: url(../Images/Warrnambool.jpeg);
 }
+div #homepage-background{
+    content: url(../Images/Background.jpg);
+}
 
 div #latrobe {
     content: url(../Images/Latrobe.jpg);
@@ -27,6 +30,14 @@ div #geelong-background{
     content: url(../Images/Geelong-Background.jpg);
     width: 100%;
 }
+
+
+div #latrobe-background {
+    content: url(../Images/Latrobe-Background.jpg);
+    width: 100%;
+}
+
+
 
 div #warrnambool-background {
     content: url(../Images/Warrnambool-Background.jpg);

@@ -1,13 +1,10 @@
-﻿
-
-<!-- section: About -->
+﻿<!-- section: About -->
 <section id="about" class="section" style="padding:0px;">
     <header class="clearfix">
         <div class="logo">
             <img src="~/Images/Background.jpg" alt="" />
         </div>
     </header>
-
     <h4>ABOUT</h4>
     <div class="row">
         <div class="col-md-12">
@@ -16,6 +13,65 @@
                     We at Feel Good Mate understand how difficult it is to move to a new country and create a home there.
                     Everybody has a different criteria to select a perfect location. This website will allow you to choose a regional city in Victoria, Australia  based on your preference.
                 </h6>
+            </div>
+        </div>
+    </div>
+
+    <h4>City Recommendation</h4>
+    <div class="row">
+        <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; width:60%">
+            Answer the questions below to get recommendations for the cities that would be the most suitable for you.
+        </h6>
+        <div class="col-md-12">
+            <div class="form-group" style="text-align:center; ">
+                <label for="occupation" style="margin:auto; font-family:Brandon Grotesque; font-size:20px;">What is your current field of profession?</label>
+                <select name="selectJob" , id="selectJob" style="margin-top:20px;">
+                    <option value="Administrative and support services">Administration</option>
+                    <option value="Agriculture, forestry and fishing">Agriculture</option>
+                    <option value="Construction">Construction</option>
+                    <option value="Education and training">Education</option>
+                    <option value="Financial and insurance services">Financial and insurance</option>
+                    <option value="Accommodation and food services">Food and accomodation</option>
+                    <option value="Health care and social assistance">Health care</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Mining">Mining</option>
+                    <option value="Professional, scientific and technical services">Professional services</option>
+                    <option value="Public administration and safety">Public administration</option>
+                    <option value="Rental, hiring and real estate services">Real estate</option>
+                    <option value="Arts and recreation services">Recreation services</option>
+                    <option value="Retail trade">Retail trade</option>
+                    <option value="Information media and telecommunications">Telecommunications</option>
+                    <option value="Electricity, gas, water and waste services">Utility services</option>
+                    <option value="Transport, postal and warehousing">Warehousing</option>
+                    <option value="Wholesale trade">Wholesale trade</option>
+                </select>
+
+                <label for="occupation" style="margin:auto; font-family:Brandon Grotesque; font-size:20px;">Which language do you speak?</label>
+                <select name="selectLanguage" , id="selectLanguage" style="margin-top:20px;">
+                    <option value="Arabic">Arabic</option>
+                    <option value="Croatian">Croatian</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="Filipino">Filipino</option>
+                    <option value="German">German</option>
+                    <option value="Greek">Greek</option>
+                    <option value="Hazaraghi">Hazaraghi</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Karen">Karen</option>
+                    <option value="Macedonian">Macedonian</option>
+                    <option value="Mandarin">Mandarin</option>
+                    <option value="Punjabi">Punjabi</option>
+                    <option value="Tagalog">Tagalog</option>
+                    <option value="Tongan">Tongan</option>
+                    <option value="Turkish">Turkish</option>
+                </select>
+            </div>
+            <div class="form-group" style="text-align:center; ">
+                <input type="button" class="btn" value="Get Your recommendation" />
+            </div>
+        </div>
+        <div class="span12" style="padding-top:15px;">
+            <div id="recomendation-section">
+
             </div>
         </div>
     </div>
@@ -104,7 +160,7 @@
                     Warrnambool is the city on the south-western coast of Victoria, and marks the western end of the Great Ocean Road
                     and the southern end of the Hopkins Highway. The nearby Flagstaff Hill Maritime Village explores the area's seafaring history through a large shipwreck collection. The word Warrnambool originates from the local Indigenous Australian name for a nearby volcanic cone.
                 </p>
-                <p style="text-align:right">                
+                <p style="text-align:right">
                     <a href="@Url.Action("Warrnambool", "City")">Explore ></a>
                 </p>
             </div>
@@ -120,11 +176,11 @@
                     <h7>Latrobe City</h7>
                 </p>
                 <p>
-                    The city of La Trobe is a local government area in the Gippsland region in eastern Victoria, Australia. La Trobe derives its name from the first lieutenant-governor of the state of Victoria, Australia Charles La Trobe. The city has a small-town atmosphere and is home to a vibrant and 
+                    The city of La Trobe is a local government area in the Gippsland region in eastern Victoria, Australia. La Trobe derives its name from the first lieutenant-governor of the state of Victoria, Australia Charles La Trobe. The city has a small-town atmosphere and is home to a vibrant and
                     walkable downtown business district with shops, restaurants, offices, and a wide range of housing options for people of all ages.
                 </p>
                 <p style="text-align:right">
-                    <a href="#">Explore ></a>
+                    <a href="@Url.Action("Latrobe", "City")">Explore ></a>
                 </p>
             </div>
         </div>
@@ -148,9 +204,51 @@
             </div>
             <div class="span6">
                 <div class="aligncenter">
-                    <img src="~/Images/logo.png" alt="" style="padding-left:20px; width:80%;"/>
+                    <img src="~/Images/logo.png" alt="" style="padding-left:20px; width:80%;" />
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+<script>var recommendation
+    //ajax调用无参数后台方法
+    $(function () {
+        $(".btn").click(function () {
+            $("#recomendation-section").find('h6').remove();
+            var opt_language = $("#selectLanguage option:selected").val();
+            var opt_job = $("#selectJob option:selected").val();
+            if (opt_job == 0) {
+                return false;
+            }
+            $.ajax({
+                type: "post",        
+                url: "http://20.188.239.51:8988/recommendation",         
+                dataType: "json",       
+
+                data: {
+                    opt_job: opt_job,
+                    opt_language: opt_language
+                },
+
+                success: function (recommendation) {                
+                    recommendationList = recommendation
+                    var city = ["Geelong", "Ballarat", "Bendigo", "Warrnambool", "Latrobe"];
+                    var result = [];
+                    for (var i = 0; i < recommendationList.length; i++) {
+                        if (city.includes(recommendationList[i]) == true) {
+                            
+                            result.push(recommendationList[i]);
+                        }
+                    }
+                    recommendation = result;
+                    //alert("Here is the list of the city that will suit with your selection : "+ recommendation);
+                    
+                    $("#recomendation-section").append(
+                        "<h6 style=" + "text-align:center;margin:auto;font-family:Brandon" + "Grotesque;width:60%;>Here is the list of the city that will suit with your selection: " + recommendation+"</h6 >"
+                    );
+                }
+            })
+        })
+    });</script>

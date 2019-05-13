@@ -1,9 +1,10 @@
 ﻿@using Kendo.Mvc.UI
 @using FGM.Models
 @{
-    ViewBag.Title = "Warrnambool";
+    ViewBag.Title = "Latrobe";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 <link href="@Url.Content("~/css/map.css")" rel="stylesheet" type="text/css" />
 
@@ -14,6 +15,7 @@
 <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
 <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
 <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.aspnetmvc.min.js"></script>
+
 
 <style>
     #population, #ethnic {
@@ -153,36 +155,37 @@
 
 
 <!--Section: Description-->
-<section id="warrnambool-description" class="section">
+<section id="latrobe-description" class="section">
     <div class="container-fluid" style="padding:0px;">
         <div class="row regional-cities">
-            <div class="span12" id="warrnambool-background"></div>
+            <div class="span12" id="latrobe-background"></div>
         </div>
     </div>
 </section>
 
 <!--Section: Map-->
-<section id="warrnambool-goolge-map" class="section">
+<section id="latrobe-goolge-map" class="section">
     <div class="container">
-        <h4>Warrnambool</h4>
+        <h4>Latrobe City </h4>
         <div class="row">
             <div class="span12" style="text-align:center;">
                 <p>
-                    Warrnambool used to be the important port during the Victorian Gold Rush.
-                    Its main beach, the sandy Bathing Beach, runs in front of vast Lake Pertobe Adventure Park. Thunder Point Coastal Reserve,
-                    with its rocky ocean scenery, encompasses Shelly Beach. East is Logans Beach Whale Watching Platform. Wunta Fiesta, a festival held
-                    in Warrnambool over the first weekend of February annually, is one of south-west Victoria's major community festivals.
-                    It incorporates a wide range of entertainment (mostly music) for all ages. The Lady Bay Lighthouse complex is on the Victorian heritage register due to its significance as an example of early colonial development.
-                    The Warrnambool foreshore is a popular swimming area, and a number of caravan parks are also located in the area
+                    La Trobe has traditionally been recognised as the centre of Victoria's electricity industry,
+                    which is derived from one of the largest brown coal reserves in the world. It is also the centre of a large
+                    forestry industry which services Australian Paper pulp and paper mill and other sawmills.
+                    Other industries in the area include food processing, engineering, post secondary education,
+                    and the service sector. Being the largest population centre in the Gippsland region,
+                    Latrobe acts as the regional headquarters for Government agencies and private operators including banks and insurance companies. The city is primarily urban with the vast majority of its population living within the four major urban areas of Moe, Morwell, Traralgon, and Churchill. Latrobe is also close to popular tourist attractions including the Baw Baw and Tarra-Bulga National Parks and is the natural service centre to the historic gold mining town of Walhalla.
                 </p>
-                <div id="warrnambool-map"></div>
+                <div id="latrobe-map"></div>
             </div>
         </div>
     </div>
 </section>
 
 
-<section id="warrnambool-population" class="section">
+
+<section id="latrobe-population" class="section">
     <div class="container">
         <button class="collapsible">
             Population
@@ -191,9 +194,9 @@
             <div class="row">
                 <div class="span12 demo-section k-content wide">
                     <p>
-                        The total population of Warrnambool is 120,718 out of which 52,150 are immigrants. 
-                        The highest immigrant population that resides in Warrnambool is from China while the most commonly spoken language is Mandarin. The second most popular language in the city is Korean. There are also many immigrants from Sri Lanka and middle-eastern countries that reside in this city. The language Japanese is the fifth most common language in the region indicating presence of a lot of people from Japan. 
-                        A few people in this city still associate themselves with indigenous groups.
+                        The total population of La Trobe is estimated to be 266,020 out of which 173,977 are immigrants. 
+                        The highest immigrant population that resides in this city is from Italy while the most commonly spoken language is Italian followed by Greek. There are many immigrants from China in La Trobe therefore, one can find a lot of Mandarin speakers in this city. Dutch is the fourth most popular language here and there is also  a fair share of Maltese population in this city, 
+                        which is a small country in Europe.
                     </p>
                 </div>
             </div>
@@ -207,7 +210,7 @@
                                         <div class="span2">
                                             <i class="fa fa-globe" aria-hidden="true"></i>
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total population</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">120,718</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">266,020</div>
                                         </div>
                                     </div>
                                 </div>
@@ -220,7 +223,7 @@
                                         <div class="span2">
                                             <i class="fa fa-home" aria-hidden="true"></i>
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Australian population</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">66,154 </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">173,977</div>
                                         </div>
                                     </div>
                                 </div>
@@ -234,7 +237,7 @@
                                         <div class="span2">
                                             <i class="fa fa-plane" aria-hidden="true"></i>
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Immigrant population</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">52,150</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">86,190</div>
                                         </div>
                                     </div>
                                 </div>
@@ -250,9 +253,8 @@
     </div>
 </section>
 
-
 <!--Section: Education Facilities-->
-<section id="warrnambool-facilities" class="section">
+<section id="latrobe-facilities" class="section">
     <div class="container">
         <button class="collapsible">
             Education Facilities
@@ -261,8 +263,8 @@
             <div class="row">
                 <div class="span12 demo-section k-content wide">
                     <p>
-                        For Education facilities, you can find more info in the 
-                        <a href="https://www.education.vic.gov.au/findaservice/SearchResult.aspx?SearchType=Text&Replace=Y&Suburb=Warrnambool&SurSuburb=0&Type=200002,200001,1,2,3,2,4,200000,5">
+                        For Education facilities, you can find more info in the
+                        <a href="https://www.education.vic.gov.au/findaservice/SearchResult.aspx?SearchType=Map&Replace=Y&LGA=381">
                             Education.vic.gov.au
                         </a>
                     </p>
@@ -275,7 +277,7 @@
 
 
 <!--Section: Healthcare Services-->
-<section id="warrnambool-facilities" class="section">
+<section id="latrobe-facilities" class="section">
     <div class="container">
         <button class="collapsible">
             Healthcare Service
@@ -285,7 +287,7 @@
                 <div class="span12 demo-section k-content wide">
                     <p>
                         For Healthcare Services, you can find more info in the
-                        <a href="https://www.education.vic.gov.au/findaservice/SearchResult.aspx?SearchType=Text&Replace=Y&Suburb=Warrnambool&SurSuburb=0&Type=200002,200001,1,2,3,2,4,200000,5">
+                        <a href="https://www.education.vic.gov.au/findaservice/SearchResult.aspx?SearchType=Map&Replace=Y&LGA=381">
                             Education.vic.gov.au
                         </a>
                     </p>
@@ -297,7 +299,7 @@
 
 
 <!--Section: Properties price-->
-<section id="warrnambool-house" class="section">
+<section id="latrobe-house" class="section">
     <div class="container">
         <button class="collapsible">
             Cost of Accommodation
@@ -306,10 +308,15 @@
             <div class="row">
                 <div class="span12 demo-section k-content wide">
                     <p>
-                        Warrnambool is a beautiful regional city in Victoria. It is suitable for someone
-                        who enjoys spacious houses and being closer to nature.  The average cost of accomodation for a year in Ballarat is
-                        $290,900 while the basic utilities, including Electricity, Heating or Cooling, Water and Garbage would together cost about $1560.  Additionally the cost of internet for a year would be around $694 with an internet speed of 60 Mbps. The house price does not seem to increase at a very fast rate but based on
-                        our analysis it might rise up to $390,900 in the next five years.
+                        La Trobe is a flourishing regional city, especially for students in Victoria.
+                        It is a heaven for someone who enjoys spacious houses and serene scenery of Regional Victoria and
+                        wants to have a kitchen garden, lawns and backyards.
+                        The average cost of accomodation for a year in La Trobe is $309,219 while the basic utilities,
+                        including Electricity, Heating or Cooling, Water and Garbage would together cost about $1594.
+                        Additionally the cost of internet for a year would be around $670 with an internet speed of 60 Mbps.
+                        The house price does not seem to increase at a very fast rate but based on our analysis it
+                        might rise up to $444,529 in the next five years.
+
                     </p>
                 </div>
             </div>
@@ -320,7 +327,7 @@
                             <div class="row no-gutters align-items-center">
                                 <i class="fa fa-usd" style="font-size: 2em;" aria-hidden="true"></i>
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="color:#dc5512 !important;margin-bottom: 15px; margin-top:15px;">Average cost of accomodation at present</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800" style="color:#dc5512 !important; font-size: 30px;">$290,900</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800" style="color:#dc5512 !important; font-size: 30px;">$309,219</div>
 
                             </div>
                         </div>
@@ -332,7 +339,7 @@
                             <div class="row no-gutters align-items-center">
                                 <i class="fa fa-line-chart" style="font-size: 2em;" aria-hidden="true"></i>
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="margin-bottom: 15px; margin-top:15px;">Estimated average cost of accomodation in the next 5 years</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800" style="color:#4e73df !important; font-size: 30px;">$390,900</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800" style="color:#4e73df !important; font-size: 30px;">$444,529</div>
                             </div>
                         </div>
                     </div>
@@ -344,7 +351,7 @@
 
 
 <!--Section: Restaurant Services-->
-<section id="warrnambool-restaurant" class="section">
+<section id="latrobe-restaurant" class="section">
     <div class="container">
         <button class="collapsible">
             Restaurant Service
@@ -353,46 +360,46 @@
             <div class="row">
                 <div class="span12" style="text-align:center;">
                     <p>
-                        Warrnambool has a huge range of places to eat, both in the city and in the surrounding suburbs, precincts and regions. Formal restaurants awarded hats by The Age Good Food Guide, quick and cheerful cafes with better-than-average coffee and loads of venues that take advantage of our position on the coast to offer views,
+                        Latrobe has a huge range of places to eat, both in the city and in the surrounding suburbs, precincts and regions. Formal restaurants awarded hats by The Age Good Food Guide, quick and cheerful cafes with better-than-average coffee and loads of venues that take advantage of our position on the coast to offer views,
                         al fresco and an amazing range of local produce.
                     </p>
                     <p>
-                        According to Zomato,the below table shows the most excited restaurants that you must try in <a href="https://www.zomato.com">Warrnambool</a>
+                        According to Zomato,the below table shows the most excited restaurants that you must try in <a href="https://www.zomato.com">Latrobe</a>
                     </p>
                 </div>
                 <div class="span12">
                     @(Html.Kendo().Grid<RestaurantModel>()
-                                                                      .Name("RestaurantGrid")
-                                                                       .Columns(columns =>
-                                                                       {
-                                                                           columns.Template(@<text> </text>).Title("Image").ClientTemplate("<img src='#:restaurantImage#' />").Width(10);
-                                                                columns.Bound(c => c.restaurantName).Title("Restaurant Name")
-                                                                            .ClientTemplate("<a href='#:restaurantPhotoUrl#'>#:restaurantName#</a>")
-                                                                            .Width(10);
-                                                                columns.Bound(c => c.restaurantCuisines).Title("Cuisines").Width(20);
-                                                                columns.Bound(c => c.restaurantRating).Title("Rating").Width(20).HtmlAttributes(new { style = "color: rgb(128, 0, 255)" });
-                                                                columns.Bound(c => c.restaurantAddress).Title("Address").Width(20);
-                                                            })
-                           .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                                                                      .Name("RestaurantGrid")
+                                                                                       .Columns(columns =>
+                                                                                       {
+                                                                                           columns.Template(@<text> </text>).Title("Image").ClientTemplate("<img src='#:restaurantImage#' />").Width(10);
+                                                                                columns.Bound(c => c.restaurantName).Title("Restaurant Name")
+                                                                                                    .ClientTemplate("<a href='#:restaurantPhotoUrl#'>#:restaurantName#</a>")
+                                                                                                    .Width(10);
+                                                                                columns.Bound(c => c.restaurantCuisines).Title("Cuisines").Width(20);
+                                                                                columns.Bound(c => c.restaurantRating).Title("Rating").Width(20).HtmlAttributes(new { style = "color: rgb(128, 0, 255)" });
+                                                                                columns.Bound(c => c.restaurantAddress).Title("Address").Width(20);
+                                                                            })
+                     .Editable(editable => editable.Mode(GridEditMode.InLine))
 
-                           .Scrollable(s => s.Height("auto"))
-                           .Filterable(filterable => filterable.Extra(false))
-                           .Sortable(sortable => sortable.Equals(false))
-                           .Pageable()
-                           .DataSource(dataSource => dataSource
-                           .Ajax()
-                           .PageSize(5)
-                           .Model(model =>
-                           {
-                               model.Id(p => p.id);
-                               model.Field(p => p.restaurantName).Editable(false);
-                           })
-                           .Read(read => read.Action("WarrnamboolRestaurantList_Read", "City"))
-                           )
-                           .AutoBind(true)
-                           .Selectable(selectable => selectable.Mode(GridSelectionMode.Single))
-                           .Resizable(resize => resize.Columns(true))
-                           .Navigatable()
+                     .Scrollable(s => s.Height("auto"))
+                     .Filterable(filterable => filterable.Extra(false))
+                     .Sortable(sortable => sortable.Equals(false))
+                     .Pageable()
+                     .DataSource(dataSource => dataSource
+                     .Ajax()
+                     .PageSize(5)
+                     .Model(model =>
+                     {
+                         model.Id(p => p.id);
+                         model.Field(p => p.restaurantName).Editable(false);
+                     })
+                     .Read(read => read.Action("LatrobeRestaurantList_Read", "City"))
+                     )
+                     .AutoBind(true)
+                     .Selectable(selectable => selectable.Mode(GridSelectionMode.Single))
+                     .Resizable(resize => resize.Columns(true))
+                     .Navigatable()
                     )
                 </div>
             </div>
@@ -402,7 +409,7 @@
 </section>
 
 <!--Section: Job Opportunities-->
-<section id="geelong-job" class="section">
+<section id="latrobe-job" class="section">
     <div class="container">
         <button class="collapsible">
             Job Opportunties
@@ -415,7 +422,7 @@
                 </div>
                 <div class="span4 mapDetail">
                     <p>
-                        The median annual income of an individual in Warrnambool is $25,056. The Professional sector has the most number of job opportunities followed by technicians and trade workers. There are several opportunities available in the community and service sector along with trade and commerce sector. The manufacturing industry has also flourished over the years in Warrnambool. 
+                        The median annual income of an individual in LaTrobe is $50,212. The Professional sector has the most number of job opportunities followed by technicians and trade workers. There are several opportunities available in the community and service sector along with trade and commerce sector. The manufacturing industry has also flourished over the years in La Trobe. 
                         From labourers to managerial roles there is an opportunity in each sector.
                     </p>
                 </div>
@@ -423,22 +430,22 @@
         </div>
     </div>
 </section>
-
-<script src="~/js/WarrnamboolMap.js"></script>
+<script src="~/js/LatrobeMap.js"></script>
 
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=@TempData["GoogleApiKey"]&callback=initMap">
 </script>
 
+
 <script type="text/javascript">
     anychart.onDocumentReady(function () {
 
         var data = [
-            ["Mandarin", 337],
-            ["Korean", 79],
-            ["Sinhalese", 67],
-            ["Arabic", 66],
-            ["Japanese", 52]
+            ["Italian", 836],
+            ["Greek", 360],
+            ["Mandarin", 301],
+            ["Dutch", 231],
+            ["Maltese", 214]
         ];
 
         // set chart type
@@ -449,7 +456,7 @@
         // enable title
         title.enabled(true);
         // set title text
-        title.text("Top 5 Languages in Warrnambool (excluding English)");
+        title.text("Top 5 Languages in Latrobe (excluding English)");
         // place title into bottom of the chart
         title.orientation("bottom");
         // stick title to the left side
@@ -470,7 +477,7 @@
         // enable title
         titleJob.enabled(true);
         // set title text
-        titleJob.text("Top 8 Occupation in Warrnambool");
+        titleJob.text("Top 8 Occupation in Latrobe");
         // place title into bottom of the chart
         titleJob.orientation("bottom");
         // stick title to the left side
@@ -533,14 +540,14 @@
 
     function getData() {
         return [
-            ["Professionals", 2944],
-            ["Technicians and Trades Workers", 2215		],
-            ["Community and Personal Service Workers", 1798	],
-            ["Clerical and Administrative Workers", 1786],
-            ["Managers", 1598],
-            ["Sales Workers", 1915],
-            ["Labourers", 2221	],
-            ["Machinery Operators and Drivers", 896]
+            ["Professionals", 4484],
+            ["Technicians and Trades Workers", 5225],
+            ["Community and Personal Service Workers", 3494],
+            ["Clerical and Administrative Workers", 3991],
+            ["Managers", 2764],
+            ["Sales Workers", 3099],
+            ["Labourers", 3485],
+            ["Machinery Operators and Drivers", 2292]
         ]
     }
 </script>
