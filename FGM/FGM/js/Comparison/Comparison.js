@@ -1,5 +1,5 @@
 ﻿$('#CompareSubmit').click(function () {
-    var criteria = $('input[name=optradio]:checked').val(); 
+    var criteria = $('input[name=optradio]:checked').val();
     var cities = [];
     var populationBendigo;
     var populationBallarat;
@@ -15,19 +15,16 @@
 
     //Remove all chart
     $('#filter').find('#ComparisonGraph').remove();
-    $('#languageFilter').find('#Geelonglanguage').remove();
-    $('#languageFilter').find('#Bendigolanguage').remove();
-    $('#languageFilter').find('#Ballaratlanguage').remove();
-
-
     $("#filters a").each(function () {
         if ($(this).hasClass("active")) {
             cities.push($(this).attr('id'));
         }
     });
-    if (cities.length < 2) {
+
+    if (cities.length !== 2) {
         alert('Please select at least two cities only');
     }
+    /*
     else {
         if (criteria === 'population') {
             $('#filter').append('<div id="ComparisonGraph"></div>');   
@@ -175,4 +172,5 @@
             }
         }
     }
+    */
 });
