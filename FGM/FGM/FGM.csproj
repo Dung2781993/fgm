@@ -197,7 +197,10 @@
     <Content Include="Images\icons\creativity.png" />
     <Content Include="Images\icons\lab.png" />
     <Content Include="Images\icons\laptop.png" />
+    <Content Include="Images\Latrobe-Background.jpg" />
+    <Content Include="Images\Latrobe.jpg" />
     <Content Include="Images\logo-2.png" />
+    <Content Include="Images\Logo_footer.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\prettyPhoto\default\default_thumb.png" />
     <Content Include="Images\prettyPhoto\default\loader.gif" />
@@ -211,6 +214,8 @@
     <Content Include="Images\team\img-3.jpg" />
     <Content Include="Images\team\img-4.jpg" />
     <Content Include="Images\team\img-5.jpg" />
+    <Content Include="Images\Warrnambool.jpeg" />
+    <Content Include="Images\Warrnambool-Background.jpg" />
     <Content Include="Images\works\1.png" />
     <Content Include="Images\works\10.png" />
     <Content Include="Images\works\2.png" />
@@ -270,11 +275,13 @@
     <Content Include="js\jquery.prettyPhoto.js" />
     <Content Include="js\jquery.scrollTo.js" />
     <Content Include="js\LatrobeBusiness.js" />
+    <Content Include="js\LatrobeMap.js" />
     <Content Include="js\map.js" />
     <Content Include="js\Password.js" />
     <Content Include="js\population.js" />
     <Content Include="js\school.js" />
     <Content Include="js\shape.js" />
+    <Content Include="js\WarrnamboolMap.js" />
     <Content Include="Scripts\animate.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -333,6 +340,8 @@
     <Content Include="Views\City\Ballarat.cshtml" />
     <Content Include="Views\City\Comparison.cshtml" />
     <Content Include="Views\City\Bendigo.cshtml" />
+    <Content Include="Views\City\Warrnambool.cshtml" />
+    <Content Include="Views\City\Latrobe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

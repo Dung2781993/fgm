@@ -21,10 +21,16 @@
     <div class="container-fluid">
         <div class="row regional-cities">
             <div class="span12" id="comparison-background"></div>
-            <div class="span3" style="float:left;">
-                <p>
-                    <h4>Comparison</h4>
-                </p>
+        </div>
+    </div>
+</section>
+
+
+<section id="comparison" class="section">
+    <div class="container">
+        <h4>Comparison</h4>
+        <div class="row">
+            <div class="span12" style="text-align:center;">
                 <p style="font-size:16px;">
                     Are you too confused between two or more cities? We are here to help you out. Use our comparison feature and compare between population, job opportunities, cost of accomodation and many other criteria for your two most favourite cities.
                     You can now make a smart and quick choice for yourself and your family.
@@ -34,80 +40,217 @@
     </div>
 </section>
 
-
 <!--Section: Comparison-->
 <section id="comparison-description" class="section">
     <div class="container">
         <div class="row regional-cities">
             <div class="span12">
-                <h4 style="text-align:left">Select one criteria from the list below:</h4>
-                <form>
-                    <div class="radio">
-                        <label class="compare"><input type="radio" name="optradio" value="population">Population</label>
-                    </div>
-                    <div class="radio">
-                        <label class="compare"><input type="radio" name="optradio" value="language">Language Spoken (Community)</label>
-                    </div>
-                    <div class="radio">
-                        <label class="compare"><input type="radio" name="optradio" value="housing">Housing Price</label>
-                    </div>
-                    <div class="radio">
-                        <label class="compare"><input type="radio" name="optradio" value="job">Job Opportunities</label>
-                    </div>
-                </form>
+                <h4 style="text-align:left">Select criteria from the list below:</h4>
+                <select name="selectType" , id="selectType">
+                    <option value="Population">Population</option>
+                    <option value="HousePrice">HousePrice</option>
+                    <option value="Job">Job</option>
+                </select>
+                <select name="selectCity1" , id="selectCity1">
+                    <option value="Geelong">Geelong</option>
+                    <option value="Ballarat">Ballarat</option>
+                    <option value="Bendigo">Bendigo</option>
+                    <option value="Latrobe">Latrobe</option>
+                    <option value="NorthWest">NorthWest</option>
+                    <option value="Warrnambool">Warrnambool</option>
+                    <option value="Shepparton">Shepparton</option>
+                    <option value="Hume">Hume</option>
+                </select>
+                <select name="selectCity2" , id="selectCity2">
+                    <option value="Geelong">Geelong</option>
+                    <option value="Ballarat">Ballarat</option>
+                    <option value="Bendigo">Bendigo</option>
+                    <option value="Latrobe">Latrobe</option>
+                    <option value="NorthWest">NorthWest</option>
+                    <option value="Warrnambool">Warrnambool</option>
+                    <option value="Shepparton">Shepparton</option>
+                    <option value="Hume">Hume</option>
+                </select>
+                <input type="button" class="btns" value="Get The data" />
+                
             </div>
         </div>
-        <div class="row">
-            <div class="span12" id="filters">
-                <h4 style="text-align:left;">Select two cities you want to compare for the criterion chosen above:</h4>
-                <ul class="clearfix">
-                    <li>
-                        <a href="#" data-filter="*" id="Geelong" value="Geelong">
-                            <!--class="active"-->
-                            <h5>Geelong</h5>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-filter="*" id="Bendigo" value="Bendigo">
-                            <h5>Bendigo</h5>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-filter="*" id="Ballarat" value="Ballarat">
-                            <h5>Ballarat</h5>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="span12" id="filters" style="text-align:left;">
-                <button type="button" id="CompareSubmit" class="btn btn-outline-info" style="color:#E65100; background-color: transparent; background-image:none; border-color:#E65100; text-align: left; padding: 12px;">
-                    Compare
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="comparison-graph" class="section" >
-    <div class="container">
         <div class="row regional-cities">
-            <div class="span12" id="filter">
+            <div class="span12">
+                <div id="container" style="height:500px;"></div>
             </div>
         </div>
-        <div class="row regional-cities" id="languageFilter">
-            <div class="span4" id="GeelongContainer">
-                <div id="Geelonglanguage"></div>
-            </div>
-            <div class="span4" id="BendigoContainer">
-                <div id="Bendigolanguage"></div>
-            </div>
-            <div class="span4" id="BallaratContainer">
-                <div id="Ballaratlanguage"></div>
-            </div>
-        </div>    
     </div>
 
+                
 </section>
+
+<!--Section: Comparison-->
+@*<section id="comparison-description" class="section">
+        <div class="container">
+            <div class="row regional-cities">
+                <div class="span12">
+                    <h4 style="text-align:left">Select one criteria from the list below:</h4>
+                    <form>
+                        <div class="radio">
+                            <label class="compare"><input type="radio" name="optradio" value="population">Population</label>
+                        </div>
+                        <div class="radio">
+                            <label class="compare"><input type="radio" name="optradio" value="housing">Housing Price</label>
+                        </div>
+                        <div class="radio">
+                            <label class="compare"><input type="radio" name="optradio" value="job">Job Opportunities</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12" id="filters">
+                    <h4 style="text-align:left;">Select two cities you want to compare for the criterion chosen above:</h4>
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#" data-filter="*" id="Geelong" value="Geelong">
+                                class="active"
+                                <h5>Geelong</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-filter="*" id="Bendigo" value="Bendigo">
+                                <h5>Bendigo</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-filter="*" id="Ballarat" value="Ballarat">
+                                <h5>Ballarat</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-filter="*" id="Warrnambool" value="Warrnambool">
+                                <h5>Warrnambool</h5>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-filter="*" id="Latrobe" value="Latrobe">
+                                <h5>Latrobe</h5>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="span12" id="filters" style="text-align:left;">
+                    <button type="button" id="CompareSubmit" class="btn btn-outline-info" style="color:#E65100; background-color: transparent; background-image:none; border-color:#E65100; text-align: left; padding: 12px;">
+                        Compare
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="comparison-graph" class="section" >
+        <div class="container">
+            <div class="row regional-cities">
+                <div class="span12" id="filter">
+                </div>
+            </div>
+            <div class="row regional-cities" id="languageFilter">
+                <div class="span4" id="GeelongContainer">
+                    <div id="Geelonglanguage"></div>
+                </div>
+                <div class="span4" id="BendigoContainer">
+                    <div id="Bendigolanguage"></div>
+                </div>
+                <div class="span4" id="BallaratContainer">
+                    <div id="Ballaratlanguage"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>*@
+
 
 <!--Comparsison-->
 
 <script src="~/js/Comparison/Comparison.js"></script>
+
+
+<script>
+
+    var jobList
+    //ajax调用无参数后台方法
+    $(function () {
+        $(".btns").click(function () {
+            $("#container").empty();
+            var opt_select = $("#selectType option:selected").val();
+            var opt_city1 = $("#selectCity1 option:selected").val();
+            var opt_city2 = $("#selectCity2 option:selected").val();
+            $.ajax({
+                type: "post",        //ajax的方式为post(get方式对传送数据长度有限制)
+                url: "http://20.188.239.51:8988/jobCompare",         //demo.aspx为目标文件，Hello为目标文件中的方法
+                dataType: "json",        //传值方式
+
+                data: {
+                    opt_select: opt_select,
+                    opt_city1: opt_city1,
+                    opt_city2: opt_city2
+                },
+
+                success: function (jobData) {      //成功回传值后触发的方法
+                    ///alert(data);          //后台返回的参数
+                    jobList = jobData;
+                    anychart.onDocumentReady(function () {
+                        // create a data set
+                        var data1 = anychart.data.set(jobList[Object.keys(jobList)[0]]);
+                        var data2 = anychart.data.set(jobList[Object.keys(jobList)[1]]);
+                        //alert(data1, data2);
+
+                        // map the data
+                        var seriesData_1 = data1.mapAs({ x: 0, value: 1 });
+                        var seriesData_2 = data2.mapAs({ x: 0, value: 1 });
+
+                        // create a chart
+                        var chart = anychart.bar();
+
+                        // create the first series, set the data and name
+                        var series1 = chart.bar(seriesData_1);
+                        series1.name(Object.keys(jobList)[0]);
+
+                        // configure the visual settings of the first series
+                        series1.normal().fill("#00cc99", 0.3);
+                        series1.hovered().fill("#00cc99", 0.1);
+                        series1.selected().fill("#00cc99", 0.5);
+                        series1.normal().stroke("#00cc99", 1, "10 5", "round");
+                        series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+                        series1.selected().stroke("#00cc99", 4, "10 5", "round");
+
+                        // create the second series, set the data and name
+                        var series2 = chart.bar(seriesData_2);
+                        series2.name(Object.keys(jobList)[1]);
+
+                        // configure the visual settings of the second series
+                        series2.normal().fill("#0066cc", 0.3);
+                        series2.hovered().fill("#0066cc", 0.1);
+                        series2.selected().fill("#0066cc", 0.5);
+                        series2.normal().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+                        series2.hovered().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+                        series2.selected().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+                        series2.normal().stroke("#0066cc");
+                        series2.hovered().stroke("#0066cc", 2);
+                        series2.selected().stroke("#0066cc", 4);
+
+                        // set the chart title
+                        chart.title("Job compare between " + Object.keys(jobList)[0] + ' ' + Object.keys(jobList)[1]);
+
+                        // set the titles of the axes
+                        //chart.xAxis().title("Manager");
+                        chart.yAxis().title("Numbers");
+
+                        // set the container id
+                        chart.container("container");
+
+                        // initiate drawing the chart
+                        chart.draw();
+                    });
+
+                }
+            })
+        })
+    });
+</script>
