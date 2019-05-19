@@ -5,83 +5,87 @@
             <img src="~/Images/Background.jpg" alt="" />
         </div>
     </header>
-    <h4>ABOUT</h4>
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; width:60%">
+                <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; width:50%">
                     We at Feel Good Mate understand how difficult it is to move to a new country and create a home there.
                     Everybody has a different criteria to select a perfect location. This website will allow you to choose a regional city in Victoria, Australia  based on your preference.
                 </h6>
             </div>
         </div>
     </div>
+</section>
 
-    <h4>City Recommendation</h4>
-    <div class="row">
-        <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; width:60%">
-            Answer the questions below to get recommendations for the cities that would be the most suitable for you.
-        </h6>
-        <div class="col-md-12" style="margin-top:20px;">
-            <div class="form-group" style="text-align:center; ">
-                <label for="occupation" style="margin:auto; font-family:Brandon Grotesque; font-size:20px;">What is your current field of profession?</label>
-                <select name="selectJob" , id="selectJob" style="margin-top:20px;">
-                    <option value="Administrative and support services">Administration</option>
-                    <option value="Agriculture, forestry and fishing">Agriculture</option>
-                    <option value="Construction">Construction</option>
-                    <option value="Education and training">Education</option>
-                    <option value="Financial and insurance services">Financial and insurance</option>
-                    <option value="Accommodation and food services">Food and accomodation</option>
-                    <option value="Health care and social assistance">Health care</option>
-                    <option value="Manufacturing">Manufacturing</option>
-                    <option value="Mining">Mining</option>
-                    <option value="Professional, scientific and technical services">Professional services</option>
-                    <option value="Public administration and safety">Public administration</option>
-                    <option value="Rental, hiring and real estate services">Real estate</option>
-                    <option value="Arts and recreation services">Recreation services</option>
-                    <option value="Retail trade">Retail trade</option>
-                    <option value="Information media and telecommunications">Telecommunications</option>
-                    <option value="Electricity, gas, water and waste services">Utility services</option>
-                    <option value="Transport, postal and warehousing">Warehousing</option>
-                    <option value="Wholesale trade">Wholesale trade</option>
-                </select>
+<section id="recomendation" class="section">
+    <div class="container">
+        <div class="row regional-cities">
+            <div class="span6 question-recomendation">
+                <h4>City Recommendation</h4>
+                <div class="form-group ">
+                    <h6 style="margin:auto; font-family:Brandon Grotesque;">
+                        Answer the questions below to get recommendations for the cities that would be the most suitable for you.
+                    </h6>
 
-                <label for="occupation" style="margin:auto; font-family:Brandon Grotesque; font-size:20px;">Which language do you speak?</label>
-                <select name="selectLanguage" , id="selectLanguage" style="margin-top:20px;">
-                    <option value="Arabic">Arabic</option>
-                    <option value="Croatian">Croatian</option>
-                    <option value="Dutch">Dutch</option>
-                    <option value="Filipino">Filipino</option>
-                    <option value="German">German</option>
-                    <option value="Greek">Greek</option>
-                    <option value="Hazaraghi">Hazaraghi</option>
-                    <option value="Italian">Italian</option>
-                    <option value="Karen">Karen</option>
-                    <option value="Macedonian">Macedonian</option>
-                    <option value="Mandarin">Mandarin</option>
-                    <option value="Punjabi">Punjabi</option>
-                    <option value="Tagalog">Tagalog</option>
-                    <option value="Tongan">Tongan</option>
-                    <option value="Turkish">Turkish</option>
-                </select>
+                    <label for="occupation" style="font-family:Brandon Grotesque; font-size:20px;" class="city-recomendation">1. What is your current field of profession?</label>
+                    <select name="selectJob" , id="selectJob" class="city-recomendation" style="border-radius:25px; width:100%">
+                        <option value="Administrative and support services">Administration</option>
+                        <option value="Agriculture, forestry and fishing">Agriculture</option>
+                        <option value="Construction">Construction</option>
+                        <option value="Education and training">Education</option>
+                        <option value="Financial and insurance services">Financial and insurance</option>
+                        <option value="Accommodation and food services">Food and accomodation</option>
+                        <option value="Health care and social assistance">Health care</option>
+                        <option value="Manufacturing">Manufacturing</option>
+                        <option value="Mining">Mining</option>
+                        <option value="Professional, scientific and technical services">Professional services</option>
+                        <option value="Public administration and safety">Public administration</option>
+                        <option value="Rental, hiring and real estate services">Real estate</option>
+                        <option value="Arts and recreation services">Recreation services</option>
+                        <option value="Retail trade">Retail trade</option>
+                        <option value="Information media and telecommunications">Telecommunications</option>
+                        <option value="Electricity, gas, water and waste services">Utility services</option>
+                        <option value="Transport, postal and warehousing">Warehousing</option>
+                        <option value="Wholesale trade">Wholesale trade</option>
+                    </select>
+                    <label for="occupation" style="font-family:Brandon Grotesque; font-size:20px;" class="city-recomendation">2. Which language do you speak?</label>
+                    <select name="selectLanguage" , id="selectLanguage" class="city-recomendation" style="border-radius:25px;width:100%">
+                        <option value="Arabic">Arabic</option>
+                        <option value="Croatian">Croatian</option>
+                        <option value="Dutch">Dutch</option>
+                        <option value="Filipino">Filipino</option>
+                        <option value="German">German</option>
+                        <option value="Greek">Greek</option>
+                        <option value="Hazaraghi">Hazaraghi</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Karen">Karen</option>
+                        <option value="Macedonian">Macedonian</option>
+                        <option value="Mandarin">Mandarin</option>
+                        <option value="Punjabi">Punjabi</option>
+                        <option value="Tagalog">Tagalog</option>
+                        <option value="Tongan">Tongan</option>
+                        <option value="Turkish">Turkish</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="button" class="btn" value="Go >" />
+                </div>
             </div>
-            <div class="form-group" style="text-align:center; ">
-                <input type="button" class="btn" value="Get Your recommendation" />
+            <div class="span6 question-recomendation">
+                <div class="form-group">
+                    <div id="recomendation-section" style="overflow:auto;"></div>
+                </div>
             </div>
-        </div>
-        
-    </div>
-    <div class="row">
-        <div id="recomendation-section">
-
         </div>
     </div>
 </section>
 
+<hr class="separated-line" />
+
 <!--Section: Regional-->
 <section id="regional" class="section">
     <div class="container">
-        <h4>REGIONAL CITIES</h4>
+        <h4>Regional Cities</h4>
         <div class="row">
             <div class="span12">
                 <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; font-size: 30px; margin-bottom:20px;">
@@ -92,125 +96,110 @@
                 </h6>
             </div>
         </div>
-
-        <hr class="separated-line" />
-        <div class="row regional-cities">
-            <div class="span6" id="geelong"></div>
-            <div class="span6" style="text-align:center;">
-                <p>
-                    <h7>Barwon Area, VIC</h7>
-                </p>
-                <p>
-                    <h7>Geelong</h7>
-                </p>
-                <p>
-                    Geelong drives its name from the aboriginal word Djillong which means ‘land’ or ‘cliffs’.
-                    The region has experienced major development in the past decade in both an education sector.
-                    It has also become the hub for the manufacturing industry.
-                </p>
-                <p style="text-align:right">
-                    <a href="@Url.Action("Geelong", "City")">Explore ></a>
-                </p>
-            </div>
-        </div>
-        <div class="row regional-cities">
-            <div class="span6" style="text-align:center;">
-                <p>
-                    <h7>Loddon Campaspe Area, VIC</h7>
-                </p>
-                <p>
-                    <h7>Bendigo</h7>
-                </p>
-                <p>
-                    Bendigo has been named after an English shepherd William Abednego "Bendigo" Thompson who was famous as a knuckle fighter prize winner in the 1800’s.
-                    The major industries in the region are health, finance, service, food processing, and education
-                </p>
-                <p style="text-align:right">
-                    <a href="@Url.Action("Bendigo", "City")">Explore ></a>
-                </p>
-            </div>
-            <div class="span6" id="bendigo"></div>
-        </div>
-        <div class="row regional-cities">
-            <div class="span6" id="ballarat"></div>
-            <div class="span6" style="text-align:center;">
-                <p>
-                    <h7>Central Highlands Area, VIC</h7>
-                </p>
-                <p>
-                    <h7>Ballarat</h7>
-                </p>
-                <p>
-                    Ballarat means ‘resting place’ in the aboriginal dialect.
-                    The city has prospered in the service sector, especially tourism and hospitality. The fertile volcanic soil in the region and its climatic conditions make it suitable for agriculture.
-                </p>
-                <p style="text-align:right">
-                    <a href="@Url.Action("Ballarat", "City")">Explore ></a>
-                </p>
-            </div>
-        </div>
-        <div class="row regional-cities">
-            <div class="span6" style="text-align:center;">
-                <p>
-                    <h7>Great Ocean Road Area,VIC</h7>
-                </p>
-                <p>
-                    <h7>Warrnambool</h7>
-                </p>
-                <p>
-                    Warrnambool is the city on the south-western coast of Victoria, and marks the western end of the Great Ocean Road
-                    and the southern end of the Hopkins Highway. The nearby Flagstaff Hill Maritime Village explores the area's seafaring history through a large shipwreck collection. The word Warrnambool originates from the local Indigenous Australian name for a nearby volcanic cone.
-                </p>
-                <p style="text-align:right">
-                    <a href="@Url.Action("Warrnambool", "City")">Explore ></a>
-                </p>
-            </div>
-            <div class="span6" id="warrnambool"></div>
-        </div>
-        <div class="row regional-cities">
-            <div class="span6" id="latrobe"></div>
-            <div class="span6" style="text-align:center;">
-                <p>
-                    <h7>Gippsland , VIC</h7>
-                </p>
-                <p>
-                    <h7>Latrobe City</h7>
-                </p>
-                <p>
-                    The city of La Trobe is a local government area in the Gippsland region in eastern Victoria, Australia. La Trobe derives its name from the first lieutenant-governor of the state of Victoria, Australia Charles La Trobe. The city has a small-town atmosphere and is home to a vibrant and
-                    walkable downtown business district with shops, restaurants, offices, and a wide range of housing options for people of all ages.
-                </p>
-                <p style="text-align:right">
-                    <a href="@Url.Action("Latrobe", "City")">Explore ></a>
-                </p>
-            </div>
-        </div>
     </div>
-</section>
-
-
-<!--Section: Team-->
-<section id="team" class="section">
-    <div class="container">
-        <h4>OUR TEAM</h4>
+    <div class="container-fluid">
         <div class="row">
-            <div class="span4 offset1">
-                <div>
-                    <h2>We live with <strong>creativity</strong></h2>
-                    <p>
-                        Coming from different corners of the world our team believes in cultural acceptance and the power of diversity.
-                        Never letting the enthusiasm die, we strive for perfection.
-                    </p>
+            <div class="span20">
+                <div class="span5">
+                    <div class="row">
+                        <div class="span4 city-photo" id="geelong"></div>
+                        <div class="span4" style="text-align:center;">
+                            <p>
+                                <h7>Barwon Area, VIC</h7>
+                            </p>
+                            <p>
+                                <h6>Geelong</h6>
+                            </p>
+                            <p class="city-description">
+                                The city of Geelong is Victoria's second city,
+                                and lies southwest of Melbourne, Australia.
+                            </p>
+                            <a href="@Url.Action("Geelong", "City")"><input type="button" class="btn explore-button" value="Explore >" /></a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="span6">
-                <div class="aligncenter">
-                    <img src="~/Images/logo.png" alt="" style="padding-left:20px; width:80%;" />
+                <div class="span5">
+                    <div class="row">
+                        <div class="span4 city-photo" id="bendigo">
+                        </div>
+                        <div class="span4" style="text-align:center;">
+                            <p>
+                                <h7>Loddon Campaspe Area, VIC</h7>
+                            </p>
+                            <p>
+                                <h6>Bendigo</h6>
+                            </p>
+                            <p class="city-description">
+                                The city of Bendigo known for its goldmines is located northwest
+                                of Melbourne, Australia.
+                            </p>
+                            <a href="@Url.Action("Bendigo", "City")"><input type="button" class="btn explore-button" value="Explore >" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="span5">
+                    <div class="row">
+                        <div class="span4 city-photo" id="ballarat">
+                        </div>
+                        <div class="span4" style="text-align:center;">
+                            <p>
+                                <h7>Central Highlands Area, VIC</h7>
+                            </p>
+                            <p>
+                                <h6>Ballarat</h6>
+                            </p>
+                            <p class="city-description">
+                                The city of Ballarat, famous for its history and culture, is situated in the
+                                Central Highlands of Victoria.
+                            </p>
+                            <a href="@Url.Action("Ballarat", "City")"><input type="button" class="btn explore-button" value="Explore >" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="span5">
+                    <div class="row">
+                        <div class="span4 city-photo" id="warrnambool">
+                        </div>
+                        <div class="span4" style="text-align:center;">
+                            <p>
+                                <h7>Great Ocean Road Area,VIC</h7>
+                            </p>
+                            <p>
+                                <h6>Warrnambool</h6>
+                            </p>
+                            <p class="city-description">
+                                The city of Warrnambool used to be the important port, is situated in
+                                the Great Ocean area of Victoria.
+                            </p>
+                            <a href="@Url.Action("Warrnambool", "City")"><input type="button" class="btn explore-button" value="Explore >" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="span5">
+                    <div class="row">
+                        <div class="span4 city-photo" id="latrobe">
+                        </div>
+                        <div class="span4" style="text-align:center;">
+                            <p>
+                                <h7>Gippsland , VIC</h7>
+                            </p>
+                            <p>
+                                <h6>Latrobe</h6>
+                            </p>
+                            <p class="city-description">
+                                The Latrobe Valley recognised as electricity and forestry industry is located South-Eastern Victoria.
+                            </p>
+                            <a href="@Url.Action("Latrobe", "City")"><input type="button" class="btn explore-button" value="Explore >" /></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
 
 
 <script>var recommendation
@@ -245,9 +234,9 @@
                     }
                     recommendation = result;
                     //alert("Here is the list of the city that will suit with your selection : "+ recommendation);
-                    
+
                     $("#recomendation-section").append(
-                        "<h6 style=" + "text-align:center;margin:auto;font-family:Brandon" + "Grotesque;width:60%;>Based on your answers the most suitable city/ cities for you would be:  " + recommendation+"</h6 >"
+                        "<h6 style=" + "font-family:Brandon" + " Grotesque;>Based on your answers the most suitable city/ cities for you would be:  <strong>" + recommendation +"</strong></h6 >"
                     );
                 }
             })

@@ -188,10 +188,12 @@
     <Content Include="Images\cities\3-photo.jpg" />
     <Content Include="Images\cities\4-photo.jpg" />
     <Content Include="Images\Comparison-Background.jpeg" />
+    <Content Include="Images\comparison.jpg" />
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\Geelong-Background.jpg" />
     <Content Include="Images\Geelong.jpg" />
     <Content Include="Images\glyphicons-halflings.png" />
+    <Content Include="Images\HomeGeelong.png" />
     <Content Include="Images\icons\basket.png" />
     <Content Include="Images\icons\camera.png" />
     <Content Include="Images\icons\creativity.png" />
@@ -200,6 +202,7 @@
     <Content Include="Images\Latrobe-Background.jpg" />
     <Content Include="Images\Latrobe.jpg" />
     <Content Include="Images\logo-2.png" />
+    <Content Include="Images\logo-white.png" />
     <Content Include="Images\Logo_footer.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\prettyPhoto\default\default_thumb.png" />
