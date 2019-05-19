@@ -170,9 +170,9 @@
     <None Include="Properties\PublishProfiles\FGM20190512062129 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\Background.jpg" />
-    <Content Include="Images\Ballarat-Background.jpeg" />
+    <Content Include="Images\Ballarat-Background.jpg" />
     <Content Include="Images\Ballarat.jpg" />
-    <Content Include="Images\Bendigo-Background.jpeg" />
+    <Content Include="Images\Bendigo-Background.jpg" />
     <Content Include="Images\Bendigo.jpg" />
     <Content Include="Images\bg\bg-1.jpg" />
     <Content Include="Images\bg\bg-2.jpg" />
@@ -217,8 +217,8 @@
     <Content Include="Images\team\img-3.jpg" />
     <Content Include="Images\team\img-4.jpg" />
     <Content Include="Images\team\img-5.jpg" />
-    <Content Include="Images\Warrnambool.jpeg" />
     <Content Include="Images\Warrnambool-Background.jpg" />
+    <Content Include="Images\Warrnambool.jpeg" />
     <Content Include="Images\works\1.png" />
     <Content Include="Images\works\10.png" />
     <Content Include="Images\works\2.png" />
