@@ -22,7 +22,7 @@
         <h6 style="text-align:center; margin:auto; font-family:Brandon Grotesque; width:60%">
             Answer the questions below to get recommendations for the cities that would be the most suitable for you.
         </h6>
-        <div class="col-md-12">
+        <div class="col-md-12" style="margin-top:20px;">
             <div class="form-group" style="text-align:center; ">
                 <label for="occupation" style="margin:auto; font-family:Brandon Grotesque; font-size:20px;">What is your current field of profession?</label>
                 <select name="selectJob" , id="selectJob" style="margin-top:20px;">
@@ -69,10 +69,11 @@
                 <input type="button" class="btn" value="Get Your recommendation" />
             </div>
         </div>
-        <div class="span12" style="padding-top:15px;">
-            <div id="recomendation-section">
+        
+    </div>
+    <div class="row">
+        <div id="recomendation-section">
 
-            </div>
         </div>
     </div>
 </section>
@@ -224,7 +225,7 @@
             }
             $.ajax({
                 type: "post",        
-                url: "https://20.188.239.51:8988/recommendation",         
+                url: "http://52.147.15.131:8988/recommendation",         
                 dataType: "json",       
 
                 data: {
