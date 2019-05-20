@@ -1,5 +1,5 @@
 ﻿div #geelong{
-    content:url(../Images/Geelong.jpg);
+    content:url(../Images/HomeGeelong.png);
 }
 
 div #warrnambool {
@@ -45,17 +45,17 @@ div #warrnambool-background {
 }
 
 div #ballarat-background {
-    content: url(../Images/Ballarat-Background.jpeg);
+    content: url(../Images/Ballarat-Background.jpg);
     width: 100%;
 }
 
 div #bendigo-background {
-    content: url(../Images/Bendigo-Background.jpeg);
+    content: url(../Images/Bendigo-Background.jpg);
     width: 100%;
 }
 
 div #comparison-background {
-    content: url(../Images/Comparison-Background.jpeg);
+    content: url(../Images/comparison.jpg);
     width: 100%;
 }
 

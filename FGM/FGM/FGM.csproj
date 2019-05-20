@@ -170,9 +170,9 @@
     <None Include="Properties\PublishProfiles\FGM20190512062129 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\Background.jpg" />
-    <Content Include="Images\Ballarat-Background.jpeg" />
+    <Content Include="Images\Ballarat-Background.jpg" />
     <Content Include="Images\Ballarat.jpg" />
-    <Content Include="Images\Bendigo-Background.jpeg" />
+    <Content Include="Images\Bendigo-Background.jpg" />
     <Content Include="Images\Bendigo.jpg" />
     <Content Include="Images\bg\bg-1.jpg" />
     <Content Include="Images\bg\bg-2.jpg" />
@@ -188,10 +188,12 @@
     <Content Include="Images\cities\3-photo.jpg" />
     <Content Include="Images\cities\4-photo.jpg" />
     <Content Include="Images\Comparison-Background.jpeg" />
+    <Content Include="Images\comparison.jpg" />
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\Geelong-Background.jpg" />
     <Content Include="Images\Geelong.jpg" />
     <Content Include="Images\glyphicons-halflings.png" />
+    <Content Include="Images\HomeGeelong.png" />
     <Content Include="Images\icons\basket.png" />
     <Content Include="Images\icons\camera.png" />
     <Content Include="Images\icons\creativity.png" />
@@ -200,6 +202,7 @@
     <Content Include="Images\Latrobe-Background.jpg" />
     <Content Include="Images\Latrobe.jpg" />
     <Content Include="Images\logo-2.png" />
+    <Content Include="Images\logo-white.png" />
     <Content Include="Images\Logo_footer.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\prettyPhoto\default\default_thumb.png" />
@@ -214,8 +217,8 @@
     <Content Include="Images\team\img-3.jpg" />
     <Content Include="Images\team\img-4.jpg" />
     <Content Include="Images\team\img-5.jpg" />
-    <Content Include="Images\Warrnambool.jpeg" />
     <Content Include="Images\Warrnambool-Background.jpg" />
+    <Content Include="Images\Warrnambool.jpeg" />
     <Content Include="Images\works\1.png" />
     <Content Include="Images\works\10.png" />
     <Content Include="Images\works\2.png" />
