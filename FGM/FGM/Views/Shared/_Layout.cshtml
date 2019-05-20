@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin="" />
-
+    <link href="@Url.Content("~/css/map.css")" rel="stylesheet" type="text/css" />
 
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
             integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
@@ -81,31 +81,23 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="span6 offset3">
-                    
+                <div class="span6" style="text-align:center;">
+                    <img src="/Images/logo-white.png" alt="" style="padding-left:20px; width:50%;" />
+                </div>
+                <div class="span4 offset1">
+                    <div>
+                        <p>We live with <strong>creativity</strong></p>
+                        <p>
+                            Coming from different corners of the world our team believes in cultural acceptance and the power of diversity.
+                            Never letting the enthusiasm die, we strive for perfection.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- ./container -->
     </footer>
-    <!--JavaScript of template-->
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-
-
-
-    <!--------------------------Visualization------------------->
-    @*<script src="https://d3js.org/d3.v3.min.js"></script>
-        <script src="js/hospital.js"></script>
-        <script src="js/Ballarat_hospital.js"></script>
-        <script src="js/Ballarat_school.js"></script>
-        <script src="js/school.js"></script>
-        <script src="js/BendigoBusiness.js"></script>
-        <script src="js/GeelongBusiness.js"></script>
-        <script src="js/Ballarat_business.js"></script>
-        <script src="js/LatrobeBusiness.js"></script>
-        <script src="js/map.js"></script>
-        <script src="js/shape.js"></script>
-        <script src="js/population.js"></script>*@
+    <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
 
     @Scripts.Render("~/bundles/common")
 
