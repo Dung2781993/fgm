@@ -157,6 +157,12 @@
                         // set the titles of the axes
                         //chart.xAxis().title("Manager");
                         chart.yAxis().title("Numbers");
+                        chart.legend()
+                            .enabled(true)
+                            .inverted(true)
+                            .fontSize(13)
+                            .padding([0, 0, 20, 0]);
+
 
                         // set the container id
                         chart.container("container");
