@@ -40,7 +40,7 @@
         border: none;
         text-align: left;
         outline: none;
-        font-size: 36px;
+        font-size: 25px;
         margin-bottom: 20px;
         font-family: EB Garamond;
     }
@@ -373,7 +373,7 @@
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <i class="fa fa-line-chart" style="font-size: 2em;" aria-hidden="true"></i>
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="margin-bottom: 15px; margin-top:15px;">Estimated average cost of accomodation in the next 5 years</div>
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="margin-bottom: 15px; margin-top:15px;">Estimated average cost of accomodation in 2024</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800" style="color:#4e73df !important; font-size: 30px;">$414,607</div>
                             </div>
                         </div>
@@ -394,7 +394,7 @@
         </button>
         <div class="content">
             <div class="row">
-                <div class="span12" style="text-align:center;">
+                <div class="span12">
                     <p>
                         Ballarat has a huge range of places to eat, both in the city and in the surrounding suburbs, precincts and regions. Formal restaurants awarded hats by The Age Good Food Guide, quick and cheerful cafes with better-than-average coffee and loads of venues that take advantage of our position on the coast to offer views,
                         al fresco and an amazing range of local produce.
@@ -454,14 +454,14 @@
         </button>
         <div class="content">
             <div class="row">
-                <div class="span8">
-                    @*<div id="businessChart"></div>*@
-                    <div id="jobPieChart"></div>
-                </div>
-                <div class="span4 mapDetail">
+                <div class="span12 mapDetail">
                     <p>
                         More than 50% of the population in Ballarat is in white collar jobs with an average income of $53,174 per year. The professional sector has the most number of job opportunities in the region followed closely by trade workers and community and personal service workers. The region has several administrative, managerial and clerical roles available. Additionally, are opportunities in the sector of machinery operators and drivers.
                     </p>
+                </div>
+                <div class="span12">
+                    @*<div id="businessChart"></div>*@
+                    <div id="jobPieChart"></div>
                 </div>
             </div>
         </div>
@@ -517,44 +517,58 @@
 
 
 
-        //Chart for job
-        var chartJob = anychart.column();
-        // turn on chart animation
-        chartJob.animation(true);
-        // set chart title text settings
-        var titleJob = chartJob.title();
-        // enable title
-        titleJob.enabled(true);
-        // set title text
-        titleJob.text("Top 8 Occupation in Ballarat");
-        // place title into bottom of the chart
-        titleJob.orientation("bottom");
-        // stick title to the left side
-        titleJob.align("centre");
+        $.ajax({
+            type: "post",        //ajax的方式为post(get方式对传送数据长度有限制)
+            url: "http://52.147.15.131:8988/jobdetial",         //demo.aspx为目标文件，Hello为目标文件中的方法
+            dataType: "json",        //传值方式
 
-        // create area series with passed data
-        chartJob.stick(getData());
+            data: {
+                opt_city1: "Ballarat",
+            },
 
-        // set scale minimum
-        chartJob.yScale()
-            .minimum(0)
-            .ticks({
-                interval: 5
-            });
+            success: function (jobData) {      //成功回传值后触发的方法
+                ///alert(data);          //后台返回的参数
+                jobList = jobData;
+                anychart.onDocumentReady(function () {
+                    // create a data set
+                    var data1 = anychart.data.set(jobList[Object.keys(jobList)[0]]);
+                    //alert(data1, data2);
 
-        // tooltips position and interactivity settings
-        chartJob.tooltip()
-            .positionMode('point')
-            .format('Number of jobs in 2016: {%Value}{groupsSeparator: }');
-        chartJob.interactivity().hoverMode('by-x');
+                    // map the data
+                    var seriesData_1 = data1.mapAs({ x: 0, value: 1 });
 
-        // axes titles
-        chartJob.yAxis().title('Job Opportunity');
-        chartJob.xAxis().labels().rotation(-90);
-        // set container id for the chart
-        chartJob.container('jobPieChart');
-        // initiate chart drawing
-        chartJob.draw();
+                    // create a chart
+                    var chart = anychart.bar();
+
+                    // create the first series, set the data and name
+                    var series1 = chart.bar(seriesData_1);
+                    series1.name(Object.keys(jobList)[0]);
+
+                    // configure the visual settings of the first series
+                    series1.normal().fill("#64b5f6", 0.3);
+                    series1.hovered().fill("#64b5f6", 0.1);
+                    series1.selected().fill("#64b5f6", 0.5);
+                    series1.normal().stroke("#64b5f6", 1, "10 5", "round");
+                    series1.hovered().stroke("#64b5f6", 2, "10 5", "round");
+                    series1.selected().stroke("#64b5f6", 4, "10 5", "round");
+
+
+                    // set the chart title
+                    chart.title("Top 8 Occupation in Ballarat");
+
+                    // set the titles of the axes
+                    //chart.xAxis().title("Manager");
+                    chart.yAxis().title("Numbers");
+
+                    // set the container id
+                    chart.container("jobPieChart");
+
+                    // initiate drawing the chart
+                    chart.draw();
+                });
+
+            }
+        })
 
 
 
