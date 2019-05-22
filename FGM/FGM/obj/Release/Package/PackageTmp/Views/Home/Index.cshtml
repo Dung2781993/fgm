@@ -24,7 +24,7 @@
                 <h4>City Recommendation</h4>
                 <div class="form-group ">
                     <h6 style="margin:auto; font-family:Brandon Grotesque;">
-                        Answer the questions below to get recommendations for the cities that would be the most suitable for you.
+                        Answer the questions below to get recommendations for the regional cities that would be the most suitable for you.
                     </h6>
 
                     <label for="occupation" style="font-family:Brandon Grotesque; font-size:20px;" class="city-recomendation">1. What is your current field of profession?</label>
@@ -48,7 +48,7 @@
                         <option value="Transport, postal and warehousing">Warehousing</option>
                         <option value="Wholesale trade">Wholesale trade</option>
                     </select>
-                    <label for="occupation" style="font-family:Brandon Grotesque; font-size:20px;" class="city-recomendation">2. Which language do you speak?</label>
+                    <label for="occupation" style="font-family:Brandon Grotesque; font-size:20px;" class="city-recomendation">2. Which language do you speak other than English?</label>
                     <select name="selectLanguage" , id="selectLanguage" class="city-recomendation" style="border-radius:25px;width:100%">
                         <option value="Arabic">Arabic</option>
                         <option value="Croatian">Croatian</option>
@@ -72,6 +72,7 @@
                 </div>
             </div>
             <div class="span6 question-recomendation">
+                <h4>Result</h4>
                 <div class="form-group">
                     <div id="recomendation-section" style="overflow:auto;"></div>
                 </div>
@@ -236,8 +237,34 @@
                     //alert("Here is the list of the city that will suit with your selection : "+ recommendation);
 
                     $("#recomendation-section").append(
-                        "<h6 style=" + "font-family:Brandon" + " Grotesque;>Based on your answers the most suitable city/ cities for you would be:  <strong>" + recommendation +"</strong></h6 >"
+                        "<h6 class=\"message\" style="+"font-family:Brandon" + " Grotesque;>Based on your answers the most suitable city/ cities for you would be: "+ "</h6 >"
                     );
+
+                    if (recommendation.length > 0) {
+                        for(var i = 0; i < recommendation.length; i++) {
+                            var cityName = recommendation[i];
+                            if (cityName == "Geelong") {
+                                var link ="@Url.Action("Geelong", "City")";
+                            }
+                            if (cityName == "Bendigo") {
+                                var link ="@Url.Action("Bendigo", "City")";
+                            }
+                            if (cityName == "Ballarat") {
+                                var link ="@Url.Action("Ballarat", "City")";
+                            }
+                            if (cityName == "Latrobe") {
+                                var link ="@Url.Action("Latrobe", "City")";
+                            }
+                            if (cityName == "Warrnambool") {
+                                var link ="@Url.Action("Warrnambool", "City")";
+                            }
+                            var city ="<a href=" + link+ ">" + cityName + "</a>";
+                            var space = " ";
+                            $(city).appendTo('.message');
+                            $('.message').append(space);
+                        }
+                    }
+                    
                 }
             })
         })

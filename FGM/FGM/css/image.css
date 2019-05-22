@@ -26,9 +26,10 @@ div #ballarat {
     padding-top: 30px;
 }
 
-div #geelong-background{
+div #geelong-background {
     content: url(../Images/Geelong-Background.jpg);
     width: 100%;
+    height: 600px;
 }
 
 
@@ -55,7 +56,7 @@ div #bendigo-background {
 }
 
 div #comparison-background {
-    content: url(../Images/comparison.jpg);
+    content: url(../Images/Comparison-Background.jpg);
     width: 100%;
 }
 
