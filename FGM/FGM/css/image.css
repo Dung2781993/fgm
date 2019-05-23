@@ -2,6 +2,10 @@
     content:url(../Images/HomeGeelong.png);
 }
 
+div #new-city {
+    content: url(../Images/newcity.jpg);
+}
+
 div #warrnambool {
     content: url(../Images/Warrnambool.jpeg);
 }

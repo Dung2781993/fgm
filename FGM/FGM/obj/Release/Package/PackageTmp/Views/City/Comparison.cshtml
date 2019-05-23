@@ -30,7 +30,7 @@
     <div class="container">
         <div class="row">
             <div class="span12" style="text-align:center;">
-                <p style="font-size:16px;">
+                <p>
                     Are you too confused between two or more cities? We are here to help you out. Use our comparison feature and compare between population, job opportunities, cost of accomodation and many other criteria for your two most favourite cities.
                     You can now make a smart and quick choice for yourself and your family.
                 </p>
@@ -152,7 +152,15 @@
                         series2.selected().stroke("#0066cc", 4);
 
                         // set the chart title
-                        chart.title(opt_select+ " compare between " + Object.keys(jobList)[0] + ' and ' + Object.keys(jobList)[1]);
+                        if (opt_select == "Population") {
+                            chart.title("Population comparison between " + Object.keys(jobList)[0] + ' and ' + Object.keys(jobList)[1]);
+                        }
+                        if (opt_select == "HousePrice") {
+                            chart.title("Accomodation cost comparison between " + Object.keys(jobList)[0] + ' and ' + Object.keys(jobList)[1]);
+                        }
+                        if (opt_select == "Job") {
+                            chart.title("Job comparison between " + Object.keys(jobList)[0] + ' and ' + Object.keys(jobList)[1]);
+                        }
 
                         // set the titles of the axes
                         //chart.xAxis().title("Manager");

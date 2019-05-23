@@ -205,6 +205,7 @@
     <Content Include="Images\logo-white.png" />
     <Content Include="Images\Logo_footer.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\newcity.jpg" />
     <Content Include="Images\prettyPhoto\default\default_thumb.png" />
     <Content Include="Images\prettyPhoto\default\loader.gif" />
     <Content Include="Images\prettyPhoto\default\sprite.png" />
